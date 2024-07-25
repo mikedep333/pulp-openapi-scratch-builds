@@ -37,13 +37,13 @@ class ContentAdvisoriesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_advisories_create(self, pulp_domain="default", **kwargs):  # noqa: E501
         """Create an update record  # noqa: E501
 
         Trigger an asynchronous task to create content,optionally create new repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_advisories_create(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -51,6 +51,7 @@ class ContentAdvisoriesApi(object):
         :param str repository: A URI of a repository the new content unit should be associated with.
         :param file file: An uploaded file that may be turned into the content unit.
         :param str upload: An uncommitted upload that may be turned into the content unit.
+        :param str url: A url that Pulp can download and turn into the content unit.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -63,15 +64,15 @@ class ContentAdvisoriesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.content_rpm_advisories_create_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_advisories_create_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """Create an update record  # noqa: E501
 
         Trigger an asynchronous task to create content,optionally create new repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_advisories_create_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -79,6 +80,7 @@ class ContentAdvisoriesApi(object):
         :param str repository: A URI of a repository the new content unit should be associated with.
         :param file file: An uploaded file that may be turned into the content unit.
         :param str upload: An uncommitted upload that may be turned into the content unit.
+        :param str url: A url that Pulp can download and turn into the content unit.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -99,7 +101,8 @@ class ContentAdvisoriesApi(object):
             'pulp_domain',
             'repository',
             'file',
-            'upload'
+            'upload',
+            'url'
         ]
         all_params.extend(
             [
@@ -114,15 +117,18 @@ class ContentAdvisoriesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method content_rpm_advisories_create" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_rpm_advisories_create`")  # noqa: E501
 
+        if self.api_client.client_side_validation and ('url' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['url']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `url` when calling `content_rpm_advisories_create`, length must be greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -141,6 +147,8 @@ class ContentAdvisoriesApi(object):
             local_var_files['file'] = local_var_params['file']  # noqa: E501
         if 'upload' in local_var_params:
             form_params.append(('upload', local_var_params['upload']))  # noqa: E501
+        if 'url' in local_var_params:
+            form_params.append(('url', local_var_params['url']))  # noqa: E501
 
         body_params = None
         # HTTP header `Accept`
@@ -152,7 +160,7 @@ class ContentAdvisoriesApi(object):
             ['multipart/form-data', 'application/x-www-form-urlencoded'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/content/rpm/advisories/', 'POST',
@@ -170,13 +178,13 @@ class ContentAdvisoriesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_advisories_list(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List update records  # noqa: E501
 
         A ViewSet for UpdateRecord.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/advisories/  Also specify queryset and serializer for UpdateRecord.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_advisories_list(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -186,6 +194,7 @@ class ContentAdvisoriesApi(object):
         :param int limit: Number of results to return per page.
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `id` - Id * `-id` - Id (descending) * `updated_date` - Updated date * `-updated_date` - Updated date (descending) * `description` - Description * `-description` - Description (descending) * `issued_date` - Issued date * `-issued_date` - Issued date (descending) * `fromstr` - Fromstr * `-fromstr` - Fromstr (descending) * `status` - Status * `-status` - Status (descending) * `title` - Title * `-title` - Title (descending) * `summary` - Summary * `-summary` - Summary (descending) * `version` - Version * `-version` - Version (descending) * `type` - Type * `-type` - Type (descending) * `severity` - Severity * `-severity` - Severity (descending) * `solution` - Solution * `-solution` - Solution (descending) * `release` - Release * `-release` - Release (descending) * `rights` - Rights * `-rights` - Rights (descending) * `reboot_suggested` - Reboot suggested * `-reboot_suggested` - Reboot suggested (descending) * `pushcount` - Pushcount * `-pushcount` - Pushcount (descending) * `digest` - Digest * `-digest` - Digest (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
         :param list[str] pulp_id__in: Multiple values may be separated by commas.
         :param str q:
@@ -215,15 +224,15 @@ class ContentAdvisoriesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.content_rpm_advisories_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_advisories_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List update records  # noqa: E501
 
         A ViewSet for UpdateRecord.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/advisories/  Also specify queryset and serializer for UpdateRecord.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_advisories_list_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -233,6 +242,7 @@ class ContentAdvisoriesApi(object):
         :param int limit: Number of results to return per page.
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `id` - Id * `-id` - Id (descending) * `updated_date` - Updated date * `-updated_date` - Updated date (descending) * `description` - Description * `-description` - Description (descending) * `issued_date` - Issued date * `-issued_date` - Issued date (descending) * `fromstr` - Fromstr * `-fromstr` - Fromstr (descending) * `status` - Status * `-status` - Status (descending) * `title` - Title * `-title` - Title (descending) * `summary` - Summary * `-summary` - Summary (descending) * `version` - Version * `-version` - Version (descending) * `type` - Type * `-type` - Type (descending) * `severity` - Severity * `-severity` - Severity (descending) * `solution` - Solution * `-solution` - Solution (descending) * `release` - Release * `-release` - Release (descending) * `rights` - Rights * `-rights` - Rights (descending) * `reboot_suggested` - Reboot suggested * `-reboot_suggested` - Reboot suggested (descending) * `pushcount` - Pushcount * `-pushcount` - Pushcount (descending) * `digest` - Digest * `-digest` - Digest (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
         :param list[str] pulp_id__in: Multiple values may be separated by commas.
         :param str q:
@@ -273,6 +283,7 @@ class ContentAdvisoriesApi(object):
             'limit',
             'offset',
             'ordering',
+            'orphaned_for',
             'pulp_href__in',
             'pulp_id__in',
             'q',
@@ -304,14 +315,14 @@ class ContentAdvisoriesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method content_rpm_advisories_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_rpm_advisories_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -332,6 +343,8 @@ class ContentAdvisoriesApi(object):
         if 'ordering' in local_var_params and local_var_params['ordering'] is not None:  # noqa: E501
             query_params.append(('ordering', local_var_params['ordering']))  # noqa: E501
             collection_formats['ordering'] = 'csv'  # noqa: E501
+        if 'orphaned_for' in local_var_params and local_var_params['orphaned_for'] is not None:  # noqa: E501
+            query_params.append(('orphaned_for', local_var_params['orphaned_for']))  # noqa: E501
         if 'pulp_href__in' in local_var_params and local_var_params['pulp_href__in'] is not None:  # noqa: E501
             query_params.append(('pulp_href__in', local_var_params['pulp_href__in']))  # noqa: E501
             collection_formats['pulp_href__in'] = 'csv'  # noqa: E501
@@ -385,7 +398,7 @@ class ContentAdvisoriesApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/content/rpm/advisories/', 'GET',
@@ -403,13 +416,13 @@ class ContentAdvisoriesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_update_record_href,  **kwargs):  # noqa: E501
+    def content_rpm_advisories_read(self, rpm_update_record_href,  **kwargs):  # noqa: E501
         """Inspect an update record  # noqa: E501
 
         A ViewSet for UpdateRecord.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/advisories/  Also specify queryset and serializer for UpdateRecord.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_update_record_href, async_req=True)
+        >>> thread = api.content_rpm_advisories_read(rpm_update_record_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -428,15 +441,15 @@ class ContentAdvisoriesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_update_record_href,  **kwargs)  # noqa: E501
+        return self.content_rpm_advisories_read_with_http_info(rpm_update_record_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_update_record_href,  **kwargs):  # noqa: E501
+    def content_rpm_advisories_read_with_http_info(self, rpm_update_record_href,  **kwargs):  # noqa: E501
         """Inspect an update record  # noqa: E501
 
         A ViewSet for UpdateRecord.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/advisories/  Also specify queryset and serializer for UpdateRecord.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_update_record_href, async_req=True)
+        >>> thread = api.content_rpm_advisories_read_with_http_info(rpm_update_record_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -477,14 +490,14 @@ class ContentAdvisoriesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method content_rpm_advisories_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_update_record_href' is set
         if self.api_client.client_side_validation and ('rpm_update_record_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_update_record_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_update_record_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_update_record_href` when calling `content_rpm_advisories_read`")  # noqa: E501
 
         collection_formats = {}
 
@@ -511,7 +524,7 @@ class ContentAdvisoriesApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_update_record_href}', 'GET',

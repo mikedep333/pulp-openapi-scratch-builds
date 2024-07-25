@@ -29,29 +29,29 @@ class TestRepositoriesRpmVersionsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_delete(self):
-        """Test case for delete
+    def test_repositories_rpm_rpm_versions_delete(self):
+        """Test case for repositories_rpm_rpm_versions_delete
 
         Delete a repository version  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_repositories_rpm_rpm_versions_list(self):
+        """Test case for repositories_rpm_rpm_versions_list
 
         List repository versions  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_repositories_rpm_rpm_versions_read(self):
+        """Test case for repositories_rpm_rpm_versions_read
 
         Inspect a repository version  # noqa: E501
         """
         pass
 
-    def test_repair(self):
-        """Test case for repair
+    def test_repositories_rpm_rpm_versions_repair(self):
+        """Test case for repositories_rpm_rpm_versions_repair
 
         """
         pass

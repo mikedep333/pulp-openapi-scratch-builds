@@ -36,16 +36,18 @@ class RpmUpdateRecord(object):
     openapi_types = {
         'repository': 'str',
         'file': 'file',
-        'upload': 'str'
+        'upload': 'str',
+        'url': 'str'
     }
 
     attribute_map = {
         'repository': 'repository',
         'file': 'file',
-        'upload': 'upload'
+        'upload': 'upload',
+        'url': 'url'
     }
 
-    def __init__(self, repository=None, file=None, upload=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, repository=None, file=None, upload=None, url=None, local_vars_configuration=None):  # noqa: E501
         """RpmUpdateRecord - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class RpmUpdateRecord(object):
         self._repository = None
         self._file = None
         self._upload = None
+        self._url = None
         self.discriminator = None
 
         if repository is not None:
@@ -62,6 +65,8 @@ class RpmUpdateRecord(object):
             self.file = file
         if upload is not None:
             self.upload = upload
+        if url is not None:
+            self.url = url
 
     @property
     def repository(self):
@@ -131,6 +136,32 @@ class RpmUpdateRecord(object):
         """
 
         self._upload = upload
+
+    @property
+    def url(self):
+        """Gets the url of this RpmUpdateRecord.  # noqa: E501
+
+        A url that Pulp can download and turn into the content unit.  # noqa: E501
+
+        :return: The url of this RpmUpdateRecord.  # noqa: E501
+        :rtype: str
+        """
+        return self._url
+
+    @url.setter
+    def url(self, url):
+        """Sets the url of this RpmUpdateRecord.
+
+        A url that Pulp can download and turn into the content unit.  # noqa: E501
+
+        :param url: The url of this RpmUpdateRecord.  # noqa: E501
+        :type: str
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                url is not None and len(url) < 1):
+            raise ValueError("Invalid value for `url`, length must be greater than or equal to `1`")  # noqa: E501
+
+        self._url = url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

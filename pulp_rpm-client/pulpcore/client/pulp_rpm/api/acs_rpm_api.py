@@ -37,13 +37,13 @@ class AcsRpmApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_role(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_add_role(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
         """Add a role  # noqa: E501
 
         Add a role for this object to users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
+        >>> thread = api.acs_rpm_rpm_add_role(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -61,15 +61,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.add_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_add_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role,  **kwargs)  # noqa: E501
 
-    def add_role_with_http_info(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_add_role_with_http_info(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
         """Add a role  # noqa: E501
 
         Add a role for this object to users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
+        >>> thread = api.acs_rpm_rpm_add_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -108,18 +108,18 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_role" % key
+                    " to method acs_rpm_rpm_add_role" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `add_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_add_role`")  # noqa: E501
         # verify the required parameter 'nested_role' is set
         if self.api_client.client_side_validation and ('nested_role' not in local_var_params or  # noqa: E501
                                                         local_var_params['nested_role'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `nested_role` when calling `add_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `nested_role` when calling `acs_rpm_rpm_add_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -146,7 +146,7 @@ class AcsRpmApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}add_role/', 'POST',
@@ -164,13 +164,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create(self, rpm_rpm_alternate_content_source, pulp_domain="default", **kwargs):  # noqa: E501
+    def acs_rpm_rpm_create(self, rpm_rpm_alternate_content_source, pulp_domain="default", **kwargs):  # noqa: E501
         """Create a rpm alternate content source  # noqa: E501
 
         ViewSet for ACS.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(pulp_domain, rpm_rpm_alternate_content_source, async_req=True)
+        >>> thread = api.acs_rpm_rpm_create(pulp_domain, rpm_rpm_alternate_content_source, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -188,15 +188,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_with_http_info(rpm_rpm_alternate_content_source, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_create_with_http_info(rpm_rpm_alternate_content_source, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, rpm_rpm_alternate_content_source, pulp_domain="default", **kwargs):  # noqa: E501
+    def acs_rpm_rpm_create_with_http_info(self, rpm_rpm_alternate_content_source, pulp_domain="default", **kwargs):  # noqa: E501
         """Create a rpm alternate content source  # noqa: E501
 
         ViewSet for ACS.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(pulp_domain, rpm_rpm_alternate_content_source, async_req=True)
+        >>> thread = api.acs_rpm_rpm_create_with_http_info(pulp_domain, rpm_rpm_alternate_content_source, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -235,18 +235,18 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method acs_rpm_rpm_create" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `acs_rpm_rpm_create`")  # noqa: E501
         # verify the required parameter 'rpm_rpm_alternate_content_source' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source` when calling `acs_rpm_rpm_create`")  # noqa: E501
 
         collection_formats = {}
 
@@ -273,7 +273,7 @@ class AcsRpmApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/acs/rpm/rpm/', 'POST',
@@ -291,13 +291,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_delete(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """Delete a rpm alternate content source  # noqa: E501
 
         Trigger an asynchronous delete ACS task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_delete(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -314,15 +314,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_delete_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
 
-    def delete_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_delete_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """Delete a rpm alternate content source  # noqa: E501
 
         Trigger an asynchronous delete ACS task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_delete_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -359,14 +359,14 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method acs_rpm_rpm_delete" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `delete`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -387,7 +387,7 @@ class AcsRpmApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}', 'DELETE',
@@ -405,13 +405,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def acs_rpm_rpm_list(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List rpm alternate content sources  # noqa: E501
 
         ViewSet for ACS.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(pulp_domain, async_req=True)
+        >>> thread = api.acs_rpm_rpm_list(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -445,15 +445,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def acs_rpm_rpm_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List rpm alternate content sources  # noqa: E501
 
         ViewSet for ACS.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.acs_rpm_rpm_list_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -524,14 +524,14 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method acs_rpm_rpm_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `acs_rpm_rpm_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -592,7 +592,7 @@ class AcsRpmApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/acs/rpm/rpm/', 'GET',
@@ -610,13 +610,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_roles(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_list_roles(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """List roles  # noqa: E501
 
         List roles assigned to this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_list_roles(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -635,15 +635,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_roles_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_list_roles_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
 
-    def list_roles_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_list_roles_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """List roles  # noqa: E501
 
         List roles assigned to this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_list_roles_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -684,14 +684,14 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_roles" % key
+                    " to method acs_rpm_rpm_list_roles" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `list_roles`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_list_roles`")  # noqa: E501
 
         collection_formats = {}
 
@@ -718,7 +718,7 @@ class AcsRpmApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}list_roles/', 'GET',
@@ -736,13 +736,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def my_permissions(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_my_permissions(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """List user permissions  # noqa: E501
 
         List permissions available to the current user on this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.my_permissions(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_my_permissions(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -761,15 +761,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.my_permissions_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_my_permissions_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
 
-    def my_permissions_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_my_permissions_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """List user permissions  # noqa: E501
 
         List permissions available to the current user on this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.my_permissions_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_my_permissions_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -810,14 +810,14 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method my_permissions" % key
+                    " to method acs_rpm_rpm_my_permissions" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `my_permissions`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_my_permissions`")  # noqa: E501
 
         collection_formats = {}
 
@@ -844,7 +844,7 @@ class AcsRpmApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}my_permissions/', 'GET',
@@ -862,13 +862,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def partial_update(self, rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_partial_update(self, rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
         """Update a rpm alternate content source  # noqa: E501
 
         Trigger an asynchronous partial update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update(rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source, async_req=True)
+        >>> thread = api.acs_rpm_rpm_partial_update(rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -886,15 +886,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.partial_update_with_http_info(rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_partial_update_with_http_info(rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source,  **kwargs)  # noqa: E501
 
-    def partial_update_with_http_info(self, rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_partial_update_with_http_info(self, rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
         """Update a rpm alternate content source  # noqa: E501
 
         Trigger an asynchronous partial update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_with_http_info(rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source, async_req=True)
+        >>> thread = api.acs_rpm_rpm_partial_update_with_http_info(rpm_rpm_alternate_content_source_href, patchedrpm_rpm_alternate_content_source, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -933,18 +933,18 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method partial_update" % key
+                    " to method acs_rpm_rpm_partial_update" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `partial_update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_partial_update`")  # noqa: E501
         # verify the required parameter 'patchedrpm_rpm_alternate_content_source' is set
         if self.api_client.client_side_validation and ('patchedrpm_rpm_alternate_content_source' not in local_var_params or  # noqa: E501
                                                         local_var_params['patchedrpm_rpm_alternate_content_source'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `patchedrpm_rpm_alternate_content_source` when calling `partial_update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `patchedrpm_rpm_alternate_content_source` when calling `acs_rpm_rpm_partial_update`")  # noqa: E501
 
         collection_formats = {}
 
@@ -971,7 +971,7 @@ class AcsRpmApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}', 'PATCH',
@@ -989,13 +989,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_read(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """Inspect a rpm alternate content source  # noqa: E501
 
         ViewSet for ACS.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_read(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1014,15 +1014,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_read_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_read_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
         """Inspect a rpm alternate content source  # noqa: E501
 
         ViewSet for ACS.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_read_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1063,14 +1063,14 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method acs_rpm_rpm_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_read`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1097,7 +1097,7 @@ class AcsRpmApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}', 'GET',
@@ -1115,13 +1115,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def refresh(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
-        """refresh  # noqa: E501
+    def acs_rpm_rpm_refresh(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+        """acs_rpm_rpm_refresh  # noqa: E501
 
         Trigger an asynchronous task to create Alternate Content Source content.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.refresh(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_refresh(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1138,15 +1138,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.refresh_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_refresh_with_http_info(rpm_rpm_alternate_content_source_href,  **kwargs)  # noqa: E501
 
-    def refresh_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
-        """refresh  # noqa: E501
+    def acs_rpm_rpm_refresh_with_http_info(self, rpm_rpm_alternate_content_source_href,  **kwargs):  # noqa: E501
+        """acs_rpm_rpm_refresh  # noqa: E501
 
         Trigger an asynchronous task to create Alternate Content Source content.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.refresh_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
+        >>> thread = api.acs_rpm_rpm_refresh_with_http_info(rpm_rpm_alternate_content_source_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1183,14 +1183,14 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method refresh" % key
+                    " to method acs_rpm_rpm_refresh" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `refresh`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_refresh`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1211,7 +1211,7 @@ class AcsRpmApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}refresh/', 'POST',
@@ -1229,13 +1229,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def remove_role(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_remove_role(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
         """Remove a role  # noqa: E501
 
         Remove a role for this object from users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_role(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
+        >>> thread = api.acs_rpm_rpm_remove_role(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1253,15 +1253,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.remove_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_remove_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role,  **kwargs)  # noqa: E501
 
-    def remove_role_with_http_info(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_remove_role_with_http_info(self, rpm_rpm_alternate_content_source_href, nested_role,  **kwargs):  # noqa: E501
         """Remove a role  # noqa: E501
 
         Remove a role for this object from users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
+        >>> thread = api.acs_rpm_rpm_remove_role_with_http_info(rpm_rpm_alternate_content_source_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1300,18 +1300,18 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method remove_role" % key
+                    " to method acs_rpm_rpm_remove_role" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `remove_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_remove_role`")  # noqa: E501
         # verify the required parameter 'nested_role' is set
         if self.api_client.client_side_validation and ('nested_role' not in local_var_params or  # noqa: E501
                                                         local_var_params['nested_role'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `nested_role` when calling `remove_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `nested_role` when calling `acs_rpm_rpm_remove_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1338,7 +1338,7 @@ class AcsRpmApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}remove_role/', 'POST',
@@ -1356,13 +1356,13 @@ class AcsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_update(self, rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
         """Update a rpm alternate content source  # noqa: E501
 
         Trigger an asynchronous update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source, async_req=True)
+        >>> thread = api.acs_rpm_rpm_update(rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1380,15 +1380,15 @@ class AcsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_with_http_info(rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source,  **kwargs)  # noqa: E501
+        return self.acs_rpm_rpm_update_with_http_info(rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source,  **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
+    def acs_rpm_rpm_update_with_http_info(self, rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source,  **kwargs):  # noqa: E501
         """Update a rpm alternate content source  # noqa: E501
 
         Trigger an asynchronous update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source, async_req=True)
+        >>> thread = api.acs_rpm_rpm_update_with_http_info(rpm_rpm_alternate_content_source_href, rpm_rpm_alternate_content_source, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1427,18 +1427,18 @@ class AcsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method acs_rpm_rpm_update" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_alternate_content_source_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source_href` when calling `acs_rpm_rpm_update`")  # noqa: E501
         # verify the required parameter 'rpm_rpm_alternate_content_source' is set
         if self.api_client.client_side_validation and ('rpm_rpm_alternate_content_source' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_alternate_content_source'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source` when calling `update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_alternate_content_source` when calling `acs_rpm_rpm_update`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1465,7 +1465,7 @@ class AcsRpmApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_alternate_content_source_href}', 'PUT',

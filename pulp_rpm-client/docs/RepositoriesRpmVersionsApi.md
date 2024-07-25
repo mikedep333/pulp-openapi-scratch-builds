@@ -1,17 +1,17 @@
 # pulpcore.client.pulp_rpm.RepositoriesRpmVersionsApi
 
-All URIs are relative to *http://localhost:5001*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete**](RepositoriesRpmVersionsApi.md#delete) | **DELETE** {rpm_rpm_repository_version_href} | Delete a repository version
-[**list**](RepositoriesRpmVersionsApi.md#list) | **GET** {rpm_rpm_repository_href}versions/ | List repository versions
-[**read**](RepositoriesRpmVersionsApi.md#read) | **GET** {rpm_rpm_repository_version_href} | Inspect a repository version
-[**repair**](RepositoriesRpmVersionsApi.md#repair) | **POST** {rpm_rpm_repository_version_href}repair/ | 
+[**repositories_rpm_rpm_versions_delete**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_delete) | **DELETE** {rpm_rpm_repository_version_href} | Delete a repository version
+[**repositories_rpm_rpm_versions_list**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_list) | **GET** {rpm_rpm_repository_href}versions/ | List repository versions
+[**repositories_rpm_rpm_versions_read**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_read) | **GET** {rpm_rpm_repository_version_href} | Inspect a repository version
+[**repositories_rpm_rpm_versions_repair**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_repair) | **POST** {rpm_rpm_repository_version_href}repair/ | 
 
 
-# **delete**
-> AsyncOperationResponse delete(rpm_rpm_repository_version_href)
+# **repositories_rpm_rpm_versions_delete**
+> AsyncOperationResponse repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href)
 
 Delete a repository version
 
@@ -26,10 +26,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -45,13 +45,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -61,10 +67,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a repository version
-        api_response = api_instance.delete(rpm_rpm_repository_version_href)
+        api_response = api_instance.repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->delete: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_delete: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -74,10 +80,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -93,13 +99,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -109,10 +121,64 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a repository version
-        api_response = api_instance.delete(rpm_rpm_repository_version_href)
+        api_response = api_instance.repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->delete: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_delete: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RepositoriesRpmVersionsApi(api_client)
+    rpm_rpm_repository_version_href = 'rpm_rpm_repository_version_href_example' # str | 
+
+    try:
+        # Delete a repository version
+        api_response = api_instance.repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -127,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -141,8 +207,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedRepositoryVersionResponseList list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_versions_list**
+> PaginatedRepositoryVersionResponseList repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
 
 List repository versions
 
@@ -157,10 +223,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -176,13 +242,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -213,10 +285,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List repository versions
-        api_response = api_instance.list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->list: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -226,10 +298,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -245,13 +317,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -282,10 +360,85 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List repository versions
-        api_response = api_instance.list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->list: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_list: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RepositoriesRpmVersionsApi(api_client)
+    rpm_rpm_repository_href = 'rpm_rpm_repository_href_example' # str | 
+content = 'content_example' # str | Content Unit referenced by HREF (optional)
+content__in = 'content__in_example' # str | Content Unit referenced by HREF (optional)
+limit = 56 # int | Number of results to return per page. (optional)
+number = 56 # int | Filter results where number matches value (optional)
+number__gt = 56 # int | Filter results where number is greater than value (optional)
+number__gte = 56 # int | Filter results where number is greater than or equal to value (optional)
+number__lt = 56 # int | Filter results where number is less than value (optional)
+number__lte = 56 # int | Filter results where number is less than or equal to value (optional)
+number__range = [56] # list[int] | Filter results where number is between two comma separated values (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+ordering = ['ordering_example'] # list[str] | Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `number` - Number * `-number` - Number (descending) * `complete` - Complete * `-complete` - Complete (descending) * `info` - Info * `-info` - Info (descending) * `pk` - Pk * `-pk` - Pk (descending) (optional)
+pulp_created = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_created matches value (optional)
+pulp_created__gt = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_created is greater than value (optional)
+pulp_created__gte = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_created is greater than or equal to value (optional)
+pulp_created__lt = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_created is less than value (optional)
+pulp_created__lte = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_created is less than or equal to value (optional)
+pulp_created__range = ['2013-10-20T19:20:30+01:00'] # list[datetime] | Filter results where pulp_created is between two comma separated values (optional)
+pulp_href__in = ['pulp_href__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
+q = 'q_example' # str |  (optional)
+fields = ['fields_example'] # list[str] | A list of fields to include in the response. (optional)
+exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to exclude from the response. (optional)
+
+    try:
+        # List repository versions
+        api_response = api_instance.repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -321,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -335,8 +488,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RepositoryVersionResponse read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_versions_read**
+> RepositoryVersionResponse repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect a repository version
 
@@ -351,10 +504,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -370,13 +523,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -388,10 +547,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a repository version
-        api_response = api_instance.read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->read: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -401,10 +560,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -420,13 +579,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -438,10 +603,66 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a repository version
-        api_response = api_instance.read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->read: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_read: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RepositoriesRpmVersionsApi(api_client)
+    rpm_rpm_repository_version_href = 'rpm_rpm_repository_version_href_example' # str | 
+fields = ['fields_example'] # list[str] | A list of fields to include in the response. (optional)
+exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to exclude from the response. (optional)
+
+    try:
+        # Inspect a repository version
+        api_response = api_instance.repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -458,7 +679,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -472,8 +693,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **repair**
-> AsyncOperationResponse repair(rpm_rpm_repository_version_href, repair)
+# **repositories_rpm_rpm_versions_repair**
+> AsyncOperationResponse repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair)
 
 
 
@@ -488,10 +709,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -507,13 +728,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -523,10 +750,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 repair = pulpcore.client.pulp_rpm.Repair() # Repair | 
 
     try:
-        api_response = api_instance.repair(rpm_rpm_repository_version_href, repair)
+        api_response = api_instance.repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->repair: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_repair: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -536,10 +763,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -555,13 +782,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -571,10 +804,64 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 repair = pulpcore.client.pulp_rpm.Repair() # Repair | 
 
     try:
-        api_response = api_instance.repair(rpm_rpm_repository_version_href, repair)
+        api_response = api_instance.repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->repair: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_repair: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RepositoriesRpmVersionsApi(api_client)
+    rpm_rpm_repository_version_href = 'rpm_rpm_repository_version_href_example' # str | 
+repair = pulpcore.client.pulp_rpm.Repair() # Repair | 
+
+    try:
+        api_response = api_instance.repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_repair: %s\n" % e)
 ```
 
 ### Parameters
@@ -590,7 +877,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 

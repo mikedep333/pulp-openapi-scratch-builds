@@ -29,22 +29,22 @@ class TestContentModulemdObsoletesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_content_rpm_modulemd_obsoletes_create(self):
+        """Test case for content_rpm_modulemd_obsoletes_create
 
         Create a modulemd obsolete  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_modulemd_obsoletes_list(self):
+        """Test case for content_rpm_modulemd_obsoletes_list
 
         List modulemd obsoletes  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_modulemd_obsoletes_read(self):
+        """Test case for content_rpm_modulemd_obsoletes_read
 
         Inspect a modulemd obsolete  # noqa: E501
         """

@@ -1,25 +1,25 @@
 # pulpcore.client.pulp_rpm.RemotesUlnApi
 
-All URIs are relative to *http://localhost:5001*
+All URIs are relative to *http://localhost:8000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_role**](RemotesUlnApi.md#add_role) | **POST** {rpm_uln_remote_href}add_role/ | Add a role
-[**create**](RemotesUlnApi.md#create) | **POST** /api/pulp/{pulp_domain}/api/v3/remotes/rpm/uln/ | Create an uln remote
-[**delete**](RemotesUlnApi.md#delete) | **DELETE** {rpm_uln_remote_href} | Delete an uln remote
-[**list**](RemotesUlnApi.md#list) | **GET** /api/pulp/{pulp_domain}/api/v3/remotes/rpm/uln/ | List uln remotes
-[**list_roles**](RemotesUlnApi.md#list_roles) | **GET** {rpm_uln_remote_href}list_roles/ | List roles
-[**my_permissions**](RemotesUlnApi.md#my_permissions) | **GET** {rpm_uln_remote_href}my_permissions/ | List user permissions
-[**partial_update**](RemotesUlnApi.md#partial_update) | **PATCH** {rpm_uln_remote_href} | Update an uln remote
-[**read**](RemotesUlnApi.md#read) | **GET** {rpm_uln_remote_href} | Inspect an uln remote
-[**remove_role**](RemotesUlnApi.md#remove_role) | **POST** {rpm_uln_remote_href}remove_role/ | Remove a role
-[**set_label**](RemotesUlnApi.md#set_label) | **POST** {rpm_uln_remote_href}set_label/ | Set a label
-[**unset_label**](RemotesUlnApi.md#unset_label) | **POST** {rpm_uln_remote_href}unset_label/ | Unset a label
-[**update**](RemotesUlnApi.md#update) | **PUT** {rpm_uln_remote_href} | Update an uln remote
+[**remotes_rpm_uln_add_role**](RemotesUlnApi.md#remotes_rpm_uln_add_role) | **POST** {rpm_uln_remote_href}add_role/ | Add a role
+[**remotes_rpm_uln_create**](RemotesUlnApi.md#remotes_rpm_uln_create) | **POST** /api/pulp/{pulp_domain}/api/v3/remotes/rpm/uln/ | Create an uln remote
+[**remotes_rpm_uln_delete**](RemotesUlnApi.md#remotes_rpm_uln_delete) | **DELETE** {rpm_uln_remote_href} | Delete an uln remote
+[**remotes_rpm_uln_list**](RemotesUlnApi.md#remotes_rpm_uln_list) | **GET** /api/pulp/{pulp_domain}/api/v3/remotes/rpm/uln/ | List uln remotes
+[**remotes_rpm_uln_list_roles**](RemotesUlnApi.md#remotes_rpm_uln_list_roles) | **GET** {rpm_uln_remote_href}list_roles/ | List roles
+[**remotes_rpm_uln_my_permissions**](RemotesUlnApi.md#remotes_rpm_uln_my_permissions) | **GET** {rpm_uln_remote_href}my_permissions/ | List user permissions
+[**remotes_rpm_uln_partial_update**](RemotesUlnApi.md#remotes_rpm_uln_partial_update) | **PATCH** {rpm_uln_remote_href} | Update an uln remote
+[**remotes_rpm_uln_read**](RemotesUlnApi.md#remotes_rpm_uln_read) | **GET** {rpm_uln_remote_href} | Inspect an uln remote
+[**remotes_rpm_uln_remove_role**](RemotesUlnApi.md#remotes_rpm_uln_remove_role) | **POST** {rpm_uln_remote_href}remove_role/ | Remove a role
+[**remotes_rpm_uln_set_label**](RemotesUlnApi.md#remotes_rpm_uln_set_label) | **POST** {rpm_uln_remote_href}set_label/ | Set a label
+[**remotes_rpm_uln_unset_label**](RemotesUlnApi.md#remotes_rpm_uln_unset_label) | **POST** {rpm_uln_remote_href}unset_label/ | Unset a label
+[**remotes_rpm_uln_update**](RemotesUlnApi.md#remotes_rpm_uln_update) | **PUT** {rpm_uln_remote_href} | Update an uln remote
 
 
-# **add_role**
-> NestedRoleResponse add_role(rpm_uln_remote_href, nested_role)
+# **remotes_rpm_uln_add_role**
+> NestedRoleResponse remotes_rpm_uln_add_role(rpm_uln_remote_href, nested_role)
 
 Add a role
 
@@ -34,10 +34,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -53,13 +53,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -70,10 +76,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_uln_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_uln_add_role(rpm_uln_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->add_role: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_add_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -83,10 +89,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -102,13 +108,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -119,10 +131,65 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_uln_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_uln_add_role(rpm_uln_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->add_role: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_add_role: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole | 
+
+    try:
+        # Add a role
+        api_response = api_instance.remotes_rpm_uln_add_role(rpm_uln_remote_href, nested_role)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_add_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -138,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -152,8 +219,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> RpmUlnRemoteResponse create(pulp_domain, rpm_uln_remote)
+# **remotes_rpm_uln_create**
+> RpmUlnRemoteResponse remotes_rpm_uln_create(pulp_domain, rpm_uln_remote)
 
 Create an uln remote
 
@@ -168,10 +235,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -187,13 +254,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -204,10 +277,10 @@ rpm_uln_remote = pulpcore.client.pulp_rpm.RpmUlnRemote() # RpmUlnRemote |
 
     try:
         # Create an uln remote
-        api_response = api_instance.create(pulp_domain, rpm_uln_remote)
+        api_response = api_instance.remotes_rpm_uln_create(pulp_domain, rpm_uln_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->create: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_create: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -217,10 +290,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -236,13 +309,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -253,10 +332,65 @@ rpm_uln_remote = pulpcore.client.pulp_rpm.RpmUlnRemote() # RpmUlnRemote |
 
     try:
         # Create an uln remote
-        api_response = api_instance.create(pulp_domain, rpm_uln_remote)
+        api_response = api_instance.remotes_rpm_uln_create(pulp_domain, rpm_uln_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->create: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_create: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    pulp_domain = 'pulp_domain_example' # str | 
+rpm_uln_remote = pulpcore.client.pulp_rpm.RpmUlnRemote() # RpmUlnRemote | 
+
+    try:
+        # Create an uln remote
+        api_response = api_instance.remotes_rpm_uln_create(pulp_domain, rpm_uln_remote)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -272,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -286,8 +420,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> AsyncOperationResponse delete(rpm_uln_remote_href)
+# **remotes_rpm_uln_delete**
+> AsyncOperationResponse remotes_rpm_uln_delete(rpm_uln_remote_href)
 
 Delete an uln remote
 
@@ -302,10 +436,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -321,13 +455,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -337,10 +477,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete an uln remote
-        api_response = api_instance.delete(rpm_uln_remote_href)
+        api_response = api_instance.remotes_rpm_uln_delete(rpm_uln_remote_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->delete: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_delete: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -350,10 +490,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -369,13 +509,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -385,10 +531,64 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete an uln remote
-        api_response = api_instance.delete(rpm_uln_remote_href)
+        api_response = api_instance.remotes_rpm_uln_delete(rpm_uln_remote_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->delete: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_delete: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+
+    try:
+        # Delete an uln remote
+        api_response = api_instance.remotes_rpm_uln_delete(rpm_uln_remote_href)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -403,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -417,8 +617,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedrpmUlnRemoteResponseList list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_uln_list**
+> PaginatedrpmUlnRemoteResponseList remotes_rpm_uln_list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
 
 List uln remotes
 
@@ -433,10 +633,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -452,13 +652,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -492,10 +698,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List uln remotes
-        api_response = api_instance.list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->list: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -505,10 +711,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -524,13 +730,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -564,10 +776,88 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List uln remotes
-        api_response = api_instance.list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->list: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_list: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    pulp_domain = 'pulp_domain_example' # str | 
+limit = 56 # int | Number of results to return per page. (optional)
+name = 'name_example' # str | Filter results where name matches value (optional)
+name__contains = 'name__contains_example' # str | Filter results where name contains value (optional)
+name__icontains = 'name__icontains_example' # str | Filter results where name contains value (optional)
+name__iexact = 'name__iexact_example' # str | Filter results where name matches value (optional)
+name__in = ['name__in_example'] # list[str] | Filter results where name is in a comma-separated list of values (optional)
+name__iregex = 'name__iregex_example' # str | Filter results where name matches regex value (optional)
+name__istartswith = 'name__istartswith_example' # str | Filter results where name starts with value (optional)
+name__regex = 'name__regex_example' # str | Filter results where name matches regex value (optional)
+name__startswith = 'name__startswith_example' # str | Filter results where name starts with value (optional)
+offset = 56 # int | The initial index from which to return the results. (optional)
+ordering = ['ordering_example'] # list[str] | Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `name` - Name * `-name` - Name (descending) * `pulp_labels` - Pulp labels * `-pulp_labels` - Pulp labels (descending) * `url` - Url * `-url` - Url (descending) * `ca_cert` - Ca cert * `-ca_cert` - Ca cert (descending) * `client_cert` - Client cert * `-client_cert` - Client cert (descending) * `client_key` - Client key * `-client_key` - Client key (descending) * `tls_validation` - Tls validation * `-tls_validation` - Tls validation (descending) * `username` - Username * `-username` - Username (descending) * `password` - Password * `-password` - Password (descending) * `proxy_url` - Proxy url * `-proxy_url` - Proxy url (descending) * `proxy_username` - Proxy username * `-proxy_username` - Proxy username (descending) * `proxy_password` - Proxy password * `-proxy_password` - Proxy password (descending) * `download_concurrency` - Download concurrency * `-download_concurrency` - Download concurrency (descending) * `max_retries` - Max retries * `-max_retries` - Max retries (descending) * `policy` - Policy * `-policy` - Policy (descending) * `total_timeout` - Total timeout * `-total_timeout` - Total timeout (descending) * `connect_timeout` - Connect timeout * `-connect_timeout` - Connect timeout (descending) * `sock_connect_timeout` - Sock connect timeout * `-sock_connect_timeout` - Sock connect timeout (descending) * `sock_read_timeout` - Sock read timeout * `-sock_read_timeout` - Sock read timeout (descending) * `headers` - Headers * `-headers` - Headers (descending) * `rate_limit` - Rate limit * `-rate_limit` - Rate limit (descending) * `pk` - Pk * `-pk` - Pk (descending) (optional)
+pulp_href__in = ['pulp_href__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
+pulp_id__in = ['pulp_id__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
+pulp_label_select = 'pulp_label_select_example' # str | Filter labels by search string (optional)
+pulp_last_updated = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_last_updated matches value (optional)
+pulp_last_updated__gt = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_last_updated is greater than value (optional)
+pulp_last_updated__gte = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_last_updated is greater than or equal to value (optional)
+pulp_last_updated__lt = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_last_updated is less than value (optional)
+pulp_last_updated__lte = '2013-10-20T19:20:30+01:00' # datetime | Filter results where pulp_last_updated is less than or equal to value (optional)
+pulp_last_updated__range = ['2013-10-20T19:20:30+01:00'] # list[datetime] | Filter results where pulp_last_updated is between two comma separated values (optional)
+q = 'q_example' # str |  (optional)
+fields = ['fields_example'] # list[str] | A list of fields to include in the response. (optional)
+exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to exclude from the response. (optional)
+
+    try:
+        # List uln remotes
+        api_response = api_instance.remotes_rpm_uln_list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -606,7 +896,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -620,8 +910,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_roles**
-> ObjectRolesResponse list_roles(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_uln_list_roles**
+> ObjectRolesResponse remotes_rpm_uln_list_roles(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
 
 List roles
 
@@ -636,10 +926,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -655,13 +945,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -673,10 +969,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_list_roles(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->list_roles: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_list_roles: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -686,10 +982,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -705,13 +1001,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -723,10 +1025,66 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_list_roles(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->list_roles: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_list_roles: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+fields = ['fields_example'] # list[str] | A list of fields to include in the response. (optional)
+exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to exclude from the response. (optional)
+
+    try:
+        # List roles
+        api_response = api_instance.remotes_rpm_uln_list_roles(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_list_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -743,7 +1101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -757,8 +1115,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **my_permissions**
-> MyPermissionsResponse my_permissions(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_uln_my_permissions**
+> MyPermissionsResponse remotes_rpm_uln_my_permissions(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
 
 List user permissions
 
@@ -773,10 +1131,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -792,13 +1150,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -810,10 +1174,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_my_permissions(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->my_permissions: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_my_permissions: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -823,10 +1187,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -842,13 +1206,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -860,10 +1230,66 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_my_permissions(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->my_permissions: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_my_permissions: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+fields = ['fields_example'] # list[str] | A list of fields to include in the response. (optional)
+exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to exclude from the response. (optional)
+
+    try:
+        # List user permissions
+        api_response = api_instance.remotes_rpm_uln_my_permissions(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_my_permissions: %s\n" % e)
 ```
 
 ### Parameters
@@ -880,7 +1306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -894,8 +1320,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **partial_update**
-> AsyncOperationResponse partial_update(rpm_uln_remote_href, patchedrpm_uln_remote)
+# **remotes_rpm_uln_partial_update**
+> AsyncOperationResponse remotes_rpm_uln_partial_update(rpm_uln_remote_href, patchedrpm_uln_remote)
 
 Update an uln remote
 
@@ -910,10 +1336,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -929,13 +1355,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -946,10 +1378,10 @@ patchedrpm_uln_remote = pulpcore.client.pulp_rpm.PatchedrpmUlnRemote() # Patched
 
     try:
         # Update an uln remote
-        api_response = api_instance.partial_update(rpm_uln_remote_href, patchedrpm_uln_remote)
+        api_response = api_instance.remotes_rpm_uln_partial_update(rpm_uln_remote_href, patchedrpm_uln_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->partial_update: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_partial_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -959,10 +1391,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -978,13 +1410,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -995,10 +1433,65 @@ patchedrpm_uln_remote = pulpcore.client.pulp_rpm.PatchedrpmUlnRemote() # Patched
 
     try:
         # Update an uln remote
-        api_response = api_instance.partial_update(rpm_uln_remote_href, patchedrpm_uln_remote)
+        api_response = api_instance.remotes_rpm_uln_partial_update(rpm_uln_remote_href, patchedrpm_uln_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->partial_update: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_partial_update: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+patchedrpm_uln_remote = pulpcore.client.pulp_rpm.PatchedrpmUlnRemote() # PatchedrpmUlnRemote | 
+
+    try:
+        # Update an uln remote
+        api_response = api_instance.remotes_rpm_uln_partial_update(rpm_uln_remote_href, patchedrpm_uln_remote)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_partial_update: %s\n" % e)
 ```
 
 ### Parameters
@@ -1014,7 +1507,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -1028,8 +1521,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RpmUlnRemoteResponse read(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_uln_read**
+> RpmUlnRemoteResponse remotes_rpm_uln_read(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect an uln remote
 
@@ -1044,10 +1537,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1063,13 +1556,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1081,10 +1580,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect an uln remote
-        api_response = api_instance.read(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_read(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->read: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1094,10 +1593,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1113,13 +1612,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1131,10 +1636,66 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect an uln remote
-        api_response = api_instance.read(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_uln_read(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->read: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_read: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+fields = ['fields_example'] # list[str] | A list of fields to include in the response. (optional)
+exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to exclude from the response. (optional)
+
+    try:
+        # Inspect an uln remote
+        api_response = api_instance.remotes_rpm_uln_read(rpm_uln_remote_href, fields=fields, exclude_fields=exclude_fields)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -1151,7 +1712,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -1165,8 +1726,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_role**
-> NestedRoleResponse remove_role(rpm_uln_remote_href, nested_role)
+# **remotes_rpm_uln_remove_role**
+> NestedRoleResponse remotes_rpm_uln_remove_role(rpm_uln_remote_href, nested_role)
 
 Remove a role
 
@@ -1181,10 +1742,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1200,13 +1761,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1217,10 +1784,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_uln_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_uln_remove_role(rpm_uln_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->remove_role: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_remove_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1230,10 +1797,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1249,13 +1816,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1266,10 +1839,65 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_uln_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_uln_remove_role(rpm_uln_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->remove_role: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_remove_role: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole | 
+
+    try:
+        # Remove a role
+        api_response = api_instance.remotes_rpm_uln_remove_role(rpm_uln_remote_href, nested_role)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_remove_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1285,7 +1913,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -1299,8 +1927,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_label**
-> SetLabelResponse set_label(rpm_uln_remote_href, set_label)
+# **remotes_rpm_uln_set_label**
+> SetLabelResponse remotes_rpm_uln_set_label(rpm_uln_remote_href, set_label)
 
 Set a label
 
@@ -1315,10 +1943,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1334,13 +1962,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1351,10 +1985,10 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_uln_remote_href, set_label)
+        api_response = api_instance.remotes_rpm_uln_set_label(rpm_uln_remote_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->set_label: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_set_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1364,10 +1998,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1383,13 +2017,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1400,10 +2040,65 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_uln_remote_href, set_label)
+        api_response = api_instance.remotes_rpm_uln_set_label(rpm_uln_remote_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->set_label: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_set_label: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel | 
+
+    try:
+        # Set a label
+        api_response = api_instance.remotes_rpm_uln_set_label(rpm_uln_remote_href, set_label)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_set_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1419,7 +2114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -1433,8 +2128,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unset_label**
-> UnsetLabelResponse unset_label(rpm_uln_remote_href, unset_label)
+# **remotes_rpm_uln_unset_label**
+> UnsetLabelResponse remotes_rpm_uln_unset_label(rpm_uln_remote_href, unset_label)
 
 Unset a label
 
@@ -1449,10 +2144,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1468,13 +2163,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1485,10 +2186,10 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_uln_remote_href, unset_label)
+        api_response = api_instance.remotes_rpm_uln_unset_label(rpm_uln_remote_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->unset_label: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_unset_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1498,10 +2199,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1517,13 +2218,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1534,10 +2241,65 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_uln_remote_href, unset_label)
+        api_response = api_instance.remotes_rpm_uln_unset_label(rpm_uln_remote_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->unset_label: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_unset_label: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel | 
+
+    try:
+        # Unset a label
+        api_response = api_instance.remotes_rpm_uln_unset_label(rpm_uln_remote_href, unset_label)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_unset_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1553,7 +2315,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 
@@ -1567,8 +2329,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> AsyncOperationResponse update(rpm_uln_remote_href, rpm_uln_remote)
+# **remotes_rpm_uln_update**
+> AsyncOperationResponse remotes_rpm_uln_update(rpm_uln_remote_href, rpm_uln_remote)
 
 Update an uln remote
 
@@ -1583,10 +2345,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1602,13 +2364,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1619,10 +2387,10 @@ rpm_uln_remote = pulpcore.client.pulp_rpm.RpmUlnRemote() # RpmUlnRemote |
 
     try:
         # Update an uln remote
-        api_response = api_instance.update(rpm_uln_remote_href, rpm_uln_remote)
+        api_response = api_instance.remotes_rpm_uln_update(rpm_uln_remote_href, rpm_uln_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->update: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1632,10 +2400,10 @@ import time
 import pulpcore.client.pulp_rpm
 from pulpcore.client.pulp_rpm.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost:5001
+# Defining the host is optional and defaults to http://localhost:8000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001"
+    host = "http://localhost:8000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -1651,13 +2419,19 @@ configuration = pulpcore.client.pulp_rpm.Configuration(
 
 # Configure API key authorization: cookieAuth
 configuration = pulpcore.client.pulp_rpm.Configuration(
-    host = "http://localhost:5001",
+    host = "http://localhost:8000",
     api_key = {
         'sessionid': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
 with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
@@ -1668,10 +2442,65 @@ rpm_uln_remote = pulpcore.client.pulp_rpm.RpmUlnRemote() # RpmUlnRemote |
 
     try:
         # Update an uln remote
-        api_response = api_instance.update(rpm_uln_remote_href, rpm_uln_remote)
+        api_response = api_instance.remotes_rpm_uln_update(rpm_uln_remote_href, rpm_uln_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesUlnApi->update: %s\n" % e)
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_update: %s\n" % e)
+```
+
+* OAuth Authentication (json_header_remote_authentication):
+```python
+from __future__ import print_function
+import time
+import pulpcore.client.pulp_rpm
+from pulpcore.client.pulp_rpm.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost:8000
+# See configuration.py for a list of all supported configuration parameters.
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Configure API key authorization: cookieAuth
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000",
+    api_key = {
+        'sessionid': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['sessionid'] = 'Bearer'
+
+# Configure OAuth2 access token for authorization: json_header_remote_authentication
+configuration = pulpcore.client.pulp_rpm.Configuration(
+    host = "http://localhost:8000"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pulpcore.client.pulp_rpm.RemotesUlnApi(api_client)
+    rpm_uln_remote_href = 'rpm_uln_remote_href_example' # str | 
+rpm_uln_remote = pulpcore.client.pulp_rpm.RpmUlnRemote() # RpmUlnRemote | 
+
+    try:
+        # Update an uln remote
+        api_response = api_instance.remotes_rpm_uln_update(rpm_uln_remote_href, rpm_uln_remote)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RemotesUlnApi->remotes_rpm_uln_update: %s\n" % e)
 ```
 
 ### Parameters
@@ -1687,7 +2516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth)
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [json_header_remote_authentication](../README.md#json_header_remote_authentication)
 
 ### HTTP request headers
 

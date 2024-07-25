@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pulp_href** | **str** |  | [optional] [readonly] 
 **pulp_created** | **datetime** | Timestamp of creation. | [optional] [readonly] 
+**pulp_last_updated** | **datetime** | Timestamp of the last time this resource was updated. Note: for immutable resources - like content, repository versions, and publication - pulp_created and pulp_last_updated dates will be the same. | [optional] [readonly] 
 **md5** | **str** | The MD5 checksum if available. | [optional] [readonly] 
 **sha1** | **str** | The SHA-1 checksum if available. | [optional] [readonly] 
 **sha224** | **str** | The SHA-224 checksum if available. | [optional] [readonly] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **sha384** | **str** | The SHA-384 checksum if available. | [optional] [readonly] 
 **sha512** | **str** | The SHA-512 checksum if available. | [optional] [readonly] 
 **artifact** | **str** | Artifact file representing the physical content | [optional] 
+**url** | **str** | URL with more information about the packaged software | [optional] [readonly] 
 **name** | **str** | Name of the package | [optional] [readonly] 
 **epoch** | **str** | The package&#39;s epoch | [optional] [readonly] 
 **version** | **str** | The version of the package. For example, &#39;2.8.0&#39; | [optional] [readonly] 
@@ -22,7 +24,6 @@ Name | Type | Description | Notes
 **checksum_type** | **str** | Type of checksum, e.g. &#39;sha256&#39;, &#39;md5&#39; | [optional] [readonly] 
 **summary** | **str** | Short description of the packaged software | [optional] [readonly] 
 **description** | **str** | In-depth description of the packaged software | [optional] [readonly] 
-**url** | **str** | URL with more information about the packaged software | [optional] [readonly] 
 **changelogs** | [**object**](.md) | Changelogs that package contains | [optional] [readonly] 
 **files** | [**object**](.md) | Files that package contains | [optional] [readonly] 
 **requires** | [**object**](.md) | Capabilities the package requires | [optional] [readonly] 

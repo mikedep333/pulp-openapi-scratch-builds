@@ -37,13 +37,701 @@ class ContentPackagesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, pulp_domain="default", **kwargs):  # noqa: E501
-        """Create a package  # noqa: E501
+    def content_python_packages_create(self, relative_path, pulp_domain="default", **kwargs):  # noqa: E501
+        """Create a python package content  # noqa: E501
 
         Trigger an asynchronous task to create content,optionally create new repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(pulp_domain, async_req=True)
+        >>> thread = api.content_python_packages_create(pulp_domain, relative_path, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str pulp_domain: (required)
+        :param str relative_path: Path where the artifact is located relative to distributions base_path (required)
+        :param str repository: A URI of a repository the new content unit should be associated with.
+        :param str artifact: Artifact file representing the physical content
+        :param file file: An uploaded file that may be turned into the content unit.
+        :param str upload: An uncommitted upload that may be turned into the content unit.
+        :param str url: A url that Pulp can download and turn into the content unit.
+        :param str sha256: The SHA256 digest of this package.
+        :param str summary: A one-line summary of what the package does.
+        :param str description: A longer description of the package that can run to several paragraphs.
+        :param str description_content_type: A string stating the markup syntax (if any) used in the distribution’s description, so that tools can intelligently render the description.
+        :param str keywords: Additional keywords to be used to assist searching for the package in a larger catalog.
+        :param str home_page: The URL for the package's home page.
+        :param str download_url: Legacy field denoting the URL from which this package can be downloaded.
+        :param str author: Text containing the author's name. Contact information can also be added, separated with newlines.
+        :param str author_email: The author's e-mail address. 
+        :param str maintainer: The maintainer's name at a minimum; additional contact information may be provided.
+        :param str maintainer_email: The maintainer's e-mail address.
+        :param str license: Text indicating the license covering the distribution
+        :param str requires_python: The Python version(s) that the distribution is guaranteed to be compatible with.
+        :param str project_url: A browsable URL for the project and a label for it, separated by a comma.
+        :param object project_urls: A dictionary of labels and URLs for the project.
+        :param str platform: A comma-separated list of platform specifications, summarizing the operating systems supported by the package.
+        :param str supported_platform: Field to specify the OS and CPU for which the binary package was compiled. 
+        :param object requires_dist: A JSON list containing names of some other distutils project required by this distribution.
+        :param object provides_dist: A JSON list containing names of a Distutils project which is contained within this distribution.
+        :param object obsoletes_dist: A JSON list containing names of a distutils project's distribution which this distribution renders obsolete, meaning that the two projects should not be installed at the same time.
+        :param object requires_external: A JSON list containing some dependency in the system that the distribution is to be used.
+        :param object classifiers: A JSON list containing classification values for a Python package.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: AsyncOperationResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.content_python_packages_create_with_http_info(relative_path, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+
+    def content_python_packages_create_with_http_info(self, relative_path, pulp_domain="default", **kwargs):  # noqa: E501
+        """Create a python package content  # noqa: E501
+
+        Trigger an asynchronous task to create content,optionally create new repository version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.content_python_packages_create_with_http_info(pulp_domain, relative_path, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str pulp_domain: (required)
+        :param str relative_path: Path where the artifact is located relative to distributions base_path (required)
+        :param str repository: A URI of a repository the new content unit should be associated with.
+        :param str artifact: Artifact file representing the physical content
+        :param file file: An uploaded file that may be turned into the content unit.
+        :param str upload: An uncommitted upload that may be turned into the content unit.
+        :param str url: A url that Pulp can download and turn into the content unit.
+        :param str sha256: The SHA256 digest of this package.
+        :param str summary: A one-line summary of what the package does.
+        :param str description: A longer description of the package that can run to several paragraphs.
+        :param str description_content_type: A string stating the markup syntax (if any) used in the distribution’s description, so that tools can intelligently render the description.
+        :param str keywords: Additional keywords to be used to assist searching for the package in a larger catalog.
+        :param str home_page: The URL for the package's home page.
+        :param str download_url: Legacy field denoting the URL from which this package can be downloaded.
+        :param str author: Text containing the author's name. Contact information can also be added, separated with newlines.
+        :param str author_email: The author's e-mail address. 
+        :param str maintainer: The maintainer's name at a minimum; additional contact information may be provided.
+        :param str maintainer_email: The maintainer's e-mail address.
+        :param str license: Text indicating the license covering the distribution
+        :param str requires_python: The Python version(s) that the distribution is guaranteed to be compatible with.
+        :param str project_url: A browsable URL for the project and a label for it, separated by a comma.
+        :param object project_urls: A dictionary of labels and URLs for the project.
+        :param str platform: A comma-separated list of platform specifications, summarizing the operating systems supported by the package.
+        :param str supported_platform: Field to specify the OS and CPU for which the binary package was compiled. 
+        :param object requires_dist: A JSON list containing names of some other distutils project required by this distribution.
+        :param object provides_dist: A JSON list containing names of a Distutils project which is contained within this distribution.
+        :param object obsoletes_dist: A JSON list containing names of a distutils project's distribution which this distribution renders obsolete, meaning that the two projects should not be installed at the same time.
+        :param object requires_external: A JSON list containing some dependency in the system that the distribution is to be used.
+        :param object classifiers: A JSON list containing classification values for a Python package.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(AsyncOperationResponse, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'pulp_domain',
+            'relative_path',
+            'repository',
+            'artifact',
+            'file',
+            'upload',
+            'url',
+            'sha256',
+            'summary',
+            'description',
+            'description_content_type',
+            'keywords',
+            'home_page',
+            'download_url',
+            'author',
+            'author_email',
+            'maintainer',
+            'maintainer_email',
+            'license',
+            'requires_python',
+            'project_url',
+            'project_urls',
+            'platform',
+            'supported_platform',
+            'requires_dist',
+            'provides_dist',
+            'obsoletes_dist',
+            'requires_external',
+            'classifiers'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method content_python_packages_create" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'pulp_domain' is set
+        if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
+                                                        local_var_params['pulp_domain'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_python_packages_create`")  # noqa: E501
+        # verify the required parameter 'relative_path' is set
+        if self.api_client.client_side_validation and ('relative_path' not in local_var_params or  # noqa: E501
+                                                        local_var_params['relative_path'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `relative_path` when calling `content_python_packages_create`")  # noqa: E501
+
+        if self.api_client.client_side_validation and ('relative_path' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['relative_path']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `relative_path` when calling `content_python_packages_create`, length must be greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('url' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['url']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `url` when calling `content_python_packages_create`, length must be greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and ('sha256' in local_var_params and  # noqa: E501
+                                                        len(local_var_params['sha256']) < 1):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `sha256` when calling `content_python_packages_create`, length must be greater than or equal to `1`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'pulp_domain' in local_var_params:
+            path_params['pulp_domain'] = local_var_params['pulp_domain']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'repository' in local_var_params:
+            form_params.append(('repository', local_var_params['repository']))  # noqa: E501
+        if 'artifact' in local_var_params:
+            form_params.append(('artifact', local_var_params['artifact']))  # noqa: E501
+        if 'relative_path' in local_var_params:
+            form_params.append(('relative_path', local_var_params['relative_path']))  # noqa: E501
+        if 'file' in local_var_params:
+            local_var_files['file'] = local_var_params['file']  # noqa: E501
+        if 'upload' in local_var_params:
+            form_params.append(('upload', local_var_params['upload']))  # noqa: E501
+        if 'url' in local_var_params:
+            form_params.append(('url', local_var_params['url']))  # noqa: E501
+        if 'sha256' in local_var_params:
+            form_params.append(('sha256', local_var_params['sha256']))  # noqa: E501
+        if 'summary' in local_var_params:
+            form_params.append(('summary', local_var_params['summary']))  # noqa: E501
+        if 'description' in local_var_params:
+            form_params.append(('description', local_var_params['description']))  # noqa: E501
+        if 'description_content_type' in local_var_params:
+            form_params.append(('description_content_type', local_var_params['description_content_type']))  # noqa: E501
+        if 'keywords' in local_var_params:
+            form_params.append(('keywords', local_var_params['keywords']))  # noqa: E501
+        if 'home_page' in local_var_params:
+            form_params.append(('home_page', local_var_params['home_page']))  # noqa: E501
+        if 'download_url' in local_var_params:
+            form_params.append(('download_url', local_var_params['download_url']))  # noqa: E501
+        if 'author' in local_var_params:
+            form_params.append(('author', local_var_params['author']))  # noqa: E501
+        if 'author_email' in local_var_params:
+            form_params.append(('author_email', local_var_params['author_email']))  # noqa: E501
+        if 'maintainer' in local_var_params:
+            form_params.append(('maintainer', local_var_params['maintainer']))  # noqa: E501
+        if 'maintainer_email' in local_var_params:
+            form_params.append(('maintainer_email', local_var_params['maintainer_email']))  # noqa: E501
+        if 'license' in local_var_params:
+            form_params.append(('license', local_var_params['license']))  # noqa: E501
+        if 'requires_python' in local_var_params:
+            form_params.append(('requires_python', local_var_params['requires_python']))  # noqa: E501
+        if 'project_url' in local_var_params:
+            form_params.append(('project_url', local_var_params['project_url']))  # noqa: E501
+        if 'project_urls' in local_var_params:
+            form_params.append(('project_urls', local_var_params['project_urls']))  # noqa: E501
+        if 'platform' in local_var_params:
+            form_params.append(('platform', local_var_params['platform']))  # noqa: E501
+        if 'supported_platform' in local_var_params:
+            form_params.append(('supported_platform', local_var_params['supported_platform']))  # noqa: E501
+        if 'requires_dist' in local_var_params:
+            form_params.append(('requires_dist', local_var_params['requires_dist']))  # noqa: E501
+        if 'provides_dist' in local_var_params:
+            form_params.append(('provides_dist', local_var_params['provides_dist']))  # noqa: E501
+        if 'obsoletes_dist' in local_var_params:
+            form_params.append(('obsoletes_dist', local_var_params['obsoletes_dist']))  # noqa: E501
+        if 'requires_external' in local_var_params:
+            form_params.append(('requires_external', local_var_params['requires_external']))  # noqa: E501
+        if 'classifiers' in local_var_params:
+            form_params.append(('classifiers', local_var_params['classifiers']))  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data', 'application/x-www-form-urlencoded'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/pulp/{pulp_domain}/api/v3/content/python/packages/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AsyncOperationResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def content_python_packages_list(self, pulp_domain="default", **kwargs):  # noqa: E501
+        """List python package contents  # noqa: E501
+
+         PythonPackageContent represents each individually installable Python package. In the Python ecosystem, this is called a Python Distribution, sometimes (ambiguously) refered to as a package. In Pulp Python, we refer to it as PythonPackageContent. Each PythonPackageContent corresponds to a single filename, for example `pulpcore-3.0.0rc1-py3-none-any.whl` or `pulpcore-3.0.0rc1.tar.gz`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.content_python_packages_list(pulp_domain, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str pulp_domain: (required)
+        :param str author: Filter results where author matches value
+        :param list[str] author__in: Filter results where author is in a comma-separated list of values
+        :param str filename: Filter results where filename matches value
+        :param str filename__contains: Filter results where filename contains value
+        :param list[str] filename__in: Filter results where filename is in a comma-separated list of values
+        :param str keywords__contains: Filter results where keywords contains value
+        :param list[str] keywords__in: Filter results where keywords is in a comma-separated list of values
+        :param int limit: Number of results to return per page.
+        :param str name: Filter results where name matches value
+        :param list[str] name__in: Filter results where name is in a comma-separated list of values
+        :param int offset: The initial index from which to return the results.
+        :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `filename` - Filename * `-filename` - Filename (descending) * `packagetype` - Packagetype * `-packagetype` - Packagetype (descending) * `name` - Name * `-name` - Name (descending) * `version` - Version * `-version` - Version (descending) * `sha256` - Sha256 * `-sha256` - Sha256 (descending) * `python_version` - Python version * `-python_version` - Python version (descending) * `metadata_version` - Metadata version * `-metadata_version` - Metadata version (descending) * `summary` - Summary * `-summary` - Summary (descending) * `description` - Description * `-description` - Description (descending) * `keywords` - Keywords * `-keywords` - Keywords (descending) * `home_page` - Home page * `-home_page` - Home page (descending) * `download_url` - Download url * `-download_url` - Download url (descending) * `author` - Author * `-author` - Author (descending) * `author_email` - Author email * `-author_email` - Author email (descending) * `maintainer` - Maintainer * `-maintainer` - Maintainer (descending) * `maintainer_email` - Maintainer email * `-maintainer_email` - Maintainer email (descending) * `license` - License * `-license` - License (descending) * `requires_python` - Requires python * `-requires_python` - Requires python (descending) * `project_url` - Project url * `-project_url` - Project url (descending) * `platform` - Platform * `-platform` - Platform (descending) * `supported_platform` - Supported platform * `-supported_platform` - Supported platform (descending) * `requires_dist` - Requires dist * `-requires_dist` - Requires dist (descending) * `provides_dist` - Provides dist * `-provides_dist` - Provides dist (descending) * `obsoletes_dist` - Obsoletes dist * `-obsoletes_dist` - Obsoletes dist (descending) * `requires_external` - Requires external * `-requires_external` - Requires external (descending) * `classifiers` - Classifiers * `-classifiers` - Classifiers (descending) * `project_urls` - Project urls * `-project_urls` - Project urls (descending) * `description_content_type` - Description content type * `-description_content_type` - Description content type (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
+        :param str packagetype: Filter results where packagetype matches value  * `bdist_dmg` - bdist_dmg * `bdist_dumb` - bdist_dumb * `bdist_egg` - bdist_egg * `bdist_msi` - bdist_msi * `bdist_rpm` - bdist_rpm * `bdist_wheel` - bdist_wheel * `bdist_wininst` - bdist_wininst * `sdist` - sdist
+        :param list[str] packagetype__in: Filter results where packagetype is in a comma-separated list of values
+        :param list[str] pulp_href__in: Multiple values may be separated by commas.
+        :param list[str] pulp_id__in: Multiple values may be separated by commas.
+        :param str q:
+        :param str repository_version: Repository Version referenced by HREF
+        :param str repository_version_added: Repository Version referenced by HREF
+        :param str repository_version_removed: Repository Version referenced by HREF
+        :param str requires_python: Filter results where requires_python matches value
+        :param str requires_python__contains: Filter results where requires_python contains value
+        :param list[str] requires_python__in: Filter results where requires_python is in a comma-separated list of values
+        :param str sha256: Filter results where sha256 matches value
+        :param list[str] sha256__in: Filter results where sha256 is in a comma-separated list of values
+        :param str version: Filter results where version matches value
+        :param str version__gt: Filter results where version is greater than value
+        :param str version__gte: Filter results where version is greater than or equal to value
+        :param str version__lt: Filter results where version is less than value
+        :param str version__lte: Filter results where version is less than or equal to value
+        :param list[str] fields: A list of fields to include in the response.
+        :param list[str] exclude_fields: A list of fields to exclude from the response.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: PaginatedpythonPythonPackageContentResponseList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.content_python_packages_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+
+    def content_python_packages_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+        """List python package contents  # noqa: E501
+
+         PythonPackageContent represents each individually installable Python package. In the Python ecosystem, this is called a Python Distribution, sometimes (ambiguously) refered to as a package. In Pulp Python, we refer to it as PythonPackageContent. Each PythonPackageContent corresponds to a single filename, for example `pulpcore-3.0.0rc1-py3-none-any.whl` or `pulpcore-3.0.0rc1.tar.gz`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.content_python_packages_list_with_http_info(pulp_domain, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str pulp_domain: (required)
+        :param str author: Filter results where author matches value
+        :param list[str] author__in: Filter results where author is in a comma-separated list of values
+        :param str filename: Filter results where filename matches value
+        :param str filename__contains: Filter results where filename contains value
+        :param list[str] filename__in: Filter results where filename is in a comma-separated list of values
+        :param str keywords__contains: Filter results where keywords contains value
+        :param list[str] keywords__in: Filter results where keywords is in a comma-separated list of values
+        :param int limit: Number of results to return per page.
+        :param str name: Filter results where name matches value
+        :param list[str] name__in: Filter results where name is in a comma-separated list of values
+        :param int offset: The initial index from which to return the results.
+        :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `filename` - Filename * `-filename` - Filename (descending) * `packagetype` - Packagetype * `-packagetype` - Packagetype (descending) * `name` - Name * `-name` - Name (descending) * `version` - Version * `-version` - Version (descending) * `sha256` - Sha256 * `-sha256` - Sha256 (descending) * `python_version` - Python version * `-python_version` - Python version (descending) * `metadata_version` - Metadata version * `-metadata_version` - Metadata version (descending) * `summary` - Summary * `-summary` - Summary (descending) * `description` - Description * `-description` - Description (descending) * `keywords` - Keywords * `-keywords` - Keywords (descending) * `home_page` - Home page * `-home_page` - Home page (descending) * `download_url` - Download url * `-download_url` - Download url (descending) * `author` - Author * `-author` - Author (descending) * `author_email` - Author email * `-author_email` - Author email (descending) * `maintainer` - Maintainer * `-maintainer` - Maintainer (descending) * `maintainer_email` - Maintainer email * `-maintainer_email` - Maintainer email (descending) * `license` - License * `-license` - License (descending) * `requires_python` - Requires python * `-requires_python` - Requires python (descending) * `project_url` - Project url * `-project_url` - Project url (descending) * `platform` - Platform * `-platform` - Platform (descending) * `supported_platform` - Supported platform * `-supported_platform` - Supported platform (descending) * `requires_dist` - Requires dist * `-requires_dist` - Requires dist (descending) * `provides_dist` - Provides dist * `-provides_dist` - Provides dist (descending) * `obsoletes_dist` - Obsoletes dist * `-obsoletes_dist` - Obsoletes dist (descending) * `requires_external` - Requires external * `-requires_external` - Requires external (descending) * `classifiers` - Classifiers * `-classifiers` - Classifiers (descending) * `project_urls` - Project urls * `-project_urls` - Project urls (descending) * `description_content_type` - Description content type * `-description_content_type` - Description content type (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
+        :param str packagetype: Filter results where packagetype matches value  * `bdist_dmg` - bdist_dmg * `bdist_dumb` - bdist_dumb * `bdist_egg` - bdist_egg * `bdist_msi` - bdist_msi * `bdist_rpm` - bdist_rpm * `bdist_wheel` - bdist_wheel * `bdist_wininst` - bdist_wininst * `sdist` - sdist
+        :param list[str] packagetype__in: Filter results where packagetype is in a comma-separated list of values
+        :param list[str] pulp_href__in: Multiple values may be separated by commas.
+        :param list[str] pulp_id__in: Multiple values may be separated by commas.
+        :param str q:
+        :param str repository_version: Repository Version referenced by HREF
+        :param str repository_version_added: Repository Version referenced by HREF
+        :param str repository_version_removed: Repository Version referenced by HREF
+        :param str requires_python: Filter results where requires_python matches value
+        :param str requires_python__contains: Filter results where requires_python contains value
+        :param list[str] requires_python__in: Filter results where requires_python is in a comma-separated list of values
+        :param str sha256: Filter results where sha256 matches value
+        :param list[str] sha256__in: Filter results where sha256 is in a comma-separated list of values
+        :param str version: Filter results where version matches value
+        :param str version__gt: Filter results where version is greater than value
+        :param str version__gte: Filter results where version is greater than or equal to value
+        :param str version__lt: Filter results where version is less than value
+        :param str version__lte: Filter results where version is less than or equal to value
+        :param list[str] fields: A list of fields to include in the response.
+        :param list[str] exclude_fields: A list of fields to exclude from the response.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(PaginatedpythonPythonPackageContentResponseList, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'pulp_domain',
+            'author',
+            'author__in',
+            'filename',
+            'filename__contains',
+            'filename__in',
+            'keywords__contains',
+            'keywords__in',
+            'limit',
+            'name',
+            'name__in',
+            'offset',
+            'ordering',
+            'orphaned_for',
+            'packagetype',
+            'packagetype__in',
+            'pulp_href__in',
+            'pulp_id__in',
+            'q',
+            'repository_version',
+            'repository_version_added',
+            'repository_version_removed',
+            'requires_python',
+            'requires_python__contains',
+            'requires_python__in',
+            'sha256',
+            'sha256__in',
+            'version',
+            'version__gt',
+            'version__gte',
+            'version__lt',
+            'version__lte',
+            'fields',
+            'exclude_fields'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method content_python_packages_list" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'pulp_domain' is set
+        if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
+                                                        local_var_params['pulp_domain'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_python_packages_list`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'pulp_domain' in local_var_params:
+            path_params['pulp_domain'] = local_var_params['pulp_domain']  # noqa: E501
+
+        query_params = []
+        if 'author' in local_var_params and local_var_params['author'] is not None:  # noqa: E501
+            query_params.append(('author', local_var_params['author']))  # noqa: E501
+        if 'author__in' in local_var_params and local_var_params['author__in'] is not None:  # noqa: E501
+            query_params.append(('author__in', local_var_params['author__in']))  # noqa: E501
+            collection_formats['author__in'] = 'csv'  # noqa: E501
+        if 'filename' in local_var_params and local_var_params['filename'] is not None:  # noqa: E501
+            query_params.append(('filename', local_var_params['filename']))  # noqa: E501
+        if 'filename__contains' in local_var_params and local_var_params['filename__contains'] is not None:  # noqa: E501
+            query_params.append(('filename__contains', local_var_params['filename__contains']))  # noqa: E501
+        if 'filename__in' in local_var_params and local_var_params['filename__in'] is not None:  # noqa: E501
+            query_params.append(('filename__in', local_var_params['filename__in']))  # noqa: E501
+            collection_formats['filename__in'] = 'csv'  # noqa: E501
+        if 'keywords__contains' in local_var_params and local_var_params['keywords__contains'] is not None:  # noqa: E501
+            query_params.append(('keywords__contains', local_var_params['keywords__contains']))  # noqa: E501
+        if 'keywords__in' in local_var_params and local_var_params['keywords__in'] is not None:  # noqa: E501
+            query_params.append(('keywords__in', local_var_params['keywords__in']))  # noqa: E501
+            collection_formats['keywords__in'] = 'csv'  # noqa: E501
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'name' in local_var_params and local_var_params['name'] is not None:  # noqa: E501
+            query_params.append(('name', local_var_params['name']))  # noqa: E501
+        if 'name__in' in local_var_params and local_var_params['name__in'] is not None:  # noqa: E501
+            query_params.append(('name__in', local_var_params['name__in']))  # noqa: E501
+            collection_formats['name__in'] = 'csv'  # noqa: E501
+        if 'offset' in local_var_params and local_var_params['offset'] is not None:  # noqa: E501
+            query_params.append(('offset', local_var_params['offset']))  # noqa: E501
+        if 'ordering' in local_var_params and local_var_params['ordering'] is not None:  # noqa: E501
+            query_params.append(('ordering', local_var_params['ordering']))  # noqa: E501
+            collection_formats['ordering'] = 'csv'  # noqa: E501
+        if 'orphaned_for' in local_var_params and local_var_params['orphaned_for'] is not None:  # noqa: E501
+            query_params.append(('orphaned_for', local_var_params['orphaned_for']))  # noqa: E501
+        if 'packagetype' in local_var_params and local_var_params['packagetype'] is not None:  # noqa: E501
+            query_params.append(('packagetype', local_var_params['packagetype']))  # noqa: E501
+        if 'packagetype__in' in local_var_params and local_var_params['packagetype__in'] is not None:  # noqa: E501
+            query_params.append(('packagetype__in', local_var_params['packagetype__in']))  # noqa: E501
+            collection_formats['packagetype__in'] = 'csv'  # noqa: E501
+        if 'pulp_href__in' in local_var_params and local_var_params['pulp_href__in'] is not None:  # noqa: E501
+            query_params.append(('pulp_href__in', local_var_params['pulp_href__in']))  # noqa: E501
+            collection_formats['pulp_href__in'] = 'csv'  # noqa: E501
+        if 'pulp_id__in' in local_var_params and local_var_params['pulp_id__in'] is not None:  # noqa: E501
+            query_params.append(('pulp_id__in', local_var_params['pulp_id__in']))  # noqa: E501
+            collection_formats['pulp_id__in'] = 'csv'  # noqa: E501
+        if 'q' in local_var_params and local_var_params['q'] is not None:  # noqa: E501
+            query_params.append(('q', local_var_params['q']))  # noqa: E501
+        if 'repository_version' in local_var_params and local_var_params['repository_version'] is not None:  # noqa: E501
+            query_params.append(('repository_version', local_var_params['repository_version']))  # noqa: E501
+        if 'repository_version_added' in local_var_params and local_var_params['repository_version_added'] is not None:  # noqa: E501
+            query_params.append(('repository_version_added', local_var_params['repository_version_added']))  # noqa: E501
+        if 'repository_version_removed' in local_var_params and local_var_params['repository_version_removed'] is not None:  # noqa: E501
+            query_params.append(('repository_version_removed', local_var_params['repository_version_removed']))  # noqa: E501
+        if 'requires_python' in local_var_params and local_var_params['requires_python'] is not None:  # noqa: E501
+            query_params.append(('requires_python', local_var_params['requires_python']))  # noqa: E501
+        if 'requires_python__contains' in local_var_params and local_var_params['requires_python__contains'] is not None:  # noqa: E501
+            query_params.append(('requires_python__contains', local_var_params['requires_python__contains']))  # noqa: E501
+        if 'requires_python__in' in local_var_params and local_var_params['requires_python__in'] is not None:  # noqa: E501
+            query_params.append(('requires_python__in', local_var_params['requires_python__in']))  # noqa: E501
+            collection_formats['requires_python__in'] = 'csv'  # noqa: E501
+        if 'sha256' in local_var_params and local_var_params['sha256'] is not None:  # noqa: E501
+            query_params.append(('sha256', local_var_params['sha256']))  # noqa: E501
+        if 'sha256__in' in local_var_params and local_var_params['sha256__in'] is not None:  # noqa: E501
+            query_params.append(('sha256__in', local_var_params['sha256__in']))  # noqa: E501
+            collection_formats['sha256__in'] = 'csv'  # noqa: E501
+        if 'version' in local_var_params and local_var_params['version'] is not None:  # noqa: E501
+            query_params.append(('version', local_var_params['version']))  # noqa: E501
+        if 'version__gt' in local_var_params and local_var_params['version__gt'] is not None:  # noqa: E501
+            query_params.append(('version__gt', local_var_params['version__gt']))  # noqa: E501
+        if 'version__gte' in local_var_params and local_var_params['version__gte'] is not None:  # noqa: E501
+            query_params.append(('version__gte', local_var_params['version__gte']))  # noqa: E501
+        if 'version__lt' in local_var_params and local_var_params['version__lt'] is not None:  # noqa: E501
+            query_params.append(('version__lt', local_var_params['version__lt']))  # noqa: E501
+        if 'version__lte' in local_var_params and local_var_params['version__lte'] is not None:  # noqa: E501
+            query_params.append(('version__lte', local_var_params['version__lte']))  # noqa: E501
+        if 'fields' in local_var_params and local_var_params['fields'] is not None:  # noqa: E501
+            query_params.append(('fields', local_var_params['fields']))  # noqa: E501
+            collection_formats['fields'] = 'multi'  # noqa: E501
+        if 'exclude_fields' in local_var_params and local_var_params['exclude_fields'] is not None:  # noqa: E501
+            query_params.append(('exclude_fields', local_var_params['exclude_fields']))  # noqa: E501
+            collection_formats['exclude_fields'] = 'multi'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/pulp/{pulp_domain}/api/v3/content/python/packages/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PaginatedpythonPythonPackageContentResponseList',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def content_python_packages_read(self, python_python_package_content_href,  **kwargs):  # noqa: E501
+        """Inspect a python package content  # noqa: E501
+
+         PythonPackageContent represents each individually installable Python package. In the Python ecosystem, this is called a Python Distribution, sometimes (ambiguously) refered to as a package. In Pulp Python, we refer to it as PythonPackageContent. Each PythonPackageContent corresponds to a single filename, for example `pulpcore-3.0.0rc1-py3-none-any.whl` or `pulpcore-3.0.0rc1.tar.gz`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.content_python_packages_read(python_python_package_content_href, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str python_python_package_content_href: (required)
+        :param list[str] fields: A list of fields to include in the response.
+        :param list[str] exclude_fields: A list of fields to exclude from the response.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: PythonPythonPackageContentResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.content_python_packages_read_with_http_info(python_python_package_content_href,  **kwargs)  # noqa: E501
+
+    def content_python_packages_read_with_http_info(self, python_python_package_content_href,  **kwargs):  # noqa: E501
+        """Inspect a python package content  # noqa: E501
+
+         PythonPackageContent represents each individually installable Python package. In the Python ecosystem, this is called a Python Distribution, sometimes (ambiguously) refered to as a package. In Pulp Python, we refer to it as PythonPackageContent. Each PythonPackageContent corresponds to a single filename, for example `pulpcore-3.0.0rc1-py3-none-any.whl` or `pulpcore-3.0.0rc1.tar.gz`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.content_python_packages_read_with_http_info(python_python_package_content_href, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str python_python_package_content_href: (required)
+        :param list[str] fields: A list of fields to include in the response.
+        :param list[str] exclude_fields: A list of fields to exclude from the response.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(PythonPythonPackageContentResponse, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'python_python_package_content_href',
+            'fields',
+            'exclude_fields'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method content_python_packages_read" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'python_python_package_content_href' is set
+        if self.api_client.client_side_validation and ('python_python_package_content_href' not in local_var_params or  # noqa: E501
+                                                        local_var_params['python_python_package_content_href'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `python_python_package_content_href` when calling `content_python_packages_read`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'python_python_package_content_href' in local_var_params:
+            path_params['python_python_package_content_href'] = local_var_params['python_python_package_content_href']  # noqa: E501
+
+        query_params = []
+        if 'fields' in local_var_params and local_var_params['fields'] is not None:  # noqa: E501
+            query_params.append(('fields', local_var_params['fields']))  # noqa: E501
+            collection_formats['fields'] = 'multi'  # noqa: E501
+        if 'exclude_fields' in local_var_params and local_var_params['exclude_fields'] is not None:  # noqa: E501
+            query_params.append(('exclude_fields', local_var_params['exclude_fields']))  # noqa: E501
+            collection_formats['exclude_fields'] = 'multi'  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
+
+        return self.api_client.call_api(
+            '{python_python_package_content_href}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PythonPythonPackageContentResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def content_rpm_packages_create(self, pulp_domain="default", **kwargs):  # noqa: E501
+        """Create a package  # noqa: E501
+
+        Trigger an asynchronous task to create an RPM package,optionally create new repository version.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.content_rpm_packages_create(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -65,15 +753,15 @@ class ContentPackagesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.content_rpm_packages_create_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_packages_create_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """Create a package  # noqa: E501
 
-        Trigger an asynchronous task to create content,optionally create new repository version.  # noqa: E501
+        Trigger an asynchronous task to create an RPM package,optionally create new repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_packages_create_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -120,18 +808,18 @@ class ContentPackagesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method content_rpm_packages_create" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_rpm_packages_create`")  # noqa: E501
 
         if self.api_client.client_side_validation and ('relative_path' in local_var_params and  # noqa: E501
                                                         len(local_var_params['relative_path']) < 1):  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `relative_path` when calling `create`, length must be greater than or equal to `1`")  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `relative_path` when calling `content_rpm_packages_create`, length must be greater than or equal to `1`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -165,7 +853,7 @@ class ContentPackagesApi(object):
             ['multipart/form-data', 'application/x-www-form-urlencoded'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/content/rpm/packages/', 'POST',
@@ -183,13 +871,13 @@ class ContentPackagesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_packages_list(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List packages  # noqa: E501
 
         A ViewSet for Package.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/packages/  Also specify queryset and serializer for Package.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_packages_list(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -214,6 +902,7 @@ class ContentPackagesApi(object):
         :param str name__startswith: Filter results where name starts with value
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `name` - Name * `-name` - Name (descending) * `epoch` - Epoch * `-epoch` - Epoch (descending) * `version` - Version * `-version` - Version (descending) * `release` - Release * `-release` - Release (descending) * `arch` - Arch * `-arch` - Arch (descending) * `evr` - Evr * `-evr` - Evr (descending) * `pkgId` - Pkgid * `-pkgId` - Pkgid (descending) * `checksum_type` - Checksum type * `-checksum_type` - Checksum type (descending) * `summary` - Summary * `-summary` - Summary (descending) * `description` - Description * `-description` - Description (descending) * `url` - Url * `-url` - Url (descending) * `changelogs` - Changelogs * `-changelogs` - Changelogs (descending) * `files` - Files * `-files` - Files (descending) * `requires` - Requires * `-requires` - Requires (descending) * `provides` - Provides * `-provides` - Provides (descending) * `conflicts` - Conflicts * `-conflicts` - Conflicts (descending) * `obsoletes` - Obsoletes * `-obsoletes` - Obsoletes (descending) * `suggests` - Suggests * `-suggests` - Suggests (descending) * `enhances` - Enhances * `-enhances` - Enhances (descending) * `recommends` - Recommends * `-recommends` - Recommends (descending) * `supplements` - Supplements * `-supplements` - Supplements (descending) * `location_base` - Location base * `-location_base` - Location base (descending) * `location_href` - Location href * `-location_href` - Location href (descending) * `rpm_buildhost` - Rpm buildhost * `-rpm_buildhost` - Rpm buildhost (descending) * `rpm_group` - Rpm group * `-rpm_group` - Rpm group (descending) * `rpm_license` - Rpm license * `-rpm_license` - Rpm license (descending) * `rpm_packager` - Rpm packager * `-rpm_packager` - Rpm packager (descending) * `rpm_sourcerpm` - Rpm sourcerpm * `-rpm_sourcerpm` - Rpm sourcerpm (descending) * `rpm_vendor` - Rpm vendor * `-rpm_vendor` - Rpm vendor (descending) * `rpm_header_start` - Rpm header start * `-rpm_header_start` - Rpm header start (descending) * `rpm_header_end` - Rpm header end * `-rpm_header_end` - Rpm header end (descending) * `size_archive` - Size archive * `-size_archive` - Size archive (descending) * `size_installed` - Size installed * `-size_installed` - Size installed (descending) * `size_package` - Size package * `-size_package` - Size package (descending) * `time_build` - Time build * `-time_build` - Time build (descending) * `time_file` - Time file * `-time_file` - Time file (descending) * `is_modular` - Is modular * `-is_modular` - Is modular (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param str pkg_id: Filter results where pkgId matches value
         :param list[str] pkg_id__in: Filter results where pkgId is in a comma-separated list of values
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
@@ -245,15 +934,15 @@ class ContentPackagesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.content_rpm_packages_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_packages_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List packages  # noqa: E501
 
         A ViewSet for Package.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/packages/  Also specify queryset and serializer for Package.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_packages_list_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -278,6 +967,7 @@ class ContentPackagesApi(object):
         :param str name__startswith: Filter results where name starts with value
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `name` - Name * `-name` - Name (descending) * `epoch` - Epoch * `-epoch` - Epoch (descending) * `version` - Version * `-version` - Version (descending) * `release` - Release * `-release` - Release (descending) * `arch` - Arch * `-arch` - Arch (descending) * `evr` - Evr * `-evr` - Evr (descending) * `pkgId` - Pkgid * `-pkgId` - Pkgid (descending) * `checksum_type` - Checksum type * `-checksum_type` - Checksum type (descending) * `summary` - Summary * `-summary` - Summary (descending) * `description` - Description * `-description` - Description (descending) * `url` - Url * `-url` - Url (descending) * `changelogs` - Changelogs * `-changelogs` - Changelogs (descending) * `files` - Files * `-files` - Files (descending) * `requires` - Requires * `-requires` - Requires (descending) * `provides` - Provides * `-provides` - Provides (descending) * `conflicts` - Conflicts * `-conflicts` - Conflicts (descending) * `obsoletes` - Obsoletes * `-obsoletes` - Obsoletes (descending) * `suggests` - Suggests * `-suggests` - Suggests (descending) * `enhances` - Enhances * `-enhances` - Enhances (descending) * `recommends` - Recommends * `-recommends` - Recommends (descending) * `supplements` - Supplements * `-supplements` - Supplements (descending) * `location_base` - Location base * `-location_base` - Location base (descending) * `location_href` - Location href * `-location_href` - Location href (descending) * `rpm_buildhost` - Rpm buildhost * `-rpm_buildhost` - Rpm buildhost (descending) * `rpm_group` - Rpm group * `-rpm_group` - Rpm group (descending) * `rpm_license` - Rpm license * `-rpm_license` - Rpm license (descending) * `rpm_packager` - Rpm packager * `-rpm_packager` - Rpm packager (descending) * `rpm_sourcerpm` - Rpm sourcerpm * `-rpm_sourcerpm` - Rpm sourcerpm (descending) * `rpm_vendor` - Rpm vendor * `-rpm_vendor` - Rpm vendor (descending) * `rpm_header_start` - Rpm header start * `-rpm_header_start` - Rpm header start (descending) * `rpm_header_end` - Rpm header end * `-rpm_header_end` - Rpm header end (descending) * `size_archive` - Size archive * `-size_archive` - Size archive (descending) * `size_installed` - Size installed * `-size_installed` - Size installed (descending) * `size_package` - Size package * `-size_package` - Size package (descending) * `time_build` - Time build * `-time_build` - Time build (descending) * `time_file` - Time file * `-time_file` - Time file (descending) * `is_modular` - Is modular * `-is_modular` - Is modular (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param str pkg_id: Filter results where pkgId matches value
         :param list[str] pkg_id__in: Filter results where pkgId is in a comma-separated list of values
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
@@ -335,6 +1025,7 @@ class ContentPackagesApi(object):
             'name__startswith',
             'offset',
             'ordering',
+            'orphaned_for',
             'pkg_id',
             'pkg_id__in',
             'pulp_href__in',
@@ -368,14 +1059,14 @@ class ContentPackagesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method content_rpm_packages_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_rpm_packages_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -429,6 +1120,8 @@ class ContentPackagesApi(object):
         if 'ordering' in local_var_params and local_var_params['ordering'] is not None:  # noqa: E501
             query_params.append(('ordering', local_var_params['ordering']))  # noqa: E501
             collection_formats['ordering'] = 'csv'  # noqa: E501
+        if 'orphaned_for' in local_var_params and local_var_params['orphaned_for'] is not None:  # noqa: E501
+            query_params.append(('orphaned_for', local_var_params['orphaned_for']))  # noqa: E501
         if 'pkg_id' in local_var_params and local_var_params['pkg_id'] is not None:  # noqa: E501
             query_params.append(('pkgId', local_var_params['pkg_id']))  # noqa: E501
         if 'pkg_id__in' in local_var_params and local_var_params['pkg_id__in'] is not None:  # noqa: E501
@@ -486,7 +1179,7 @@ class ContentPackagesApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/content/rpm/packages/', 'GET',
@@ -504,13 +1197,13 @@ class ContentPackagesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_package_href,  **kwargs):  # noqa: E501
+    def content_rpm_packages_read(self, rpm_package_href,  **kwargs):  # noqa: E501
         """Inspect a package  # noqa: E501
 
         A ViewSet for Package.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/packages/  Also specify queryset and serializer for Package.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_package_href, async_req=True)
+        >>> thread = api.content_rpm_packages_read(rpm_package_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -529,15 +1222,15 @@ class ContentPackagesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_package_href,  **kwargs)  # noqa: E501
+        return self.content_rpm_packages_read_with_http_info(rpm_package_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_package_href,  **kwargs):  # noqa: E501
+    def content_rpm_packages_read_with_http_info(self, rpm_package_href,  **kwargs):  # noqa: E501
         """Inspect a package  # noqa: E501
 
         A ViewSet for Package.  Define endpoint name which will appear in the API endpoint for this content type. For example::     http://pulp.example.com/pulp/api/v3/content/rpm/packages/  Also specify queryset and serializer for Package.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_package_href, async_req=True)
+        >>> thread = api.content_rpm_packages_read_with_http_info(rpm_package_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -578,14 +1271,14 @@ class ContentPackagesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method content_rpm_packages_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_package_href' is set
         if self.api_client.client_side_validation and ('rpm_package_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_package_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_package_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_package_href` when calling `content_rpm_packages_read`")  # noqa: E501
 
         collection_formats = {}
 
@@ -612,7 +1305,7 @@ class ContentPackagesApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_package_href}', 'GET',

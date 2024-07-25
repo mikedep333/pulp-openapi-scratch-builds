@@ -146,7 +146,7 @@ class RpmCopyApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/rpm/copy/', 'POST',

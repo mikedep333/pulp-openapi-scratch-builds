@@ -36,6 +36,7 @@ class RpmPackageResponse(object):
     openapi_types = {
         'pulp_href': 'str',
         'pulp_created': 'datetime',
+        'pulp_last_updated': 'datetime',
         'md5': 'str',
         'sha1': 'str',
         'sha224': 'str',
@@ -43,6 +44,7 @@ class RpmPackageResponse(object):
         'sha384': 'str',
         'sha512': 'str',
         'artifact': 'str',
+        'url': 'str',
         'name': 'str',
         'epoch': 'str',
         'version': 'str',
@@ -52,7 +54,6 @@ class RpmPackageResponse(object):
         'checksum_type': 'str',
         'summary': 'str',
         'description': 'str',
-        'url': 'str',
         'changelogs': 'object',
         'files': 'object',
         'requires': 'object',
@@ -84,6 +85,7 @@ class RpmPackageResponse(object):
     attribute_map = {
         'pulp_href': 'pulp_href',
         'pulp_created': 'pulp_created',
+        'pulp_last_updated': 'pulp_last_updated',
         'md5': 'md5',
         'sha1': 'sha1',
         'sha224': 'sha224',
@@ -91,6 +93,7 @@ class RpmPackageResponse(object):
         'sha384': 'sha384',
         'sha512': 'sha512',
         'artifact': 'artifact',
+        'url': 'url',
         'name': 'name',
         'epoch': 'epoch',
         'version': 'version',
@@ -100,7 +103,6 @@ class RpmPackageResponse(object):
         'checksum_type': 'checksum_type',
         'summary': 'summary',
         'description': 'description',
-        'url': 'url',
         'changelogs': 'changelogs',
         'files': 'files',
         'requires': 'requires',
@@ -129,7 +131,7 @@ class RpmPackageResponse(object):
         'time_file': 'time_file'
     }
 
-    def __init__(self, pulp_href=None, pulp_created=None, md5=None, sha1=None, sha224=None, sha256=None, sha384=None, sha512=None, artifact=None, name=None, epoch=None, version=None, release=None, arch=None, pkg_id=None, checksum_type=None, summary=None, description=None, url=None, changelogs=None, files=None, requires=None, provides=None, conflicts=None, obsoletes=None, suggests=None, enhances=None, recommends=None, supplements=None, location_base=None, location_href=None, rpm_buildhost=None, rpm_group=None, rpm_license=None, rpm_packager=None, rpm_sourcerpm=None, rpm_vendor=None, rpm_header_start=None, rpm_header_end=None, is_modular=None, size_archive=None, size_installed=None, size_package=None, time_build=None, time_file=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pulp_href=None, pulp_created=None, pulp_last_updated=None, md5=None, sha1=None, sha224=None, sha256=None, sha384=None, sha512=None, artifact=None, url=None, name=None, epoch=None, version=None, release=None, arch=None, pkg_id=None, checksum_type=None, summary=None, description=None, changelogs=None, files=None, requires=None, provides=None, conflicts=None, obsoletes=None, suggests=None, enhances=None, recommends=None, supplements=None, location_base=None, location_href=None, rpm_buildhost=None, rpm_group=None, rpm_license=None, rpm_packager=None, rpm_sourcerpm=None, rpm_vendor=None, rpm_header_start=None, rpm_header_end=None, is_modular=None, size_archive=None, size_installed=None, size_package=None, time_build=None, time_file=None, local_vars_configuration=None):  # noqa: E501
         """RpmPackageResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -137,6 +139,7 @@ class RpmPackageResponse(object):
 
         self._pulp_href = None
         self._pulp_created = None
+        self._pulp_last_updated = None
         self._md5 = None
         self._sha1 = None
         self._sha224 = None
@@ -144,6 +147,7 @@ class RpmPackageResponse(object):
         self._sha384 = None
         self._sha512 = None
         self._artifact = None
+        self._url = None
         self._name = None
         self._epoch = None
         self._version = None
@@ -153,7 +157,6 @@ class RpmPackageResponse(object):
         self._checksum_type = None
         self._summary = None
         self._description = None
-        self._url = None
         self._changelogs = None
         self._files = None
         self._requires = None
@@ -186,6 +189,8 @@ class RpmPackageResponse(object):
             self.pulp_href = pulp_href
         if pulp_created is not None:
             self.pulp_created = pulp_created
+        if pulp_last_updated is not None:
+            self.pulp_last_updated = pulp_last_updated
         if md5 is not None:
             self.md5 = md5
         if sha1 is not None:
@@ -200,6 +205,8 @@ class RpmPackageResponse(object):
             self.sha512 = sha512
         if artifact is not None:
             self.artifact = artifact
+        if url is not None:
+            self.url = url
         if name is not None:
             self.name = name
         if epoch is not None:
@@ -218,8 +225,6 @@ class RpmPackageResponse(object):
             self.summary = summary
         if description is not None:
             self.description = description
-        if url is not None:
-            self.url = url
         if changelogs is not None:
             self.changelogs = changelogs
         if files is not None:
@@ -316,6 +321,29 @@ class RpmPackageResponse(object):
         """
 
         self._pulp_created = pulp_created
+
+    @property
+    def pulp_last_updated(self):
+        """Gets the pulp_last_updated of this RpmPackageResponse.  # noqa: E501
+
+        Timestamp of the last time this resource was updated. Note: for immutable resources - like content, repository versions, and publication - pulp_created and pulp_last_updated dates will be the same.  # noqa: E501
+
+        :return: The pulp_last_updated of this RpmPackageResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._pulp_last_updated
+
+    @pulp_last_updated.setter
+    def pulp_last_updated(self, pulp_last_updated):
+        """Sets the pulp_last_updated of this RpmPackageResponse.
+
+        Timestamp of the last time this resource was updated. Note: for immutable resources - like content, repository versions, and publication - pulp_created and pulp_last_updated dates will be the same.  # noqa: E501
+
+        :param pulp_last_updated: The pulp_last_updated of this RpmPackageResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._pulp_last_updated = pulp_last_updated
 
     @property
     def md5(self):
@@ -477,6 +505,29 @@ class RpmPackageResponse(object):
         """
 
         self._artifact = artifact
+
+    @property
+    def url(self):
+        """Gets the url of this RpmPackageResponse.  # noqa: E501
+
+        URL with more information about the packaged software  # noqa: E501
+
+        :return: The url of this RpmPackageResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._url
+
+    @url.setter
+    def url(self, url):
+        """Sets the url of this RpmPackageResponse.
+
+        URL with more information about the packaged software  # noqa: E501
+
+        :param url: The url of this RpmPackageResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._url = url
 
     @property
     def name(self):
@@ -684,29 +735,6 @@ class RpmPackageResponse(object):
         """
 
         self._description = description
-
-    @property
-    def url(self):
-        """Gets the url of this RpmPackageResponse.  # noqa: E501
-
-        URL with more information about the packaged software  # noqa: E501
-
-        :return: The url of this RpmPackageResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._url
-
-    @url.setter
-    def url(self, url):
-        """Sets the url of this RpmPackageResponse.
-
-        URL with more information about the packaged software  # noqa: E501
-
-        :param url: The url of this RpmPackageResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._url = url
 
     @property
     def changelogs(self):

@@ -29,22 +29,43 @@ class TestContentPackagesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_content_python_packages_create(self):
+        """Test case for content_python_packages_create
+
+        Create a python package content  # noqa: E501
+        """
+        pass
+
+    def test_content_python_packages_list(self):
+        """Test case for content_python_packages_list
+
+        List python package contents  # noqa: E501
+        """
+        pass
+
+    def test_content_python_packages_read(self):
+        """Test case for content_python_packages_read
+
+        Inspect a python package content  # noqa: E501
+        """
+        pass
+
+    def test_content_rpm_packages_create(self):
+        """Test case for content_rpm_packages_create
 
         Create a package  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_packages_list(self):
+        """Test case for content_rpm_packages_list
 
         List packages  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_packages_read(self):
+        """Test case for content_rpm_packages_read
 
         Inspect a package  # noqa: E501
         """

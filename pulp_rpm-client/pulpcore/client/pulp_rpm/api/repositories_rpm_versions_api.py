@@ -37,13 +37,13 @@ class RepositoriesRpmVersionsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def delete(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
+    def repositories_rpm_rpm_versions_delete(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
         """Delete a repository version  # noqa: E501
 
         Trigger an asynchronous task to delete a repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(rpm_rpm_repository_version_href, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -60,15 +60,15 @@ class RepositoriesRpmVersionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_with_http_info(rpm_rpm_repository_version_href,  **kwargs)  # noqa: E501
+        return self.repositories_rpm_rpm_versions_delete_with_http_info(rpm_rpm_repository_version_href,  **kwargs)  # noqa: E501
 
-    def delete_with_http_info(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
+    def repositories_rpm_rpm_versions_delete_with_http_info(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
         """Delete a repository version  # noqa: E501
 
         Trigger an asynchronous task to delete a repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(rpm_rpm_repository_version_href, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_delete_with_http_info(rpm_rpm_repository_version_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -105,14 +105,14 @@ class RepositoriesRpmVersionsApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method repositories_rpm_rpm_versions_delete" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_repository_version_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_repository_version_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_repository_version_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_version_href` when calling `delete`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_version_href` when calling `repositories_rpm_rpm_versions_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -133,7 +133,7 @@ class RepositoriesRpmVersionsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_repository_version_href}', 'DELETE',
@@ -151,13 +151,13 @@ class RepositoriesRpmVersionsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list(self, rpm_rpm_repository_href,  **kwargs):  # noqa: E501
+    def repositories_rpm_rpm_versions_list(self, rpm_rpm_repository_href,  **kwargs):  # noqa: E501
         """List repository versions  # noqa: E501
 
         RpmRepositoryVersion represents a single rpm repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(rpm_rpm_repository_href, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -195,15 +195,15 @@ class RepositoriesRpmVersionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(rpm_rpm_repository_href,  **kwargs)  # noqa: E501
+        return self.repositories_rpm_rpm_versions_list_with_http_info(rpm_rpm_repository_href,  **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, rpm_rpm_repository_href,  **kwargs):  # noqa: E501
+    def repositories_rpm_rpm_versions_list_with_http_info(self, rpm_rpm_repository_href,  **kwargs):  # noqa: E501
         """List repository versions  # noqa: E501
 
         RpmRepositoryVersion represents a single rpm repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(rpm_rpm_repository_href, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_list_with_http_info(rpm_rpm_repository_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -282,14 +282,14 @@ class RepositoriesRpmVersionsApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method repositories_rpm_rpm_versions_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_repository_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_repository_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_repository_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_href` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_href` when calling `repositories_rpm_rpm_versions_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -358,7 +358,7 @@ class RepositoriesRpmVersionsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_repository_href}versions/', 'GET',
@@ -376,13 +376,13 @@ class RepositoriesRpmVersionsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
+    def repositories_rpm_rpm_versions_read(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
         """Inspect a repository version  # noqa: E501
 
         RpmRepositoryVersion represents a single rpm repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_rpm_repository_version_href, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -401,15 +401,15 @@ class RepositoriesRpmVersionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_rpm_repository_version_href,  **kwargs)  # noqa: E501
+        return self.repositories_rpm_rpm_versions_read_with_http_info(rpm_rpm_repository_version_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
+    def repositories_rpm_rpm_versions_read_with_http_info(self, rpm_rpm_repository_version_href,  **kwargs):  # noqa: E501
         """Inspect a repository version  # noqa: E501
 
         RpmRepositoryVersion represents a single rpm repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_rpm_repository_version_href, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_read_with_http_info(rpm_rpm_repository_version_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -450,14 +450,14 @@ class RepositoriesRpmVersionsApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method repositories_rpm_rpm_versions_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_repository_version_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_repository_version_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_repository_version_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_version_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_version_href` when calling `repositories_rpm_rpm_versions_read`")  # noqa: E501
 
         collection_formats = {}
 
@@ -484,7 +484,7 @@ class RepositoriesRpmVersionsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_repository_version_href}', 'GET',
@@ -502,13 +502,13 @@ class RepositoriesRpmVersionsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def repair(self, rpm_rpm_repository_version_href, repair,  **kwargs):  # noqa: E501
-        """repair  # noqa: E501
+    def repositories_rpm_rpm_versions_repair(self, rpm_rpm_repository_version_href, repair,  **kwargs):  # noqa: E501
+        """repositories_rpm_rpm_versions_repair  # noqa: E501
 
         Trigger an asynchronous task to repair a repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.repair(rpm_rpm_repository_version_href, repair, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -526,15 +526,15 @@ class RepositoriesRpmVersionsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.repair_with_http_info(rpm_rpm_repository_version_href, repair,  **kwargs)  # noqa: E501
+        return self.repositories_rpm_rpm_versions_repair_with_http_info(rpm_rpm_repository_version_href, repair,  **kwargs)  # noqa: E501
 
-    def repair_with_http_info(self, rpm_rpm_repository_version_href, repair,  **kwargs):  # noqa: E501
-        """repair  # noqa: E501
+    def repositories_rpm_rpm_versions_repair_with_http_info(self, rpm_rpm_repository_version_href, repair,  **kwargs):  # noqa: E501
+        """repositories_rpm_rpm_versions_repair  # noqa: E501
 
         Trigger an asynchronous task to repair a repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.repair_with_http_info(rpm_rpm_repository_version_href, repair, async_req=True)
+        >>> thread = api.repositories_rpm_rpm_versions_repair_with_http_info(rpm_rpm_repository_version_href, repair, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -573,18 +573,18 @@ class RepositoriesRpmVersionsApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method repair" % key
+                    " to method repositories_rpm_rpm_versions_repair" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_repository_version_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_repository_version_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_repository_version_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_version_href` when calling `repair`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_repository_version_href` when calling `repositories_rpm_rpm_versions_repair`")  # noqa: E501
         # verify the required parameter 'repair' is set
         if self.api_client.client_side_validation and ('repair' not in local_var_params or  # noqa: E501
                                                         local_var_params['repair'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `repair` when calling `repair`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `repair` when calling `repositories_rpm_rpm_versions_repair`")  # noqa: E501
 
         collection_formats = {}
 
@@ -611,7 +611,7 @@ class RepositoriesRpmVersionsApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_rpm_repository_version_href}repair/', 'POST',

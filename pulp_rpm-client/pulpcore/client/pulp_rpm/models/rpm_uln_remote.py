@@ -48,7 +48,7 @@ class RpmUlnRemote(object):
         'pulp_labels': 'dict(str, str)',
         'download_concurrency': 'int',
         'max_retries': 'int',
-        'policy': 'PolicyEnum',
+        'policy': 'Policy692Enum',
         'total_timeout': 'float',
         'connect_timeout': 'float',
         'sock_connect_timeout': 'float',
@@ -508,7 +508,7 @@ class RpmUlnRemote(object):
         The policy to use when downloading content. The possible values include: 'immediate', 'on_demand', and 'streamed'. 'immediate' is the default.  * `immediate` - When syncing, download all metadata and content now. * `on_demand` - When syncing, download metadata, but do not download content now. Instead, download content as clients request it, and save it in Pulp to be served for future client requests. * `streamed` - When syncing, download metadata, but do not download content now. Instead,download content as clients request it, but never save it in Pulp. This causes future requests for that same content to have to be downloaded again.  # noqa: E501
 
         :return: The policy of this RpmUlnRemote.  # noqa: E501
-        :rtype: PolicyEnum
+        :rtype: Policy692Enum
         """
         return self._policy
 
@@ -519,7 +519,7 @@ class RpmUlnRemote(object):
         The policy to use when downloading content. The possible values include: 'immediate', 'on_demand', and 'streamed'. 'immediate' is the default.  * `immediate` - When syncing, download all metadata and content now. * `on_demand` - When syncing, download metadata, but do not download content now. Instead, download content as clients request it, and save it in Pulp to be served for future client requests. * `streamed` - When syncing, download metadata, but do not download content now. Instead,download content as clients request it, but never save it in Pulp. This causes future requests for that same content to have to be downloaded again.  # noqa: E501
 
         :param policy: The policy of this RpmUlnRemote.  # noqa: E501
-        :type: PolicyEnum
+        :type: Policy692Enum
         """
 
         self._policy = policy

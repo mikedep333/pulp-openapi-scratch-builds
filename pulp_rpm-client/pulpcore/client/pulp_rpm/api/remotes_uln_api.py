@@ -37,13 +37,13 @@ class RemotesUlnApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_role(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_add_role(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
         """Add a role  # noqa: E501
 
         Add a role for this object to users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role(rpm_uln_remote_href, nested_role, async_req=True)
+        >>> thread = api.remotes_rpm_uln_add_role(rpm_uln_remote_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -61,15 +61,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.add_role_with_http_info(rpm_uln_remote_href, nested_role,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_add_role_with_http_info(rpm_uln_remote_href, nested_role,  **kwargs)  # noqa: E501
 
-    def add_role_with_http_info(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_add_role_with_http_info(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
         """Add a role  # noqa: E501
 
         Add a role for this object to users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_with_http_info(rpm_uln_remote_href, nested_role, async_req=True)
+        >>> thread = api.remotes_rpm_uln_add_role_with_http_info(rpm_uln_remote_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -108,18 +108,18 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_role" % key
+                    " to method remotes_rpm_uln_add_role" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `add_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_add_role`")  # noqa: E501
         # verify the required parameter 'nested_role' is set
         if self.api_client.client_side_validation and ('nested_role' not in local_var_params or  # noqa: E501
                                                         local_var_params['nested_role'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `nested_role` when calling `add_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `nested_role` when calling `remotes_rpm_uln_add_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -146,7 +146,7 @@ class RemotesUlnApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}add_role/', 'POST',
@@ -164,13 +164,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create(self, rpm_uln_remote, pulp_domain="default", **kwargs):  # noqa: E501
+    def remotes_rpm_uln_create(self, rpm_uln_remote, pulp_domain="default", **kwargs):  # noqa: E501
         """Create an uln remote  # noqa: E501
 
         A ViewSet for UlnRemote.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(pulp_domain, rpm_uln_remote, async_req=True)
+        >>> thread = api.remotes_rpm_uln_create(pulp_domain, rpm_uln_remote, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -188,15 +188,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_with_http_info(rpm_uln_remote, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_create_with_http_info(rpm_uln_remote, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, rpm_uln_remote, pulp_domain="default", **kwargs):  # noqa: E501
+    def remotes_rpm_uln_create_with_http_info(self, rpm_uln_remote, pulp_domain="default", **kwargs):  # noqa: E501
         """Create an uln remote  # noqa: E501
 
         A ViewSet for UlnRemote.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(pulp_domain, rpm_uln_remote, async_req=True)
+        >>> thread = api.remotes_rpm_uln_create_with_http_info(pulp_domain, rpm_uln_remote, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -235,18 +235,18 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method remotes_rpm_uln_create" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `remotes_rpm_uln_create`")  # noqa: E501
         # verify the required parameter 'rpm_uln_remote' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote` when calling `remotes_rpm_uln_create`")  # noqa: E501
 
         collection_formats = {}
 
@@ -273,7 +273,7 @@ class RemotesUlnApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/remotes/rpm/uln/', 'POST',
@@ -291,13 +291,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_delete(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """Delete an uln remote  # noqa: E501
 
         Trigger an asynchronous delete task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_delete(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -314,15 +314,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_delete_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
 
-    def delete_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_delete_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """Delete an uln remote  # noqa: E501
 
         Trigger an asynchronous delete task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_delete_with_http_info(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -359,14 +359,14 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method remotes_rpm_uln_delete" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `delete`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -387,7 +387,7 @@ class RemotesUlnApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}', 'DELETE',
@@ -405,13 +405,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def remotes_rpm_uln_list(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List uln remotes  # noqa: E501
 
         A ViewSet for UlnRemote.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(pulp_domain, async_req=True)
+        >>> thread = api.remotes_rpm_uln_list(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -452,15 +452,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def remotes_rpm_uln_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List uln remotes  # noqa: E501
 
         A ViewSet for UlnRemote.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.remotes_rpm_uln_list_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -545,14 +545,14 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method remotes_rpm_uln_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `remotes_rpm_uln_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -628,7 +628,7 @@ class RemotesUlnApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/pulp/{pulp_domain}/api/v3/remotes/rpm/uln/', 'GET',
@@ -646,13 +646,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_roles(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_list_roles(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """List roles  # noqa: E501
 
         List roles assigned to this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_list_roles(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -671,15 +671,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_roles_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_list_roles_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
 
-    def list_roles_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_list_roles_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """List roles  # noqa: E501
 
         List roles assigned to this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles_with_http_info(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_list_roles_with_http_info(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -720,14 +720,14 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_roles" % key
+                    " to method remotes_rpm_uln_list_roles" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `list_roles`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_list_roles`")  # noqa: E501
 
         collection_formats = {}
 
@@ -754,7 +754,7 @@ class RemotesUlnApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}list_roles/', 'GET',
@@ -772,13 +772,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def my_permissions(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_my_permissions(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """List user permissions  # noqa: E501
 
         List permissions available to the current user on this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.my_permissions(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_my_permissions(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -797,15 +797,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.my_permissions_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_my_permissions_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
 
-    def my_permissions_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_my_permissions_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """List user permissions  # noqa: E501
 
         List permissions available to the current user on this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.my_permissions_with_http_info(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_my_permissions_with_http_info(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -846,14 +846,14 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method my_permissions" % key
+                    " to method remotes_rpm_uln_my_permissions" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `my_permissions`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_my_permissions`")  # noqa: E501
 
         collection_formats = {}
 
@@ -880,7 +880,7 @@ class RemotesUlnApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}my_permissions/', 'GET',
@@ -898,13 +898,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def partial_update(self, rpm_uln_remote_href, patchedrpm_uln_remote,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_partial_update(self, rpm_uln_remote_href, patchedrpm_uln_remote,  **kwargs):  # noqa: E501
         """Update an uln remote  # noqa: E501
 
         Trigger an asynchronous partial update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update(rpm_uln_remote_href, patchedrpm_uln_remote, async_req=True)
+        >>> thread = api.remotes_rpm_uln_partial_update(rpm_uln_remote_href, patchedrpm_uln_remote, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -922,15 +922,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.partial_update_with_http_info(rpm_uln_remote_href, patchedrpm_uln_remote,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_partial_update_with_http_info(rpm_uln_remote_href, patchedrpm_uln_remote,  **kwargs)  # noqa: E501
 
-    def partial_update_with_http_info(self, rpm_uln_remote_href, patchedrpm_uln_remote,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_partial_update_with_http_info(self, rpm_uln_remote_href, patchedrpm_uln_remote,  **kwargs):  # noqa: E501
         """Update an uln remote  # noqa: E501
 
         Trigger an asynchronous partial update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.partial_update_with_http_info(rpm_uln_remote_href, patchedrpm_uln_remote, async_req=True)
+        >>> thread = api.remotes_rpm_uln_partial_update_with_http_info(rpm_uln_remote_href, patchedrpm_uln_remote, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -969,18 +969,18 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method partial_update" % key
+                    " to method remotes_rpm_uln_partial_update" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `partial_update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_partial_update`")  # noqa: E501
         # verify the required parameter 'patchedrpm_uln_remote' is set
         if self.api_client.client_side_validation and ('patchedrpm_uln_remote' not in local_var_params or  # noqa: E501
                                                         local_var_params['patchedrpm_uln_remote'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `patchedrpm_uln_remote` when calling `partial_update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `patchedrpm_uln_remote` when calling `remotes_rpm_uln_partial_update`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1007,7 +1007,7 @@ class RemotesUlnApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}', 'PATCH',
@@ -1025,13 +1025,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_read(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """Inspect an uln remote  # noqa: E501
 
         A ViewSet for UlnRemote.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_read(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1050,15 +1050,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_read_with_http_info(rpm_uln_remote_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_read_with_http_info(self, rpm_uln_remote_href,  **kwargs):  # noqa: E501
         """Inspect an uln remote  # noqa: E501
 
         A ViewSet for UlnRemote.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_uln_remote_href, async_req=True)
+        >>> thread = api.remotes_rpm_uln_read_with_http_info(rpm_uln_remote_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1099,14 +1099,14 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method remotes_rpm_uln_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_read`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1133,7 +1133,7 @@ class RemotesUlnApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}', 'GET',
@@ -1151,13 +1151,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def remove_role(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_remove_role(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
         """Remove a role  # noqa: E501
 
         Remove a role for this object from users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_role(rpm_uln_remote_href, nested_role, async_req=True)
+        >>> thread = api.remotes_rpm_uln_remove_role(rpm_uln_remote_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1175,15 +1175,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.remove_role_with_http_info(rpm_uln_remote_href, nested_role,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_remove_role_with_http_info(rpm_uln_remote_href, nested_role,  **kwargs)  # noqa: E501
 
-    def remove_role_with_http_info(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_remove_role_with_http_info(self, rpm_uln_remote_href, nested_role,  **kwargs):  # noqa: E501
         """Remove a role  # noqa: E501
 
         Remove a role for this object from users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_role_with_http_info(rpm_uln_remote_href, nested_role, async_req=True)
+        >>> thread = api.remotes_rpm_uln_remove_role_with_http_info(rpm_uln_remote_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1222,18 +1222,18 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method remove_role" % key
+                    " to method remotes_rpm_uln_remove_role" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remove_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_remove_role`")  # noqa: E501
         # verify the required parameter 'nested_role' is set
         if self.api_client.client_side_validation and ('nested_role' not in local_var_params or  # noqa: E501
                                                         local_var_params['nested_role'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `nested_role` when calling `remove_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `nested_role` when calling `remotes_rpm_uln_remove_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1260,7 +1260,7 @@ class RemotesUlnApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}remove_role/', 'POST',
@@ -1278,13 +1278,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_label(self, rpm_uln_remote_href, set_label,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_set_label(self, rpm_uln_remote_href, set_label,  **kwargs):  # noqa: E501
         """Set a label  # noqa: E501
 
         Set a single pulp_label on the object to a specific value or null.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_label(rpm_uln_remote_href, set_label, async_req=True)
+        >>> thread = api.remotes_rpm_uln_set_label(rpm_uln_remote_href, set_label, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1302,15 +1302,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.set_label_with_http_info(rpm_uln_remote_href, set_label,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_set_label_with_http_info(rpm_uln_remote_href, set_label,  **kwargs)  # noqa: E501
 
-    def set_label_with_http_info(self, rpm_uln_remote_href, set_label,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_set_label_with_http_info(self, rpm_uln_remote_href, set_label,  **kwargs):  # noqa: E501
         """Set a label  # noqa: E501
 
         Set a single pulp_label on the object to a specific value or null.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.set_label_with_http_info(rpm_uln_remote_href, set_label, async_req=True)
+        >>> thread = api.remotes_rpm_uln_set_label_with_http_info(rpm_uln_remote_href, set_label, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1349,18 +1349,18 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method set_label" % key
+                    " to method remotes_rpm_uln_set_label" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `set_label`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_set_label`")  # noqa: E501
         # verify the required parameter 'set_label' is set
         if self.api_client.client_side_validation and ('set_label' not in local_var_params or  # noqa: E501
                                                         local_var_params['set_label'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `set_label` when calling `set_label`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `set_label` when calling `remotes_rpm_uln_set_label`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1387,7 +1387,7 @@ class RemotesUlnApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}set_label/', 'POST',
@@ -1405,13 +1405,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def unset_label(self, rpm_uln_remote_href, unset_label,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_unset_label(self, rpm_uln_remote_href, unset_label,  **kwargs):  # noqa: E501
         """Unset a label  # noqa: E501
 
         Unset a single pulp_label on the object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.unset_label(rpm_uln_remote_href, unset_label, async_req=True)
+        >>> thread = api.remotes_rpm_uln_unset_label(rpm_uln_remote_href, unset_label, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1429,15 +1429,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.unset_label_with_http_info(rpm_uln_remote_href, unset_label,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_unset_label_with_http_info(rpm_uln_remote_href, unset_label,  **kwargs)  # noqa: E501
 
-    def unset_label_with_http_info(self, rpm_uln_remote_href, unset_label,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_unset_label_with_http_info(self, rpm_uln_remote_href, unset_label,  **kwargs):  # noqa: E501
         """Unset a label  # noqa: E501
 
         Unset a single pulp_label on the object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.unset_label_with_http_info(rpm_uln_remote_href, unset_label, async_req=True)
+        >>> thread = api.remotes_rpm_uln_unset_label_with_http_info(rpm_uln_remote_href, unset_label, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1476,18 +1476,18 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method unset_label" % key
+                    " to method remotes_rpm_uln_unset_label" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `unset_label`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_unset_label`")  # noqa: E501
         # verify the required parameter 'unset_label' is set
         if self.api_client.client_side_validation and ('unset_label' not in local_var_params or  # noqa: E501
                                                         local_var_params['unset_label'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `unset_label` when calling `unset_label`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `unset_label` when calling `remotes_rpm_uln_unset_label`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1514,7 +1514,7 @@ class RemotesUlnApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}unset_label/', 'POST',
@@ -1532,13 +1532,13 @@ class RemotesUlnApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update(self, rpm_uln_remote_href, rpm_uln_remote,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_update(self, rpm_uln_remote_href, rpm_uln_remote,  **kwargs):  # noqa: E501
         """Update an uln remote  # noqa: E501
 
         Trigger an asynchronous update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update(rpm_uln_remote_href, rpm_uln_remote, async_req=True)
+        >>> thread = api.remotes_rpm_uln_update(rpm_uln_remote_href, rpm_uln_remote, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1556,15 +1556,15 @@ class RemotesUlnApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_with_http_info(rpm_uln_remote_href, rpm_uln_remote,  **kwargs)  # noqa: E501
+        return self.remotes_rpm_uln_update_with_http_info(rpm_uln_remote_href, rpm_uln_remote,  **kwargs)  # noqa: E501
 
-    def update_with_http_info(self, rpm_uln_remote_href, rpm_uln_remote,  **kwargs):  # noqa: E501
+    def remotes_rpm_uln_update_with_http_info(self, rpm_uln_remote_href, rpm_uln_remote,  **kwargs):  # noqa: E501
         """Update an uln remote  # noqa: E501
 
         Trigger an asynchronous update task  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_with_http_info(rpm_uln_remote_href, rpm_uln_remote, async_req=True)
+        >>> thread = api.remotes_rpm_uln_update_with_http_info(rpm_uln_remote_href, rpm_uln_remote, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1603,18 +1603,18 @@ class RemotesUlnApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update" % key
+                    " to method remotes_rpm_uln_update" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_uln_remote_href' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote_href` when calling `remotes_rpm_uln_update`")  # noqa: E501
         # verify the required parameter 'rpm_uln_remote' is set
         if self.api_client.client_side_validation and ('rpm_uln_remote' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_uln_remote'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_uln_remote` when calling `update`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_uln_remote` when calling `remotes_rpm_uln_update`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1641,7 +1641,7 @@ class RemotesUlnApi(object):
             ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
+        auth_settings = ['basicAuth', 'cookieAuth', 'json_header_remote_authentication']  # noqa: E501
 
         return self.api_client.call_api(
             '{rpm_uln_remote_href}', 'PUT',

@@ -91,7 +91,7 @@ conf = pulpcore.client.pulp_rpm.Configuration(
 
     _default = None
 
-    def __init__(self, host="http://localhost:5001",
+    def __init__(self, host="http://localhost:8000",
                  api_key=None, api_key_prefix=None,
                  username=None, password=None,
                  discard_unknown_keys=False,
@@ -125,6 +125,9 @@ conf = pulpcore.client.pulp_rpm.Configuration(
         """Password for HTTP basic authentication
         """
         self.discard_unknown_keys = discard_unknown_keys
+        self.access_token = None
+        """access token for OAuth/Bearer
+        """
         self.logger = {}
         """Logging Settings
         """
@@ -365,6 +368,13 @@ conf = pulpcore.client.pulp_rpm.Configuration(
                 'key': 'sessionid',
                 'value': self.get_api_key_with_prefix('sessionid')
             }
+        if self.access_token is not None:
+            auth['json_header_remote_authentication'] = {
+                'type': 'oauth2',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': 'Bearer ' + self.access_token
+            }
         return auth
 
     def to_debug_report(self):
@@ -376,7 +386,7 @@ conf = pulpcore.client.pulp_rpm.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: v3\n"\
-               "SDK Package Version: 3.25.0".\
+               "SDK Package Version: 3.27.1".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
@@ -386,7 +396,7 @@ conf = pulpcore.client.pulp_rpm.Configuration(
         """
         return [
             {
-                'url': "http://localhost:5001/",
+                'url': "http://localhost:8000/",
                 'description': "No description provided",
             }
         ]
