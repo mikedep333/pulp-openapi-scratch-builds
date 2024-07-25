@@ -37,13 +37,13 @@ class ContentModulemdDefaultsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create(self, rpm_modulemd_defaults, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_modulemd_defaults_create(self, rpm_modulemd_defaults, pulp_domain="default", **kwargs):  # noqa: E501
         """Create a modulemd defaults  # noqa: E501
 
         Trigger an asynchronous task to create content,optionally create new repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(pulp_domain, rpm_modulemd_defaults, async_req=True)
+        >>> thread = api.content_rpm_modulemd_defaults_create(pulp_domain, rpm_modulemd_defaults, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -61,15 +61,15 @@ class ContentModulemdDefaultsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_with_http_info(rpm_modulemd_defaults, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.content_rpm_modulemd_defaults_create_with_http_info(rpm_modulemd_defaults, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, rpm_modulemd_defaults, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_modulemd_defaults_create_with_http_info(self, rpm_modulemd_defaults, pulp_domain="default", **kwargs):  # noqa: E501
         """Create a modulemd defaults  # noqa: E501
 
         Trigger an asynchronous task to create content,optionally create new repository version.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(pulp_domain, rpm_modulemd_defaults, async_req=True)
+        >>> thread = api.content_rpm_modulemd_defaults_create_with_http_info(pulp_domain, rpm_modulemd_defaults, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -108,18 +108,18 @@ class ContentModulemdDefaultsApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method content_rpm_modulemd_defaults_create" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_rpm_modulemd_defaults_create`")  # noqa: E501
         # verify the required parameter 'rpm_modulemd_defaults' is set
         if self.api_client.client_side_validation and ('rpm_modulemd_defaults' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_modulemd_defaults'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_modulemd_defaults` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_modulemd_defaults` when calling `content_rpm_modulemd_defaults_create`")  # noqa: E501
 
         collection_formats = {}
 
@@ -149,7 +149,7 @@ class ContentModulemdDefaultsApi(object):
         auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/pulp/{pulp_domain}/api/v3/content/rpm/modulemd_defaults/', 'POST',
+            '/pulp/{pulp_domain}/api/v3/content/rpm/modulemd_defaults/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -164,13 +164,13 @@ class ContentModulemdDefaultsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_modulemd_defaults_list(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List modulemd defaultss  # noqa: E501
 
         ViewSet for Modulemd.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_modulemd_defaults_list(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -180,6 +180,7 @@ class ContentModulemdDefaultsApi(object):
         :param list[str] module__in: Filter results where module is in a comma-separated list of values
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `module` - Module * `-module` - Module (descending) * `stream` - Stream * `-stream` - Stream (descending) * `profiles` - Profiles * `-profiles` - Profiles (descending) * `digest` - Digest * `-digest` - Digest (descending) * `snippet` - Snippet * `-snippet` - Snippet (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
         :param list[str] pulp_id__in: Multiple values may be separated by commas.
         :param str q:
@@ -203,15 +204,15 @@ class ContentModulemdDefaultsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.content_rpm_modulemd_defaults_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_modulemd_defaults_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List modulemd defaultss  # noqa: E501
 
         ViewSet for Modulemd.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_modulemd_defaults_list_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -221,6 +222,7 @@ class ContentModulemdDefaultsApi(object):
         :param list[str] module__in: Filter results where module is in a comma-separated list of values
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `module` - Module * `-module` - Module (descending) * `stream` - Stream * `-stream` - Stream (descending) * `profiles` - Profiles * `-profiles` - Profiles (descending) * `digest` - Digest * `-digest` - Digest (descending) * `snippet` - Snippet * `-snippet` - Snippet (descending) * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
         :param list[str] pulp_id__in: Multiple values may be separated by commas.
         :param str q:
@@ -255,6 +257,7 @@ class ContentModulemdDefaultsApi(object):
             'module__in',
             'offset',
             'ordering',
+            'orphaned_for',
             'pulp_href__in',
             'pulp_id__in',
             'q',
@@ -280,14 +283,14 @@ class ContentModulemdDefaultsApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method content_rpm_modulemd_defaults_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_rpm_modulemd_defaults_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -308,6 +311,8 @@ class ContentModulemdDefaultsApi(object):
         if 'ordering' in local_var_params and local_var_params['ordering'] is not None:  # noqa: E501
             query_params.append(('ordering', local_var_params['ordering']))  # noqa: E501
             collection_formats['ordering'] = 'csv'  # noqa: E501
+        if 'orphaned_for' in local_var_params and local_var_params['orphaned_for'] is not None:  # noqa: E501
+            query_params.append(('orphaned_for', local_var_params['orphaned_for']))  # noqa: E501
         if 'pulp_href__in' in local_var_params and local_var_params['pulp_href__in'] is not None:  # noqa: E501
             query_params.append(('pulp_href__in', local_var_params['pulp_href__in']))  # noqa: E501
             collection_formats['pulp_href__in'] = 'csv'  # noqa: E501
@@ -350,7 +355,7 @@ class ContentModulemdDefaultsApi(object):
         auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/pulp/{pulp_domain}/api/v3/content/rpm/modulemd_defaults/', 'GET',
+            '/pulp/{pulp_domain}/api/v3/content/rpm/modulemd_defaults/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -365,13 +370,13 @@ class ContentModulemdDefaultsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_modulemd_defaults_href,  **kwargs):  # noqa: E501
+    def content_rpm_modulemd_defaults_read(self, rpm_modulemd_defaults_href,  **kwargs):  # noqa: E501
         """Inspect a modulemd defaults  # noqa: E501
 
         ViewSet for Modulemd.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_modulemd_defaults_href, async_req=True)
+        >>> thread = api.content_rpm_modulemd_defaults_read(rpm_modulemd_defaults_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -390,15 +395,15 @@ class ContentModulemdDefaultsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_modulemd_defaults_href,  **kwargs)  # noqa: E501
+        return self.content_rpm_modulemd_defaults_read_with_http_info(rpm_modulemd_defaults_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_modulemd_defaults_href,  **kwargs):  # noqa: E501
+    def content_rpm_modulemd_defaults_read_with_http_info(self, rpm_modulemd_defaults_href,  **kwargs):  # noqa: E501
         """Inspect a modulemd defaults  # noqa: E501
 
         ViewSet for Modulemd.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_modulemd_defaults_href, async_req=True)
+        >>> thread = api.content_rpm_modulemd_defaults_read_with_http_info(rpm_modulemd_defaults_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -439,14 +444,14 @@ class ContentModulemdDefaultsApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method content_rpm_modulemd_defaults_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_modulemd_defaults_href' is set
         if self.api_client.client_side_validation and ('rpm_modulemd_defaults_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_modulemd_defaults_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_modulemd_defaults_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_modulemd_defaults_href` when calling `content_rpm_modulemd_defaults_read`")  # noqa: E501
 
         collection_formats = {}
 

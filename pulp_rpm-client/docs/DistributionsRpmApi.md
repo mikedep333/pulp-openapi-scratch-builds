@@ -4,22 +4,22 @@ All URIs are relative to *http://localhost:5001*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_role**](DistributionsRpmApi.md#add_role) | **POST** {rpm_rpm_distribution_href}add_role/ | Add a role
-[**create**](DistributionsRpmApi.md#create) | **POST** /api/pulp/{pulp_domain}/api/v3/distributions/rpm/rpm/ | Create a rpm distribution
-[**delete**](DistributionsRpmApi.md#delete) | **DELETE** {rpm_rpm_distribution_href} | Delete a rpm distribution
-[**list**](DistributionsRpmApi.md#list) | **GET** /api/pulp/{pulp_domain}/api/v3/distributions/rpm/rpm/ | List rpm distributions
-[**list_roles**](DistributionsRpmApi.md#list_roles) | **GET** {rpm_rpm_distribution_href}list_roles/ | List roles
-[**my_permissions**](DistributionsRpmApi.md#my_permissions) | **GET** {rpm_rpm_distribution_href}my_permissions/ | List user permissions
-[**partial_update**](DistributionsRpmApi.md#partial_update) | **PATCH** {rpm_rpm_distribution_href} | Update a rpm distribution
-[**read**](DistributionsRpmApi.md#read) | **GET** {rpm_rpm_distribution_href} | Inspect a rpm distribution
-[**remove_role**](DistributionsRpmApi.md#remove_role) | **POST** {rpm_rpm_distribution_href}remove_role/ | Remove a role
-[**set_label**](DistributionsRpmApi.md#set_label) | **POST** {rpm_rpm_distribution_href}set_label/ | Set a label
-[**unset_label**](DistributionsRpmApi.md#unset_label) | **POST** {rpm_rpm_distribution_href}unset_label/ | Unset a label
-[**update**](DistributionsRpmApi.md#update) | **PUT** {rpm_rpm_distribution_href} | Update a rpm distribution
+[**distributions_rpm_rpm_add_role**](DistributionsRpmApi.md#distributions_rpm_rpm_add_role) | **POST** {rpm_rpm_distribution_href}add_role/ | Add a role
+[**distributions_rpm_rpm_create**](DistributionsRpmApi.md#distributions_rpm_rpm_create) | **POST** /pulp/{pulp_domain}/api/v3/distributions/rpm/rpm/ | Create a rpm distribution
+[**distributions_rpm_rpm_delete**](DistributionsRpmApi.md#distributions_rpm_rpm_delete) | **DELETE** {rpm_rpm_distribution_href} | Delete a rpm distribution
+[**distributions_rpm_rpm_list**](DistributionsRpmApi.md#distributions_rpm_rpm_list) | **GET** /pulp/{pulp_domain}/api/v3/distributions/rpm/rpm/ | List rpm distributions
+[**distributions_rpm_rpm_list_roles**](DistributionsRpmApi.md#distributions_rpm_rpm_list_roles) | **GET** {rpm_rpm_distribution_href}list_roles/ | List roles
+[**distributions_rpm_rpm_my_permissions**](DistributionsRpmApi.md#distributions_rpm_rpm_my_permissions) | **GET** {rpm_rpm_distribution_href}my_permissions/ | List user permissions
+[**distributions_rpm_rpm_partial_update**](DistributionsRpmApi.md#distributions_rpm_rpm_partial_update) | **PATCH** {rpm_rpm_distribution_href} | Update a rpm distribution
+[**distributions_rpm_rpm_read**](DistributionsRpmApi.md#distributions_rpm_rpm_read) | **GET** {rpm_rpm_distribution_href} | Inspect a rpm distribution
+[**distributions_rpm_rpm_remove_role**](DistributionsRpmApi.md#distributions_rpm_rpm_remove_role) | **POST** {rpm_rpm_distribution_href}remove_role/ | Remove a role
+[**distributions_rpm_rpm_set_label**](DistributionsRpmApi.md#distributions_rpm_rpm_set_label) | **POST** {rpm_rpm_distribution_href}set_label/ | Set a label
+[**distributions_rpm_rpm_unset_label**](DistributionsRpmApi.md#distributions_rpm_rpm_unset_label) | **POST** {rpm_rpm_distribution_href}unset_label/ | Unset a label
+[**distributions_rpm_rpm_update**](DistributionsRpmApi.md#distributions_rpm_rpm_update) | **PUT** {rpm_rpm_distribution_href} | Update a rpm distribution
 
 
-# **add_role**
-> NestedRoleResponse add_role(rpm_rpm_distribution_href, nested_role)
+# **distributions_rpm_rpm_add_role**
+> NestedRoleResponse distributions_rpm_rpm_add_role(rpm_rpm_distribution_href, nested_role)
 
 Add a role
 
@@ -70,10 +70,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_distribution_href, nested_role)
+        api_response = api_instance.distributions_rpm_rpm_add_role(rpm_rpm_distribution_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->add_role: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_add_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -119,10 +119,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_distribution_href, nested_role)
+        api_response = api_instance.distributions_rpm_rpm_add_role(rpm_rpm_distribution_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->add_role: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_add_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> AsyncOperationResponse create(pulp_domain, rpm_rpm_distribution)
+# **distributions_rpm_rpm_create**
+> AsyncOperationResponse distributions_rpm_rpm_create(pulp_domain, rpm_rpm_distribution)
 
 Create a rpm distribution
 
@@ -204,10 +204,10 @@ rpm_rpm_distribution = pulpcore.client.pulp_rpm.RpmRpmDistribution() # RpmRpmDis
 
     try:
         # Create a rpm distribution
-        api_response = api_instance.create(pulp_domain, rpm_rpm_distribution)
+        api_response = api_instance.distributions_rpm_rpm_create(pulp_domain, rpm_rpm_distribution)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->create: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_create: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -253,10 +253,10 @@ rpm_rpm_distribution = pulpcore.client.pulp_rpm.RpmRpmDistribution() # RpmRpmDis
 
     try:
         # Create a rpm distribution
-        api_response = api_instance.create(pulp_domain, rpm_rpm_distribution)
+        api_response = api_instance.distributions_rpm_rpm_create(pulp_domain, rpm_rpm_distribution)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->create: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -286,8 +286,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> AsyncOperationResponse delete(rpm_rpm_distribution_href)
+# **distributions_rpm_rpm_delete**
+> AsyncOperationResponse distributions_rpm_rpm_delete(rpm_rpm_distribution_href)
 
 Delete a rpm distribution
 
@@ -337,10 +337,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm distribution
-        api_response = api_instance.delete(rpm_rpm_distribution_href)
+        api_response = api_instance.distributions_rpm_rpm_delete(rpm_rpm_distribution_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->delete: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_delete: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -385,10 +385,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm distribution
-        api_response = api_instance.delete(rpm_rpm_distribution_href)
+        api_response = api_instance.distributions_rpm_rpm_delete(rpm_rpm_distribution_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->delete: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -417,8 +417,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedrpmRpmDistributionResponseList list(pulp_domain, base_path=base_path, base_path__contains=base_path__contains, base_path__icontains=base_path__icontains, base_path__in=base_path__in, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, repository=repository, repository__in=repository__in, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
+# **distributions_rpm_rpm_list**
+> PaginatedrpmRpmDistributionResponseList distributions_rpm_rpm_list(pulp_domain, base_path=base_path, base_path__contains=base_path__contains, base_path__icontains=base_path__icontains, base_path__in=base_path__in, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, repository=repository, repository__in=repository__in, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
 
 List rpm distributions
 
@@ -493,10 +493,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm distributions
-        api_response = api_instance.list(pulp_domain, base_path=base_path, base_path__contains=base_path__contains, base_path__icontains=base_path__icontains, base_path__in=base_path__in, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, repository=repository, repository__in=repository__in, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_list(pulp_domain, base_path=base_path, base_path__contains=base_path__contains, base_path__icontains=base_path__icontains, base_path__in=base_path__in, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, repository=repository, repository__in=repository__in, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->list: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -566,10 +566,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm distributions
-        api_response = api_instance.list(pulp_domain, base_path=base_path, base_path__contains=base_path__contains, base_path__icontains=base_path__icontains, base_path__in=base_path__in, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, repository=repository, repository__in=repository__in, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_list(pulp_domain, base_path=base_path, base_path__contains=base_path__contains, base_path__icontains=base_path__icontains, base_path__in=base_path__in, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, repository=repository, repository__in=repository__in, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->list: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -623,8 +623,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_roles**
-> ObjectRolesResponse list_roles(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+# **distributions_rpm_rpm_list_roles**
+> ObjectRolesResponse distributions_rpm_rpm_list_roles(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
 
 List roles
 
@@ -676,10 +676,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_list_roles(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -726,10 +726,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_list_roles(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -760,8 +760,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **my_permissions**
-> MyPermissionsResponse my_permissions(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+# **distributions_rpm_rpm_my_permissions**
+> MyPermissionsResponse distributions_rpm_rpm_my_permissions(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
 
 List user permissions
 
@@ -813,10 +813,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_my_permissions(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -863,10 +863,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_my_permissions(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 ### Parameters
@@ -897,8 +897,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **partial_update**
-> AsyncOperationResponse partial_update(rpm_rpm_distribution_href, patchedrpm_rpm_distribution)
+# **distributions_rpm_rpm_partial_update**
+> AsyncOperationResponse distributions_rpm_rpm_partial_update(rpm_rpm_distribution_href, patchedrpm_rpm_distribution)
 
 Update a rpm distribution
 
@@ -949,10 +949,10 @@ patchedrpm_rpm_distribution = pulpcore.client.pulp_rpm.PatchedrpmRpmDistribution
 
     try:
         # Update a rpm distribution
-        api_response = api_instance.partial_update(rpm_rpm_distribution_href, patchedrpm_rpm_distribution)
+        api_response = api_instance.distributions_rpm_rpm_partial_update(rpm_rpm_distribution_href, patchedrpm_rpm_distribution)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->partial_update: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_partial_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -998,10 +998,10 @@ patchedrpm_rpm_distribution = pulpcore.client.pulp_rpm.PatchedrpmRpmDistribution
 
     try:
         # Update a rpm distribution
-        api_response = api_instance.partial_update(rpm_rpm_distribution_href, patchedrpm_rpm_distribution)
+        api_response = api_instance.distributions_rpm_rpm_partial_update(rpm_rpm_distribution_href, patchedrpm_rpm_distribution)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->partial_update: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_partial_update: %s\n" % e)
 ```
 
 ### Parameters
@@ -1031,8 +1031,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RpmRpmDistributionResponse read(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+# **distributions_rpm_rpm_read**
+> RpmRpmDistributionResponse distributions_rpm_rpm_read(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect a rpm distribution
 
@@ -1084,10 +1084,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm distribution
-        api_response = api_instance.read(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_read(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->read: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1134,10 +1134,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm distribution
-        api_response = api_instance.read(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.distributions_rpm_rpm_read(rpm_rpm_distribution_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->read: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -1168,8 +1168,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_role**
-> NestedRoleResponse remove_role(rpm_rpm_distribution_href, nested_role)
+# **distributions_rpm_rpm_remove_role**
+> NestedRoleResponse distributions_rpm_rpm_remove_role(rpm_rpm_distribution_href, nested_role)
 
 Remove a role
 
@@ -1220,10 +1220,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_distribution_href, nested_role)
+        api_response = api_instance.distributions_rpm_rpm_remove_role(rpm_rpm_distribution_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1269,10 +1269,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_distribution_href, nested_role)
+        api_response = api_instance.distributions_rpm_rpm_remove_role(rpm_rpm_distribution_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1302,8 +1302,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_label**
-> SetLabelResponse set_label(rpm_rpm_distribution_href, set_label)
+# **distributions_rpm_rpm_set_label**
+> SetLabelResponse distributions_rpm_rpm_set_label(rpm_rpm_distribution_href, set_label)
 
 Set a label
 
@@ -1354,10 +1354,10 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_rpm_distribution_href, set_label)
+        api_response = api_instance.distributions_rpm_rpm_set_label(rpm_rpm_distribution_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->set_label: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_set_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1403,10 +1403,10 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_rpm_distribution_href, set_label)
+        api_response = api_instance.distributions_rpm_rpm_set_label(rpm_rpm_distribution_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->set_label: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_set_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1436,8 +1436,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unset_label**
-> UnsetLabelResponse unset_label(rpm_rpm_distribution_href, unset_label)
+# **distributions_rpm_rpm_unset_label**
+> UnsetLabelResponse distributions_rpm_rpm_unset_label(rpm_rpm_distribution_href, unset_label)
 
 Unset a label
 
@@ -1488,10 +1488,10 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_rpm_distribution_href, unset_label)
+        api_response = api_instance.distributions_rpm_rpm_unset_label(rpm_rpm_distribution_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->unset_label: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_unset_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1537,10 +1537,10 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_rpm_distribution_href, unset_label)
+        api_response = api_instance.distributions_rpm_rpm_unset_label(rpm_rpm_distribution_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->unset_label: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_unset_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1570,8 +1570,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> AsyncOperationResponse update(rpm_rpm_distribution_href, rpm_rpm_distribution)
+# **distributions_rpm_rpm_update**
+> AsyncOperationResponse distributions_rpm_rpm_update(rpm_rpm_distribution_href, rpm_rpm_distribution)
 
 Update a rpm distribution
 
@@ -1622,10 +1622,10 @@ rpm_rpm_distribution = pulpcore.client.pulp_rpm.RpmRpmDistribution() # RpmRpmDis
 
     try:
         # Update a rpm distribution
-        api_response = api_instance.update(rpm_rpm_distribution_href, rpm_rpm_distribution)
+        api_response = api_instance.distributions_rpm_rpm_update(rpm_rpm_distribution_href, rpm_rpm_distribution)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->update: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1671,10 +1671,10 @@ rpm_rpm_distribution = pulpcore.client.pulp_rpm.RpmRpmDistribution() # RpmRpmDis
 
     try:
         # Update a rpm distribution
-        api_response = api_instance.update(rpm_rpm_distribution_href, rpm_rpm_distribution)
+        api_response = api_instance.distributions_rpm_rpm_update(rpm_rpm_distribution_href, rpm_rpm_distribution)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DistributionsRpmApi->update: %s\n" % e)
+        print("Exception when calling DistributionsRpmApi->distributions_rpm_rpm_update: %s\n" % e)
 ```
 
 ### Parameters

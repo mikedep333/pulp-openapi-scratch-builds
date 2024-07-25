@@ -29,22 +29,22 @@ class TestContentModulemdsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_content_rpm_modulemds_create(self):
+        """Test case for content_rpm_modulemds_create
 
         Create a modulemd  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_modulemds_list(self):
+        """Test case for content_rpm_modulemds_list
 
         List modulemds  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_modulemds_read(self):
+        """Test case for content_rpm_modulemds_read
 
         Inspect a modulemd  # noqa: E501
         """

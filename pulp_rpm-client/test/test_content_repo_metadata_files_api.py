@@ -29,15 +29,15 @@ class TestContentRepoMetadataFilesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_repo_metadata_files_list(self):
+        """Test case for content_rpm_repo_metadata_files_list
 
         List repo metadata files  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_repo_metadata_files_read(self):
+        """Test case for content_rpm_repo_metadata_files_read
 
         Inspect a repo metadata file  # noqa: E501
         """

@@ -29,15 +29,15 @@ class TestContentDistributionTreesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_distribution_trees_list(self):
+        """Test case for content_rpm_distribution_trees_list
 
         List distribution trees  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_distribution_trees_read(self):
+        """Test case for content_rpm_distribution_trees_read
 
         Inspect a distribution tree  # noqa: E501
         """

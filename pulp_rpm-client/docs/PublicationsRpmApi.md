@@ -4,18 +4,18 @@ All URIs are relative to *http://localhost:5001*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_role**](PublicationsRpmApi.md#add_role) | **POST** {rpm_rpm_publication_href}add_role/ | Add a role
-[**create**](PublicationsRpmApi.md#create) | **POST** /api/pulp/{pulp_domain}/api/v3/publications/rpm/rpm/ | Create a rpm publication
-[**delete**](PublicationsRpmApi.md#delete) | **DELETE** {rpm_rpm_publication_href} | Delete a rpm publication
-[**list**](PublicationsRpmApi.md#list) | **GET** /api/pulp/{pulp_domain}/api/v3/publications/rpm/rpm/ | List rpm publications
-[**list_roles**](PublicationsRpmApi.md#list_roles) | **GET** {rpm_rpm_publication_href}list_roles/ | List roles
-[**my_permissions**](PublicationsRpmApi.md#my_permissions) | **GET** {rpm_rpm_publication_href}my_permissions/ | List user permissions
-[**read**](PublicationsRpmApi.md#read) | **GET** {rpm_rpm_publication_href} | Inspect a rpm publication
-[**remove_role**](PublicationsRpmApi.md#remove_role) | **POST** {rpm_rpm_publication_href}remove_role/ | Remove a role
+[**publications_rpm_rpm_add_role**](PublicationsRpmApi.md#publications_rpm_rpm_add_role) | **POST** {rpm_rpm_publication_href}add_role/ | Add a role
+[**publications_rpm_rpm_create**](PublicationsRpmApi.md#publications_rpm_rpm_create) | **POST** /pulp/{pulp_domain}/api/v3/publications/rpm/rpm/ | Create a rpm publication
+[**publications_rpm_rpm_delete**](PublicationsRpmApi.md#publications_rpm_rpm_delete) | **DELETE** {rpm_rpm_publication_href} | Delete a rpm publication
+[**publications_rpm_rpm_list**](PublicationsRpmApi.md#publications_rpm_rpm_list) | **GET** /pulp/{pulp_domain}/api/v3/publications/rpm/rpm/ | List rpm publications
+[**publications_rpm_rpm_list_roles**](PublicationsRpmApi.md#publications_rpm_rpm_list_roles) | **GET** {rpm_rpm_publication_href}list_roles/ | List roles
+[**publications_rpm_rpm_my_permissions**](PublicationsRpmApi.md#publications_rpm_rpm_my_permissions) | **GET** {rpm_rpm_publication_href}my_permissions/ | List user permissions
+[**publications_rpm_rpm_read**](PublicationsRpmApi.md#publications_rpm_rpm_read) | **GET** {rpm_rpm_publication_href} | Inspect a rpm publication
+[**publications_rpm_rpm_remove_role**](PublicationsRpmApi.md#publications_rpm_rpm_remove_role) | **POST** {rpm_rpm_publication_href}remove_role/ | Remove a role
 
 
-# **add_role**
-> NestedRoleResponse add_role(rpm_rpm_publication_href, nested_role)
+# **publications_rpm_rpm_add_role**
+> NestedRoleResponse publications_rpm_rpm_add_role(rpm_rpm_publication_href, nested_role)
 
 Add a role
 
@@ -66,10 +66,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_publication_href, nested_role)
+        api_response = api_instance.publications_rpm_rpm_add_role(rpm_rpm_publication_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->add_role: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_add_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -115,10 +115,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_publication_href, nested_role)
+        api_response = api_instance.publications_rpm_rpm_add_role(rpm_rpm_publication_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->add_role: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_add_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -148,8 +148,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> AsyncOperationResponse create(pulp_domain, rpm_rpm_publication)
+# **publications_rpm_rpm_create**
+> AsyncOperationResponse publications_rpm_rpm_create(pulp_domain, rpm_rpm_publication)
 
 Create a rpm publication
 
@@ -200,10 +200,10 @@ rpm_rpm_publication = pulpcore.client.pulp_rpm.RpmRpmPublication() # RpmRpmPubli
 
     try:
         # Create a rpm publication
-        api_response = api_instance.create(pulp_domain, rpm_rpm_publication)
+        api_response = api_instance.publications_rpm_rpm_create(pulp_domain, rpm_rpm_publication)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->create: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_create: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -249,10 +249,10 @@ rpm_rpm_publication = pulpcore.client.pulp_rpm.RpmRpmPublication() # RpmRpmPubli
 
     try:
         # Create a rpm publication
-        api_response = api_instance.create(pulp_domain, rpm_rpm_publication)
+        api_response = api_instance.publications_rpm_rpm_create(pulp_domain, rpm_rpm_publication)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->create: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -282,8 +282,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(rpm_rpm_publication_href)
+# **publications_rpm_rpm_delete**
+> publications_rpm_rpm_delete(rpm_rpm_publication_href)
 
 Delete a rpm publication
 
@@ -333,9 +333,9 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm publication
-        api_instance.delete(rpm_rpm_publication_href)
+        api_instance.publications_rpm_rpm_delete(rpm_rpm_publication_href)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->delete: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_delete: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -380,9 +380,9 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm publication
-        api_instance.delete(rpm_rpm_publication_href)
+        api_instance.publications_rpm_rpm_delete(rpm_rpm_publication_href)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->delete: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -411,8 +411,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedrpmRpmPublicationResponseList list(pulp_domain, content=content, content__in=content__in, limit=limit, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository=repository, repository_version=repository_version, fields=fields, exclude_fields=exclude_fields)
+# **publications_rpm_rpm_list**
+> PaginatedrpmRpmPublicationResponseList publications_rpm_rpm_list(pulp_domain, content=content, content__in=content__in, limit=limit, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository=repository, repository_version=repository_version, fields=fields, exclude_fields=exclude_fields)
 
 List rpm publications
 
@@ -480,10 +480,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm publications
-        api_response = api_instance.list(pulp_domain, content=content, content__in=content__in, limit=limit, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository=repository, repository_version=repository_version, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_list(pulp_domain, content=content, content__in=content__in, limit=limit, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository=repository, repository_version=repository_version, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->list: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -546,10 +546,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm publications
-        api_response = api_instance.list(pulp_domain, content=content, content__in=content__in, limit=limit, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository=repository, repository_version=repository_version, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_list(pulp_domain, content=content, content__in=content__in, limit=limit, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository=repository, repository_version=repository_version, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->list: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -596,8 +596,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_roles**
-> ObjectRolesResponse list_roles(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+# **publications_rpm_rpm_list_roles**
+> ObjectRolesResponse publications_rpm_rpm_list_roles(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
 
 List roles
 
@@ -649,10 +649,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_list_roles(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -699,10 +699,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_list_roles(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -733,8 +733,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **my_permissions**
-> MyPermissionsResponse my_permissions(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+# **publications_rpm_rpm_my_permissions**
+> MyPermissionsResponse publications_rpm_rpm_my_permissions(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
 
 List user permissions
 
@@ -786,10 +786,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_my_permissions(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -836,10 +836,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_my_permissions(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 ### Parameters
@@ -870,8 +870,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RpmRpmPublicationResponse read(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+# **publications_rpm_rpm_read**
+> RpmRpmPublicationResponse publications_rpm_rpm_read(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect a rpm publication
 
@@ -923,10 +923,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm publication
-        api_response = api_instance.read(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_read(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->read: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -973,10 +973,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm publication
-        api_response = api_instance.read(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.publications_rpm_rpm_read(rpm_rpm_publication_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->read: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -1007,8 +1007,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_role**
-> NestedRoleResponse remove_role(rpm_rpm_publication_href, nested_role)
+# **publications_rpm_rpm_remove_role**
+> NestedRoleResponse publications_rpm_rpm_remove_role(rpm_rpm_publication_href, nested_role)
 
 Remove a role
 
@@ -1059,10 +1059,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_publication_href, nested_role)
+        api_response = api_instance.publications_rpm_rpm_remove_role(rpm_rpm_publication_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1108,10 +1108,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_publication_href, nested_role)
+        api_response = api_instance.publications_rpm_rpm_remove_role(rpm_rpm_publication_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling PublicationsRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling PublicationsRpmApi->publications_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 ### Parameters

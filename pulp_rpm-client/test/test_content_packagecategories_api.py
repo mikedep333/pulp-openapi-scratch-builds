@@ -29,15 +29,15 @@ class TestContentPackagecategoriesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_packagecategories_list(self):
+        """Test case for content_rpm_packagecategories_list
 
         List package categorys  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_packagecategories_read(self):
+        """Test case for content_rpm_packagecategories_read
 
         Inspect a package category  # noqa: E501
         """

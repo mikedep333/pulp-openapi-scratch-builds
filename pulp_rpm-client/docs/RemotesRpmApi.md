@@ -4,22 +4,22 @@ All URIs are relative to *http://localhost:5001*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_role**](RemotesRpmApi.md#add_role) | **POST** {rpm_rpm_remote_href}add_role/ | Add a role
-[**create**](RemotesRpmApi.md#create) | **POST** /api/pulp/{pulp_domain}/api/v3/remotes/rpm/rpm/ | Create a rpm remote
-[**delete**](RemotesRpmApi.md#delete) | **DELETE** {rpm_rpm_remote_href} | Delete a rpm remote
-[**list**](RemotesRpmApi.md#list) | **GET** /api/pulp/{pulp_domain}/api/v3/remotes/rpm/rpm/ | List rpm remotes
-[**list_roles**](RemotesRpmApi.md#list_roles) | **GET** {rpm_rpm_remote_href}list_roles/ | List roles
-[**my_permissions**](RemotesRpmApi.md#my_permissions) | **GET** {rpm_rpm_remote_href}my_permissions/ | List user permissions
-[**partial_update**](RemotesRpmApi.md#partial_update) | **PATCH** {rpm_rpm_remote_href} | Update a rpm remote
-[**read**](RemotesRpmApi.md#read) | **GET** {rpm_rpm_remote_href} | Inspect a rpm remote
-[**remove_role**](RemotesRpmApi.md#remove_role) | **POST** {rpm_rpm_remote_href}remove_role/ | Remove a role
-[**set_label**](RemotesRpmApi.md#set_label) | **POST** {rpm_rpm_remote_href}set_label/ | Set a label
-[**unset_label**](RemotesRpmApi.md#unset_label) | **POST** {rpm_rpm_remote_href}unset_label/ | Unset a label
-[**update**](RemotesRpmApi.md#update) | **PUT** {rpm_rpm_remote_href} | Update a rpm remote
+[**remotes_rpm_rpm_add_role**](RemotesRpmApi.md#remotes_rpm_rpm_add_role) | **POST** {rpm_rpm_remote_href}add_role/ | Add a role
+[**remotes_rpm_rpm_create**](RemotesRpmApi.md#remotes_rpm_rpm_create) | **POST** /pulp/{pulp_domain}/api/v3/remotes/rpm/rpm/ | Create a rpm remote
+[**remotes_rpm_rpm_delete**](RemotesRpmApi.md#remotes_rpm_rpm_delete) | **DELETE** {rpm_rpm_remote_href} | Delete a rpm remote
+[**remotes_rpm_rpm_list**](RemotesRpmApi.md#remotes_rpm_rpm_list) | **GET** /pulp/{pulp_domain}/api/v3/remotes/rpm/rpm/ | List rpm remotes
+[**remotes_rpm_rpm_list_roles**](RemotesRpmApi.md#remotes_rpm_rpm_list_roles) | **GET** {rpm_rpm_remote_href}list_roles/ | List roles
+[**remotes_rpm_rpm_my_permissions**](RemotesRpmApi.md#remotes_rpm_rpm_my_permissions) | **GET** {rpm_rpm_remote_href}my_permissions/ | List user permissions
+[**remotes_rpm_rpm_partial_update**](RemotesRpmApi.md#remotes_rpm_rpm_partial_update) | **PATCH** {rpm_rpm_remote_href} | Update a rpm remote
+[**remotes_rpm_rpm_read**](RemotesRpmApi.md#remotes_rpm_rpm_read) | **GET** {rpm_rpm_remote_href} | Inspect a rpm remote
+[**remotes_rpm_rpm_remove_role**](RemotesRpmApi.md#remotes_rpm_rpm_remove_role) | **POST** {rpm_rpm_remote_href}remove_role/ | Remove a role
+[**remotes_rpm_rpm_set_label**](RemotesRpmApi.md#remotes_rpm_rpm_set_label) | **POST** {rpm_rpm_remote_href}set_label/ | Set a label
+[**remotes_rpm_rpm_unset_label**](RemotesRpmApi.md#remotes_rpm_rpm_unset_label) | **POST** {rpm_rpm_remote_href}unset_label/ | Unset a label
+[**remotes_rpm_rpm_update**](RemotesRpmApi.md#remotes_rpm_rpm_update) | **PUT** {rpm_rpm_remote_href} | Update a rpm remote
 
 
-# **add_role**
-> NestedRoleResponse add_role(rpm_rpm_remote_href, nested_role)
+# **remotes_rpm_rpm_add_role**
+> NestedRoleResponse remotes_rpm_rpm_add_role(rpm_rpm_remote_href, nested_role)
 
 Add a role
 
@@ -70,10 +70,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_rpm_add_role(rpm_rpm_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->add_role: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_add_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -119,10 +119,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_rpm_add_role(rpm_rpm_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->add_role: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_add_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> RpmRpmRemoteResponse create(pulp_domain, rpm_rpm_remote)
+# **remotes_rpm_rpm_create**
+> RpmRpmRemoteResponse remotes_rpm_rpm_create(pulp_domain, rpm_rpm_remote)
 
 Create a rpm remote
 
@@ -204,10 +204,10 @@ rpm_rpm_remote = pulpcore.client.pulp_rpm.RpmRpmRemote() # RpmRpmRemote |
 
     try:
         # Create a rpm remote
-        api_response = api_instance.create(pulp_domain, rpm_rpm_remote)
+        api_response = api_instance.remotes_rpm_rpm_create(pulp_domain, rpm_rpm_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->create: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_create: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -253,10 +253,10 @@ rpm_rpm_remote = pulpcore.client.pulp_rpm.RpmRpmRemote() # RpmRpmRemote |
 
     try:
         # Create a rpm remote
-        api_response = api_instance.create(pulp_domain, rpm_rpm_remote)
+        api_response = api_instance.remotes_rpm_rpm_create(pulp_domain, rpm_rpm_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->create: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -286,8 +286,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> AsyncOperationResponse delete(rpm_rpm_remote_href)
+# **remotes_rpm_rpm_delete**
+> AsyncOperationResponse remotes_rpm_rpm_delete(rpm_rpm_remote_href)
 
 Delete a rpm remote
 
@@ -337,10 +337,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm remote
-        api_response = api_instance.delete(rpm_rpm_remote_href)
+        api_response = api_instance.remotes_rpm_rpm_delete(rpm_rpm_remote_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->delete: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_delete: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -385,10 +385,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm remote
-        api_response = api_instance.delete(rpm_rpm_remote_href)
+        api_response = api_instance.remotes_rpm_rpm_delete(rpm_rpm_remote_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->delete: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -417,8 +417,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedrpmRpmRemoteResponseList list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_rpm_list**
+> PaginatedrpmRpmRemoteResponseList remotes_rpm_rpm_list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
 
 List rpm remotes
 
@@ -492,10 +492,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm remotes
-        api_response = api_instance.list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->list: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -564,10 +564,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm remotes
-        api_response = api_instance.list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_list(pulp_domain, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, pulp_last_updated=pulp_last_updated, pulp_last_updated__gt=pulp_last_updated__gt, pulp_last_updated__gte=pulp_last_updated__gte, pulp_last_updated__lt=pulp_last_updated__lt, pulp_last_updated__lte=pulp_last_updated__lte, pulp_last_updated__range=pulp_last_updated__range, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->list: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -620,8 +620,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_roles**
-> ObjectRolesResponse list_roles(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_rpm_list_roles**
+> ObjectRolesResponse remotes_rpm_rpm_list_roles(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
 
 List roles
 
@@ -673,10 +673,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_list_roles(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -723,10 +723,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_list_roles(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -757,8 +757,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **my_permissions**
-> MyPermissionsResponse my_permissions(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_rpm_my_permissions**
+> MyPermissionsResponse remotes_rpm_rpm_my_permissions(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
 
 List user permissions
 
@@ -810,10 +810,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_my_permissions(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -860,10 +860,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_my_permissions(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 ### Parameters
@@ -894,8 +894,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **partial_update**
-> AsyncOperationResponse partial_update(rpm_rpm_remote_href, patchedrpm_rpm_remote)
+# **remotes_rpm_rpm_partial_update**
+> AsyncOperationResponse remotes_rpm_rpm_partial_update(rpm_rpm_remote_href, patchedrpm_rpm_remote)
 
 Update a rpm remote
 
@@ -946,10 +946,10 @@ patchedrpm_rpm_remote = pulpcore.client.pulp_rpm.PatchedrpmRpmRemote() # Patched
 
     try:
         # Update a rpm remote
-        api_response = api_instance.partial_update(rpm_rpm_remote_href, patchedrpm_rpm_remote)
+        api_response = api_instance.remotes_rpm_rpm_partial_update(rpm_rpm_remote_href, patchedrpm_rpm_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->partial_update: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_partial_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -995,10 +995,10 @@ patchedrpm_rpm_remote = pulpcore.client.pulp_rpm.PatchedrpmRpmRemote() # Patched
 
     try:
         # Update a rpm remote
-        api_response = api_instance.partial_update(rpm_rpm_remote_href, patchedrpm_rpm_remote)
+        api_response = api_instance.remotes_rpm_rpm_partial_update(rpm_rpm_remote_href, patchedrpm_rpm_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->partial_update: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_partial_update: %s\n" % e)
 ```
 
 ### Parameters
@@ -1028,8 +1028,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RpmRpmRemoteResponse read(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+# **remotes_rpm_rpm_read**
+> RpmRpmRemoteResponse remotes_rpm_rpm_read(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect a rpm remote
 
@@ -1081,10 +1081,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm remote
-        api_response = api_instance.read(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_read(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->read: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1131,10 +1131,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm remote
-        api_response = api_instance.read(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.remotes_rpm_rpm_read(rpm_rpm_remote_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->read: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -1165,8 +1165,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_role**
-> NestedRoleResponse remove_role(rpm_rpm_remote_href, nested_role)
+# **remotes_rpm_rpm_remove_role**
+> NestedRoleResponse remotes_rpm_rpm_remove_role(rpm_rpm_remote_href, nested_role)
 
 Remove a role
 
@@ -1217,10 +1217,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_rpm_remove_role(rpm_rpm_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1266,10 +1266,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_remote_href, nested_role)
+        api_response = api_instance.remotes_rpm_rpm_remove_role(rpm_rpm_remote_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1299,8 +1299,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_label**
-> SetLabelResponse set_label(rpm_rpm_remote_href, set_label)
+# **remotes_rpm_rpm_set_label**
+> SetLabelResponse remotes_rpm_rpm_set_label(rpm_rpm_remote_href, set_label)
 
 Set a label
 
@@ -1351,10 +1351,10 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_rpm_remote_href, set_label)
+        api_response = api_instance.remotes_rpm_rpm_set_label(rpm_rpm_remote_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->set_label: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_set_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1400,10 +1400,10 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_rpm_remote_href, set_label)
+        api_response = api_instance.remotes_rpm_rpm_set_label(rpm_rpm_remote_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->set_label: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_set_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1433,8 +1433,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unset_label**
-> UnsetLabelResponse unset_label(rpm_rpm_remote_href, unset_label)
+# **remotes_rpm_rpm_unset_label**
+> UnsetLabelResponse remotes_rpm_rpm_unset_label(rpm_rpm_remote_href, unset_label)
 
 Unset a label
 
@@ -1485,10 +1485,10 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_rpm_remote_href, unset_label)
+        api_response = api_instance.remotes_rpm_rpm_unset_label(rpm_rpm_remote_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->unset_label: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_unset_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1534,10 +1534,10 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_rpm_remote_href, unset_label)
+        api_response = api_instance.remotes_rpm_rpm_unset_label(rpm_rpm_remote_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->unset_label: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_unset_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1567,8 +1567,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> AsyncOperationResponse update(rpm_rpm_remote_href, rpm_rpm_remote)
+# **remotes_rpm_rpm_update**
+> AsyncOperationResponse remotes_rpm_rpm_update(rpm_rpm_remote_href, rpm_rpm_remote)
 
 Update a rpm remote
 
@@ -1619,10 +1619,10 @@ rpm_rpm_remote = pulpcore.client.pulp_rpm.RpmRpmRemote() # RpmRpmRemote |
 
     try:
         # Update a rpm remote
-        api_response = api_instance.update(rpm_rpm_remote_href, rpm_rpm_remote)
+        api_response = api_instance.remotes_rpm_rpm_update(rpm_rpm_remote_href, rpm_rpm_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->update: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1668,10 +1668,10 @@ rpm_rpm_remote = pulpcore.client.pulp_rpm.RpmRpmRemote() # RpmRpmRemote |
 
     try:
         # Update a rpm remote
-        api_response = api_instance.update(rpm_rpm_remote_href, rpm_rpm_remote)
+        api_response = api_instance.remotes_rpm_rpm_update(rpm_rpm_remote_href, rpm_rpm_remote)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RemotesRpmApi->update: %s\n" % e)
+        print("Exception when calling RemotesRpmApi->remotes_rpm_rpm_update: %s\n" % e)
 ```
 
 ### Parameters

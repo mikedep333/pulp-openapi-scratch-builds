@@ -37,13 +37,13 @@ class ContentDistributionTreesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def list(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_distribution_trees_list(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List distribution trees  # noqa: E501
 
         Distribution Tree Viewset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_distribution_trees_list(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -51,6 +51,7 @@ class ContentDistributionTreesApi(object):
         :param int limit: Number of results to return per page.
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
         :param list[str] pulp_id__in: Multiple values may be separated by commas.
         :param str q:
@@ -71,15 +72,15 @@ class ContentDistributionTreesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.content_rpm_distribution_trees_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def content_rpm_distribution_trees_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List distribution trees  # noqa: E501
 
         Distribution Tree Viewset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.content_rpm_distribution_trees_list_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -87,6 +88,7 @@ class ContentDistributionTreesApi(object):
         :param int limit: Number of results to return per page.
         :param int offset: The initial index from which to return the results.
         :param list[str] ordering: Ordering  * `pk` - Pk * `-pk` - Pk (descending)
+        :param float orphaned_for: Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME.
         :param list[str] pulp_href__in: Multiple values may be separated by commas.
         :param list[str] pulp_id__in: Multiple values may be separated by commas.
         :param str q:
@@ -116,6 +118,7 @@ class ContentDistributionTreesApi(object):
             'limit',
             'offset',
             'ordering',
+            'orphaned_for',
             'pulp_href__in',
             'pulp_id__in',
             'q',
@@ -138,14 +141,14 @@ class ContentDistributionTreesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method content_rpm_distribution_trees_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `content_rpm_distribution_trees_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -161,6 +164,8 @@ class ContentDistributionTreesApi(object):
         if 'ordering' in local_var_params and local_var_params['ordering'] is not None:  # noqa: E501
             query_params.append(('ordering', local_var_params['ordering']))  # noqa: E501
             collection_formats['ordering'] = 'csv'  # noqa: E501
+        if 'orphaned_for' in local_var_params and local_var_params['orphaned_for'] is not None:  # noqa: E501
+            query_params.append(('orphaned_for', local_var_params['orphaned_for']))  # noqa: E501
         if 'pulp_href__in' in local_var_params and local_var_params['pulp_href__in'] is not None:  # noqa: E501
             query_params.append(('pulp_href__in', local_var_params['pulp_href__in']))  # noqa: E501
             collection_formats['pulp_href__in'] = 'csv'  # noqa: E501
@@ -196,7 +201,7 @@ class ContentDistributionTreesApi(object):
         auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/pulp/{pulp_domain}/api/v3/content/rpm/distribution_trees/', 'GET',
+            '/pulp/{pulp_domain}/api/v3/content/rpm/distribution_trees/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -211,13 +216,13 @@ class ContentDistributionTreesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_distribution_tree_href,  **kwargs):  # noqa: E501
+    def content_rpm_distribution_trees_read(self, rpm_distribution_tree_href,  **kwargs):  # noqa: E501
         """Inspect a distribution tree  # noqa: E501
 
         Distribution Tree Viewset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_distribution_tree_href, async_req=True)
+        >>> thread = api.content_rpm_distribution_trees_read(rpm_distribution_tree_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -236,15 +241,15 @@ class ContentDistributionTreesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_distribution_tree_href,  **kwargs)  # noqa: E501
+        return self.content_rpm_distribution_trees_read_with_http_info(rpm_distribution_tree_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_distribution_tree_href,  **kwargs):  # noqa: E501
+    def content_rpm_distribution_trees_read_with_http_info(self, rpm_distribution_tree_href,  **kwargs):  # noqa: E501
         """Inspect a distribution tree  # noqa: E501
 
         Distribution Tree Viewset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_distribution_tree_href, async_req=True)
+        >>> thread = api.content_rpm_distribution_trees_read_with_http_info(rpm_distribution_tree_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -285,14 +290,14 @@ class ContentDistributionTreesApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method content_rpm_distribution_trees_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_distribution_tree_href' is set
         if self.api_client.client_side_validation and ('rpm_distribution_tree_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_distribution_tree_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_distribution_tree_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_distribution_tree_href` when calling `content_rpm_distribution_trees_read`")  # noqa: E501
 
         collection_formats = {}
 

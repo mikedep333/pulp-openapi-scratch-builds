@@ -29,99 +29,99 @@ class TestRepositoriesRpmApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_role(self):
-        """Test case for add_role
+    def test_repositories_rpm_rpm_add_role(self):
+        """Test case for repositories_rpm_rpm_add_role
 
         Add a role  # noqa: E501
         """
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_repositories_rpm_rpm_create(self):
+        """Test case for repositories_rpm_rpm_create
 
         Create a rpm repository  # noqa: E501
         """
         pass
 
-    def test_delete(self):
-        """Test case for delete
+    def test_repositories_rpm_rpm_delete(self):
+        """Test case for repositories_rpm_rpm_delete
 
         Delete a rpm repository  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_repositories_rpm_rpm_list(self):
+        """Test case for repositories_rpm_rpm_list
 
         List rpm repositorys  # noqa: E501
         """
         pass
 
-    def test_list_roles(self):
-        """Test case for list_roles
+    def test_repositories_rpm_rpm_list_roles(self):
+        """Test case for repositories_rpm_rpm_list_roles
 
         List roles  # noqa: E501
         """
         pass
 
-    def test_modify(self):
-        """Test case for modify
+    def test_repositories_rpm_rpm_modify(self):
+        """Test case for repositories_rpm_rpm_modify
 
         Modify Repository Content  # noqa: E501
         """
         pass
 
-    def test_my_permissions(self):
-        """Test case for my_permissions
+    def test_repositories_rpm_rpm_my_permissions(self):
+        """Test case for repositories_rpm_rpm_my_permissions
 
         List user permissions  # noqa: E501
         """
         pass
 
-    def test_partial_update(self):
-        """Test case for partial_update
+    def test_repositories_rpm_rpm_partial_update(self):
+        """Test case for repositories_rpm_rpm_partial_update
 
         Update a rpm repository  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_repositories_rpm_rpm_read(self):
+        """Test case for repositories_rpm_rpm_read
 
         Inspect a rpm repository  # noqa: E501
         """
         pass
 
-    def test_remove_role(self):
-        """Test case for remove_role
+    def test_repositories_rpm_rpm_remove_role(self):
+        """Test case for repositories_rpm_rpm_remove_role
 
         Remove a role  # noqa: E501
         """
         pass
 
-    def test_set_label(self):
-        """Test case for set_label
+    def test_repositories_rpm_rpm_set_label(self):
+        """Test case for repositories_rpm_rpm_set_label
 
         Set a label  # noqa: E501
         """
         pass
 
-    def test_sync(self):
-        """Test case for sync
+    def test_repositories_rpm_rpm_sync(self):
+        """Test case for repositories_rpm_rpm_sync
 
         Sync from remote  # noqa: E501
         """
         pass
 
-    def test_unset_label(self):
-        """Test case for unset_label
+    def test_repositories_rpm_rpm_unset_label(self):
+        """Test case for repositories_rpm_rpm_unset_label
 
         Unset a label  # noqa: E501
         """
         pass
 
-    def test_update(self):
-        """Test case for update
+    def test_repositories_rpm_rpm_update(self):
+        """Test case for repositories_rpm_rpm_update
 
         Update a rpm repository  # noqa: E501
         """

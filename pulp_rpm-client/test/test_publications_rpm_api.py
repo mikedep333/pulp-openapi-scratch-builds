@@ -29,57 +29,57 @@ class TestPublicationsRpmApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_role(self):
-        """Test case for add_role
+    def test_publications_rpm_rpm_add_role(self):
+        """Test case for publications_rpm_rpm_add_role
 
         Add a role  # noqa: E501
         """
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_publications_rpm_rpm_create(self):
+        """Test case for publications_rpm_rpm_create
 
         Create a rpm publication  # noqa: E501
         """
         pass
 
-    def test_delete(self):
-        """Test case for delete
+    def test_publications_rpm_rpm_delete(self):
+        """Test case for publications_rpm_rpm_delete
 
         Delete a rpm publication  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_publications_rpm_rpm_list(self):
+        """Test case for publications_rpm_rpm_list
 
         List rpm publications  # noqa: E501
         """
         pass
 
-    def test_list_roles(self):
-        """Test case for list_roles
+    def test_publications_rpm_rpm_list_roles(self):
+        """Test case for publications_rpm_rpm_list_roles
 
         List roles  # noqa: E501
         """
         pass
 
-    def test_my_permissions(self):
-        """Test case for my_permissions
+    def test_publications_rpm_rpm_my_permissions(self):
+        """Test case for publications_rpm_rpm_my_permissions
 
         List user permissions  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_publications_rpm_rpm_read(self):
+        """Test case for publications_rpm_rpm_read
 
         Inspect a rpm publication  # noqa: E501
         """
         pass
 
-    def test_remove_role(self):
-        """Test case for remove_role
+    def test_publications_rpm_rpm_remove_role(self):
+        """Test case for publications_rpm_rpm_remove_role
 
         Remove a role  # noqa: E501
         """

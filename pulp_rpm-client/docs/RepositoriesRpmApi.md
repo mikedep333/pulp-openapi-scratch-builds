@@ -4,24 +4,24 @@ All URIs are relative to *http://localhost:5001*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_role**](RepositoriesRpmApi.md#add_role) | **POST** {rpm_rpm_repository_href}add_role/ | Add a role
-[**create**](RepositoriesRpmApi.md#create) | **POST** /api/pulp/{pulp_domain}/api/v3/repositories/rpm/rpm/ | Create a rpm repository
-[**delete**](RepositoriesRpmApi.md#delete) | **DELETE** {rpm_rpm_repository_href} | Delete a rpm repository
-[**list**](RepositoriesRpmApi.md#list) | **GET** /api/pulp/{pulp_domain}/api/v3/repositories/rpm/rpm/ | List rpm repositorys
-[**list_roles**](RepositoriesRpmApi.md#list_roles) | **GET** {rpm_rpm_repository_href}list_roles/ | List roles
-[**modify**](RepositoriesRpmApi.md#modify) | **POST** {rpm_rpm_repository_href}modify/ | Modify Repository Content
-[**my_permissions**](RepositoriesRpmApi.md#my_permissions) | **GET** {rpm_rpm_repository_href}my_permissions/ | List user permissions
-[**partial_update**](RepositoriesRpmApi.md#partial_update) | **PATCH** {rpm_rpm_repository_href} | Update a rpm repository
-[**read**](RepositoriesRpmApi.md#read) | **GET** {rpm_rpm_repository_href} | Inspect a rpm repository
-[**remove_role**](RepositoriesRpmApi.md#remove_role) | **POST** {rpm_rpm_repository_href}remove_role/ | Remove a role
-[**set_label**](RepositoriesRpmApi.md#set_label) | **POST** {rpm_rpm_repository_href}set_label/ | Set a label
-[**sync**](RepositoriesRpmApi.md#sync) | **POST** {rpm_rpm_repository_href}sync/ | Sync from remote
-[**unset_label**](RepositoriesRpmApi.md#unset_label) | **POST** {rpm_rpm_repository_href}unset_label/ | Unset a label
-[**update**](RepositoriesRpmApi.md#update) | **PUT** {rpm_rpm_repository_href} | Update a rpm repository
+[**repositories_rpm_rpm_add_role**](RepositoriesRpmApi.md#repositories_rpm_rpm_add_role) | **POST** {rpm_rpm_repository_href}add_role/ | Add a role
+[**repositories_rpm_rpm_create**](RepositoriesRpmApi.md#repositories_rpm_rpm_create) | **POST** /pulp/{pulp_domain}/api/v3/repositories/rpm/rpm/ | Create a rpm repository
+[**repositories_rpm_rpm_delete**](RepositoriesRpmApi.md#repositories_rpm_rpm_delete) | **DELETE** {rpm_rpm_repository_href} | Delete a rpm repository
+[**repositories_rpm_rpm_list**](RepositoriesRpmApi.md#repositories_rpm_rpm_list) | **GET** /pulp/{pulp_domain}/api/v3/repositories/rpm/rpm/ | List rpm repositorys
+[**repositories_rpm_rpm_list_roles**](RepositoriesRpmApi.md#repositories_rpm_rpm_list_roles) | **GET** {rpm_rpm_repository_href}list_roles/ | List roles
+[**repositories_rpm_rpm_modify**](RepositoriesRpmApi.md#repositories_rpm_rpm_modify) | **POST** {rpm_rpm_repository_href}modify/ | Modify Repository Content
+[**repositories_rpm_rpm_my_permissions**](RepositoriesRpmApi.md#repositories_rpm_rpm_my_permissions) | **GET** {rpm_rpm_repository_href}my_permissions/ | List user permissions
+[**repositories_rpm_rpm_partial_update**](RepositoriesRpmApi.md#repositories_rpm_rpm_partial_update) | **PATCH** {rpm_rpm_repository_href} | Update a rpm repository
+[**repositories_rpm_rpm_read**](RepositoriesRpmApi.md#repositories_rpm_rpm_read) | **GET** {rpm_rpm_repository_href} | Inspect a rpm repository
+[**repositories_rpm_rpm_remove_role**](RepositoriesRpmApi.md#repositories_rpm_rpm_remove_role) | **POST** {rpm_rpm_repository_href}remove_role/ | Remove a role
+[**repositories_rpm_rpm_set_label**](RepositoriesRpmApi.md#repositories_rpm_rpm_set_label) | **POST** {rpm_rpm_repository_href}set_label/ | Set a label
+[**repositories_rpm_rpm_sync**](RepositoriesRpmApi.md#repositories_rpm_rpm_sync) | **POST** {rpm_rpm_repository_href}sync/ | Sync from remote
+[**repositories_rpm_rpm_unset_label**](RepositoriesRpmApi.md#repositories_rpm_rpm_unset_label) | **POST** {rpm_rpm_repository_href}unset_label/ | Unset a label
+[**repositories_rpm_rpm_update**](RepositoriesRpmApi.md#repositories_rpm_rpm_update) | **PUT** {rpm_rpm_repository_href} | Update a rpm repository
 
 
-# **add_role**
-> NestedRoleResponse add_role(rpm_rpm_repository_href, nested_role)
+# **repositories_rpm_rpm_add_role**
+> NestedRoleResponse repositories_rpm_rpm_add_role(rpm_rpm_repository_href, nested_role)
 
 Add a role
 
@@ -72,10 +72,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_repository_href, nested_role)
+        api_response = api_instance.repositories_rpm_rpm_add_role(rpm_rpm_repository_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->add_role: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_add_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -121,10 +121,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Add a role
-        api_response = api_instance.add_role(rpm_rpm_repository_href, nested_role)
+        api_response = api_instance.repositories_rpm_rpm_add_role(rpm_rpm_repository_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->add_role: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_add_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -154,8 +154,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create**
-> RpmRpmRepositoryResponse create(pulp_domain, rpm_rpm_repository)
+# **repositories_rpm_rpm_create**
+> RpmRpmRepositoryResponse repositories_rpm_rpm_create(pulp_domain, rpm_rpm_repository)
 
 Create a rpm repository
 
@@ -206,10 +206,10 @@ rpm_rpm_repository = pulpcore.client.pulp_rpm.RpmRpmRepository() # RpmRpmReposit
 
     try:
         # Create a rpm repository
-        api_response = api_instance.create(pulp_domain, rpm_rpm_repository)
+        api_response = api_instance.repositories_rpm_rpm_create(pulp_domain, rpm_rpm_repository)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->create: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_create: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -255,10 +255,10 @@ rpm_rpm_repository = pulpcore.client.pulp_rpm.RpmRpmRepository() # RpmRpmReposit
 
     try:
         # Create a rpm repository
-        api_response = api_instance.create(pulp_domain, rpm_rpm_repository)
+        api_response = api_instance.repositories_rpm_rpm_create(pulp_domain, rpm_rpm_repository)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->create: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -288,8 +288,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> AsyncOperationResponse delete(rpm_rpm_repository_href)
+# **repositories_rpm_rpm_delete**
+> AsyncOperationResponse repositories_rpm_rpm_delete(rpm_rpm_repository_href)
 
 Delete a rpm repository
 
@@ -339,10 +339,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm repository
-        api_response = api_instance.delete(rpm_rpm_repository_href)
+        api_response = api_instance.repositories_rpm_rpm_delete(rpm_rpm_repository_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->delete: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_delete: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -387,10 +387,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a rpm repository
-        api_response = api_instance.delete(rpm_rpm_repository_href)
+        api_response = api_instance.repositories_rpm_rpm_delete(rpm_rpm_repository_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->delete: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -419,8 +419,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedrpmRpmRepositoryResponseList list(pulp_domain, latest_with_content=latest_with_content, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, remote=remote, retain_repo_versions=retain_repo_versions, retain_repo_versions__gt=retain_repo_versions__gt, retain_repo_versions__gte=retain_repo_versions__gte, retain_repo_versions__isnull=retain_repo_versions__isnull, retain_repo_versions__lt=retain_repo_versions__lt, retain_repo_versions__lte=retain_repo_versions__lte, retain_repo_versions__ne=retain_repo_versions__ne, retain_repo_versions__range=retain_repo_versions__range, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_list**
+> PaginatedrpmRpmRepositoryResponseList repositories_rpm_rpm_list(pulp_domain, latest_with_content=latest_with_content, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, remote=remote, retain_repo_versions=retain_repo_versions, retain_repo_versions__gt=retain_repo_versions__gt, retain_repo_versions__gte=retain_repo_versions__gte, retain_repo_versions__isnull=retain_repo_versions__isnull, retain_repo_versions__lt=retain_repo_versions__lt, retain_repo_versions__lte=retain_repo_versions__lte, retain_repo_versions__ne=retain_repo_versions__ne, retain_repo_versions__range=retain_repo_versions__range, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
 
 List rpm repositorys
 
@@ -499,10 +499,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm repositorys
-        api_response = api_instance.list(pulp_domain, latest_with_content=latest_with_content, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, remote=remote, retain_repo_versions=retain_repo_versions, retain_repo_versions__gt=retain_repo_versions__gt, retain_repo_versions__gte=retain_repo_versions__gte, retain_repo_versions__isnull=retain_repo_versions__isnull, retain_repo_versions__lt=retain_repo_versions__lt, retain_repo_versions__lte=retain_repo_versions__lte, retain_repo_versions__ne=retain_repo_versions__ne, retain_repo_versions__range=retain_repo_versions__range, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_list(pulp_domain, latest_with_content=latest_with_content, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, remote=remote, retain_repo_versions=retain_repo_versions, retain_repo_versions__gt=retain_repo_versions__gt, retain_repo_versions__gte=retain_repo_versions__gte, retain_repo_versions__isnull=retain_repo_versions__isnull, retain_repo_versions__lt=retain_repo_versions__lt, retain_repo_versions__lte=retain_repo_versions__lte, retain_repo_versions__ne=retain_repo_versions__ne, retain_repo_versions__range=retain_repo_versions__range, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->list: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -576,10 +576,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List rpm repositorys
-        api_response = api_instance.list(pulp_domain, latest_with_content=latest_with_content, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, remote=remote, retain_repo_versions=retain_repo_versions, retain_repo_versions__gt=retain_repo_versions__gt, retain_repo_versions__gte=retain_repo_versions__gte, retain_repo_versions__isnull=retain_repo_versions__isnull, retain_repo_versions__lt=retain_repo_versions__lt, retain_repo_versions__lte=retain_repo_versions__lte, retain_repo_versions__ne=retain_repo_versions__ne, retain_repo_versions__range=retain_repo_versions__range, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_list(pulp_domain, latest_with_content=latest_with_content, limit=limit, name=name, name__contains=name__contains, name__icontains=name__icontains, name__iexact=name__iexact, name__in=name__in, name__iregex=name__iregex, name__istartswith=name__istartswith, name__regex=name__regex, name__startswith=name__startswith, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, pulp_label_select=pulp_label_select, q=q, remote=remote, retain_repo_versions=retain_repo_versions, retain_repo_versions__gt=retain_repo_versions__gt, retain_repo_versions__gte=retain_repo_versions__gte, retain_repo_versions__isnull=retain_repo_versions__isnull, retain_repo_versions__lt=retain_repo_versions__lt, retain_repo_versions__lte=retain_repo_versions__lte, retain_repo_versions__ne=retain_repo_versions__ne, retain_repo_versions__range=retain_repo_versions__range, with_content=with_content, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->list: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -637,8 +637,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list_roles**
-> ObjectRolesResponse list_roles(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_list_roles**
+> ObjectRolesResponse repositories_rpm_rpm_list_roles(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
 
 List roles
 
@@ -690,10 +690,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_list_roles(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -740,10 +740,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List roles
-        api_response = api_instance.list_roles(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_list_roles(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->list_roles: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_list_roles: %s\n" % e)
 ```
 
 ### Parameters
@@ -774,8 +774,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **modify**
-> AsyncOperationResponse modify(rpm_rpm_repository_href, repository_add_remove_content)
+# **repositories_rpm_rpm_modify**
+> AsyncOperationResponse repositories_rpm_rpm_modify(rpm_rpm_repository_href, repository_add_remove_content)
 
 Modify Repository Content
 
@@ -826,10 +826,10 @@ repository_add_remove_content = pulpcore.client.pulp_rpm.RepositoryAddRemoveCont
 
     try:
         # Modify Repository Content
-        api_response = api_instance.modify(rpm_rpm_repository_href, repository_add_remove_content)
+        api_response = api_instance.repositories_rpm_rpm_modify(rpm_rpm_repository_href, repository_add_remove_content)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->modify: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_modify: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -875,10 +875,10 @@ repository_add_remove_content = pulpcore.client.pulp_rpm.RepositoryAddRemoveCont
 
     try:
         # Modify Repository Content
-        api_response = api_instance.modify(rpm_rpm_repository_href, repository_add_remove_content)
+        api_response = api_instance.repositories_rpm_rpm_modify(rpm_rpm_repository_href, repository_add_remove_content)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->modify: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_modify: %s\n" % e)
 ```
 
 ### Parameters
@@ -908,8 +908,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **my_permissions**
-> MyPermissionsResponse my_permissions(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_my_permissions**
+> MyPermissionsResponse repositories_rpm_rpm_my_permissions(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
 
 List user permissions
 
@@ -961,10 +961,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_my_permissions(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1011,10 +1011,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List user permissions
-        api_response = api_instance.my_permissions(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_my_permissions(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->my_permissions: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_my_permissions: %s\n" % e)
 ```
 
 ### Parameters
@@ -1045,8 +1045,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **partial_update**
-> AsyncOperationResponse partial_update(rpm_rpm_repository_href, patchedrpm_rpm_repository)
+# **repositories_rpm_rpm_partial_update**
+> AsyncOperationResponse repositories_rpm_rpm_partial_update(rpm_rpm_repository_href, patchedrpm_rpm_repository)
 
 Update a rpm repository
 
@@ -1097,10 +1097,10 @@ patchedrpm_rpm_repository = pulpcore.client.pulp_rpm.PatchedrpmRpmRepository() #
 
     try:
         # Update a rpm repository
-        api_response = api_instance.partial_update(rpm_rpm_repository_href, patchedrpm_rpm_repository)
+        api_response = api_instance.repositories_rpm_rpm_partial_update(rpm_rpm_repository_href, patchedrpm_rpm_repository)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->partial_update: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_partial_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1146,10 +1146,10 @@ patchedrpm_rpm_repository = pulpcore.client.pulp_rpm.PatchedrpmRpmRepository() #
 
     try:
         # Update a rpm repository
-        api_response = api_instance.partial_update(rpm_rpm_repository_href, patchedrpm_rpm_repository)
+        api_response = api_instance.repositories_rpm_rpm_partial_update(rpm_rpm_repository_href, patchedrpm_rpm_repository)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->partial_update: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_partial_update: %s\n" % e)
 ```
 
 ### Parameters
@@ -1179,8 +1179,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RpmRpmRepositoryResponse read(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_read**
+> RpmRpmRepositoryResponse repositories_rpm_rpm_read(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect a rpm repository
 
@@ -1232,10 +1232,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm repository
-        api_response = api_instance.read(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_read(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->read: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1282,10 +1282,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a rpm repository
-        api_response = api_instance.read(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_read(rpm_rpm_repository_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->read: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -1316,8 +1316,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **remove_role**
-> NestedRoleResponse remove_role(rpm_rpm_repository_href, nested_role)
+# **repositories_rpm_rpm_remove_role**
+> NestedRoleResponse repositories_rpm_rpm_remove_role(rpm_rpm_repository_href, nested_role)
 
 Remove a role
 
@@ -1368,10 +1368,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_repository_href, nested_role)
+        api_response = api_instance.repositories_rpm_rpm_remove_role(rpm_rpm_repository_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1417,10 +1417,10 @@ nested_role = pulpcore.client.pulp_rpm.NestedRole() # NestedRole |
 
     try:
         # Remove a role
-        api_response = api_instance.remove_role(rpm_rpm_repository_href, nested_role)
+        api_response = api_instance.repositories_rpm_rpm_remove_role(rpm_rpm_repository_href, nested_role)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->remove_role: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_remove_role: %s\n" % e)
 ```
 
 ### Parameters
@@ -1450,8 +1450,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_label**
-> SetLabelResponse set_label(rpm_rpm_repository_href, set_label)
+# **repositories_rpm_rpm_set_label**
+> SetLabelResponse repositories_rpm_rpm_set_label(rpm_rpm_repository_href, set_label)
 
 Set a label
 
@@ -1502,10 +1502,10 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_rpm_repository_href, set_label)
+        api_response = api_instance.repositories_rpm_rpm_set_label(rpm_rpm_repository_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->set_label: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_set_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1551,10 +1551,10 @@ set_label = pulpcore.client.pulp_rpm.SetLabel() # SetLabel |
 
     try:
         # Set a label
-        api_response = api_instance.set_label(rpm_rpm_repository_href, set_label)
+        api_response = api_instance.repositories_rpm_rpm_set_label(rpm_rpm_repository_href, set_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->set_label: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_set_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1584,8 +1584,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sync**
-> AsyncOperationResponse sync(rpm_rpm_repository_href, rpm_repository_sync_url)
+# **repositories_rpm_rpm_sync**
+> AsyncOperationResponse repositories_rpm_rpm_sync(rpm_rpm_repository_href, rpm_repository_sync_url)
 
 Sync from remote
 
@@ -1636,10 +1636,10 @@ rpm_repository_sync_url = pulpcore.client.pulp_rpm.RpmRepositorySyncURL() # RpmR
 
     try:
         # Sync from remote
-        api_response = api_instance.sync(rpm_rpm_repository_href, rpm_repository_sync_url)
+        api_response = api_instance.repositories_rpm_rpm_sync(rpm_rpm_repository_href, rpm_repository_sync_url)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->sync: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_sync: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1685,10 +1685,10 @@ rpm_repository_sync_url = pulpcore.client.pulp_rpm.RpmRepositorySyncURL() # RpmR
 
     try:
         # Sync from remote
-        api_response = api_instance.sync(rpm_rpm_repository_href, rpm_repository_sync_url)
+        api_response = api_instance.repositories_rpm_rpm_sync(rpm_rpm_repository_href, rpm_repository_sync_url)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->sync: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_sync: %s\n" % e)
 ```
 
 ### Parameters
@@ -1718,8 +1718,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unset_label**
-> UnsetLabelResponse unset_label(rpm_rpm_repository_href, unset_label)
+# **repositories_rpm_rpm_unset_label**
+> UnsetLabelResponse repositories_rpm_rpm_unset_label(rpm_rpm_repository_href, unset_label)
 
 Unset a label
 
@@ -1770,10 +1770,10 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_rpm_repository_href, unset_label)
+        api_response = api_instance.repositories_rpm_rpm_unset_label(rpm_rpm_repository_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->unset_label: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_unset_label: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1819,10 +1819,10 @@ unset_label = pulpcore.client.pulp_rpm.UnsetLabel() # UnsetLabel |
 
     try:
         # Unset a label
-        api_response = api_instance.unset_label(rpm_rpm_repository_href, unset_label)
+        api_response = api_instance.repositories_rpm_rpm_unset_label(rpm_rpm_repository_href, unset_label)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->unset_label: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_unset_label: %s\n" % e)
 ```
 
 ### Parameters
@@ -1852,8 +1852,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> AsyncOperationResponse update(rpm_rpm_repository_href, rpm_rpm_repository)
+# **repositories_rpm_rpm_update**
+> AsyncOperationResponse repositories_rpm_rpm_update(rpm_rpm_repository_href, rpm_rpm_repository)
 
 Update a rpm repository
 
@@ -1904,10 +1904,10 @@ rpm_rpm_repository = pulpcore.client.pulp_rpm.RpmRpmRepository() # RpmRpmReposit
 
     try:
         # Update a rpm repository
-        api_response = api_instance.update(rpm_rpm_repository_href, rpm_rpm_repository)
+        api_response = api_instance.repositories_rpm_rpm_update(rpm_rpm_repository_href, rpm_rpm_repository)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->update: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_update: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -1953,10 +1953,10 @@ rpm_rpm_repository = pulpcore.client.pulp_rpm.RpmRpmRepository() # RpmRpmReposit
 
     try:
         # Update a rpm repository
-        api_response = api_instance.update(rpm_rpm_repository_href, rpm_rpm_repository)
+        api_response = api_instance.repositories_rpm_rpm_update(rpm_rpm_repository_href, rpm_rpm_repository)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmApi->update: %s\n" % e)
+        print("Exception when calling RepositoriesRpmApi->repositories_rpm_rpm_update: %s\n" % e)
 ```
 
 ### Parameters

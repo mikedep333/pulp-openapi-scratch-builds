@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost:5001*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete**](RepositoriesRpmVersionsApi.md#delete) | **DELETE** {rpm_rpm_repository_version_href} | Delete a repository version
-[**list**](RepositoriesRpmVersionsApi.md#list) | **GET** {rpm_rpm_repository_href}versions/ | List repository versions
-[**read**](RepositoriesRpmVersionsApi.md#read) | **GET** {rpm_rpm_repository_version_href} | Inspect a repository version
-[**repair**](RepositoriesRpmVersionsApi.md#repair) | **POST** {rpm_rpm_repository_version_href}repair/ | 
+[**repositories_rpm_rpm_versions_delete**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_delete) | **DELETE** {rpm_rpm_repository_version_href} | Delete a repository version
+[**repositories_rpm_rpm_versions_list**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_list) | **GET** {rpm_rpm_repository_href}versions/ | List repository versions
+[**repositories_rpm_rpm_versions_read**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_read) | **GET** {rpm_rpm_repository_version_href} | Inspect a repository version
+[**repositories_rpm_rpm_versions_repair**](RepositoriesRpmVersionsApi.md#repositories_rpm_rpm_versions_repair) | **POST** {rpm_rpm_repository_version_href}repair/ | 
 
 
-# **delete**
-> AsyncOperationResponse delete(rpm_rpm_repository_version_href)
+# **repositories_rpm_rpm_versions_delete**
+> AsyncOperationResponse repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href)
 
 Delete a repository version
 
@@ -61,10 +61,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a repository version
-        api_response = api_instance.delete(rpm_rpm_repository_version_href)
+        api_response = api_instance.repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->delete: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_delete: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -109,10 +109,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 
     try:
         # Delete a repository version
-        api_response = api_instance.delete(rpm_rpm_repository_version_href)
+        api_response = api_instance.repositories_rpm_rpm_versions_delete(rpm_rpm_repository_version_href)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->delete: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -141,8 +141,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedRepositoryVersionResponseList list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_versions_list**
+> PaginatedRepositoryVersionResponseList repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
 
 List repository versions
 
@@ -213,10 +213,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List repository versions
-        api_response = api_instance.list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->list: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -282,10 +282,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List repository versions
-        api_response = api_instance.list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_list(rpm_rpm_repository_href, content=content, content__in=content__in, limit=limit, number=number, number__gt=number__gt, number__gte=number__gte, number__lt=number__lt, number__lte=number__lte, number__range=number__range, offset=offset, ordering=ordering, pulp_created=pulp_created, pulp_created__gt=pulp_created__gt, pulp_created__gte=pulp_created__gte, pulp_created__lt=pulp_created__lt, pulp_created__lte=pulp_created__lte, pulp_created__range=pulp_created__range, pulp_href__in=pulp_href__in, q=q, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->list: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -335,8 +335,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RepositoryVersionResponse read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
+# **repositories_rpm_rpm_versions_read**
+> RepositoryVersionResponse repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect a repository version
 
@@ -388,10 +388,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a repository version
-        api_response = api_instance.read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->read: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -438,10 +438,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a repository version
-        api_response = api_instance.read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.repositories_rpm_rpm_versions_read(rpm_rpm_repository_version_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->read: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_read: %s\n" % e)
 ```
 
 ### Parameters
@@ -472,8 +472,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **repair**
-> AsyncOperationResponse repair(rpm_rpm_repository_version_href, repair)
+# **repositories_rpm_rpm_versions_repair**
+> AsyncOperationResponse repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair)
 
 
 
@@ -523,10 +523,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 repair = pulpcore.client.pulp_rpm.Repair() # Repair | 
 
     try:
-        api_response = api_instance.repair(rpm_rpm_repository_version_href, repair)
+        api_response = api_instance.repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->repair: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_repair: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -571,10 +571,10 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 repair = pulpcore.client.pulp_rpm.Repair() # Repair | 
 
     try:
-        api_response = api_instance.repair(rpm_rpm_repository_version_href, repair)
+        api_response = api_instance.repositories_rpm_rpm_versions_repair(rpm_rpm_repository_version_href, repair)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling RepositoriesRpmVersionsApi->repair: %s\n" % e)
+        print("Exception when calling RepositoriesRpmVersionsApi->repositories_rpm_rpm_versions_repair: %s\n" % e)
 ```
 
 ### Parameters

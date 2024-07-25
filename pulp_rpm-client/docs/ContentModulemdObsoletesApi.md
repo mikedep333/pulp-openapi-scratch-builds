@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:5001*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](ContentModulemdObsoletesApi.md#create) | **POST** /api/pulp/{pulp_domain}/api/v3/content/rpm/modulemd_obsoletes/ | Create a modulemd obsolete
-[**list**](ContentModulemdObsoletesApi.md#list) | **GET** /api/pulp/{pulp_domain}/api/v3/content/rpm/modulemd_obsoletes/ | List modulemd obsoletes
-[**read**](ContentModulemdObsoletesApi.md#read) | **GET** {rpm_modulemd_obsolete_href} | Inspect a modulemd obsolete
+[**content_rpm_modulemd_obsoletes_create**](ContentModulemdObsoletesApi.md#content_rpm_modulemd_obsoletes_create) | **POST** /pulp/{pulp_domain}/api/v3/content/rpm/modulemd_obsoletes/ | Create a modulemd obsolete
+[**content_rpm_modulemd_obsoletes_list**](ContentModulemdObsoletesApi.md#content_rpm_modulemd_obsoletes_list) | **GET** /pulp/{pulp_domain}/api/v3/content/rpm/modulemd_obsoletes/ | List modulemd obsoletes
+[**content_rpm_modulemd_obsoletes_read**](ContentModulemdObsoletesApi.md#content_rpm_modulemd_obsoletes_read) | **GET** {rpm_modulemd_obsolete_href} | Inspect a modulemd obsolete
 
 
-# **create**
-> AsyncOperationResponse create(pulp_domain, rpm_modulemd_obsolete)
+# **content_rpm_modulemd_obsoletes_create**
+> AsyncOperationResponse content_rpm_modulemd_obsoletes_create(pulp_domain, rpm_modulemd_obsolete)
 
 Create a modulemd obsolete
 
@@ -61,10 +61,10 @@ rpm_modulemd_obsolete = pulpcore.client.pulp_rpm.RpmModulemdObsolete() # RpmModu
 
     try:
         # Create a modulemd obsolete
-        api_response = api_instance.create(pulp_domain, rpm_modulemd_obsolete)
+        api_response = api_instance.content_rpm_modulemd_obsoletes_create(pulp_domain, rpm_modulemd_obsolete)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentModulemdObsoletesApi->create: %s\n" % e)
+        print("Exception when calling ContentModulemdObsoletesApi->content_rpm_modulemd_obsoletes_create: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -110,10 +110,10 @@ rpm_modulemd_obsolete = pulpcore.client.pulp_rpm.RpmModulemdObsolete() # RpmModu
 
     try:
         # Create a modulemd obsolete
-        api_response = api_instance.create(pulp_domain, rpm_modulemd_obsolete)
+        api_response = api_instance.content_rpm_modulemd_obsoletes_create(pulp_domain, rpm_modulemd_obsolete)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentModulemdObsoletesApi->create: %s\n" % e)
+        print("Exception when calling ContentModulemdObsoletesApi->content_rpm_modulemd_obsoletes_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -143,8 +143,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedrpmModulemdObsoleteResponseList list(pulp_domain, limit=limit, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, fields=fields, exclude_fields=exclude_fields)
+# **content_rpm_modulemd_obsoletes_list**
+> PaginatedrpmModulemdObsoleteResponseList content_rpm_modulemd_obsoletes_list(pulp_domain, limit=limit, offset=offset, ordering=ordering, orphaned_for=orphaned_for, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, fields=fields, exclude_fields=exclude_fields)
 
 List modulemd obsoletes
 
@@ -194,6 +194,7 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 ordering = ['ordering_example'] # list[str] | Ordering  * `pk` - Pk * `-pk` - Pk (descending) (optional)
+orphaned_for = 3.4 # float | Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME. (optional)
 pulp_href__in = ['pulp_href__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 pulp_id__in = ['pulp_id__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 q = 'q_example' # str |  (optional)
@@ -205,10 +206,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List modulemd obsoletes
-        api_response = api_instance.list(pulp_domain, limit=limit, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_modulemd_obsoletes_list(pulp_domain, limit=limit, offset=offset, ordering=ordering, orphaned_for=orphaned_for, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentModulemdObsoletesApi->list: %s\n" % e)
+        print("Exception when calling ContentModulemdObsoletesApi->content_rpm_modulemd_obsoletes_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -253,6 +254,7 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 ordering = ['ordering_example'] # list[str] | Ordering  * `pk` - Pk * `-pk` - Pk (descending) (optional)
+orphaned_for = 3.4 # float | Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME. (optional)
 pulp_href__in = ['pulp_href__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 pulp_id__in = ['pulp_id__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 q = 'q_example' # str |  (optional)
@@ -264,10 +266,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List modulemd obsoletes
-        api_response = api_instance.list(pulp_domain, limit=limit, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_modulemd_obsoletes_list(pulp_domain, limit=limit, offset=offset, ordering=ordering, orphaned_for=orphaned_for, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentModulemdObsoletesApi->list: %s\n" % e)
+        print("Exception when calling ContentModulemdObsoletesApi->content_rpm_modulemd_obsoletes_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -278,6 +280,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
  **ordering** | [**list[str]**](str.md)| Ordering  * &#x60;pk&#x60; - Pk * &#x60;-pk&#x60; - Pk (descending) | [optional] 
+ **orphaned_for** | **float**| Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME. | [optional] 
  **pulp_href__in** | [**list[str]**](str.md)| Multiple values may be separated by commas. | [optional] 
  **pulp_id__in** | [**list[str]**](str.md)| Multiple values may be separated by commas. | [optional] 
  **q** | **str**|  | [optional] 
@@ -307,8 +310,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RpmModulemdObsoleteResponse read(rpm_modulemd_obsolete_href, fields=fields, exclude_fields=exclude_fields)
+# **content_rpm_modulemd_obsoletes_read**
+> RpmModulemdObsoleteResponse content_rpm_modulemd_obsoletes_read(rpm_modulemd_obsolete_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect a modulemd obsolete
 
@@ -360,10 +363,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a modulemd obsolete
-        api_response = api_instance.read(rpm_modulemd_obsolete_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_modulemd_obsoletes_read(rpm_modulemd_obsolete_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentModulemdObsoletesApi->read: %s\n" % e)
+        print("Exception when calling ContentModulemdObsoletesApi->content_rpm_modulemd_obsoletes_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -410,10 +413,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect a modulemd obsolete
-        api_response = api_instance.read(rpm_modulemd_obsolete_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_modulemd_obsoletes_read(rpm_modulemd_obsolete_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentModulemdObsoletesApi->read: %s\n" % e)
+        print("Exception when calling ContentModulemdObsoletesApi->content_rpm_modulemd_obsoletes_read: %s\n" % e)
 ```
 
 ### Parameters

@@ -29,22 +29,22 @@ class TestContentAdvisoriesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_content_rpm_advisories_create(self):
+        """Test case for content_rpm_advisories_create
 
         Create an update record  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_advisories_list(self):
+        """Test case for content_rpm_advisories_list
 
         List update records  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_advisories_read(self):
+        """Test case for content_rpm_advisories_read
 
         Inspect an update record  # noqa: E501
         """

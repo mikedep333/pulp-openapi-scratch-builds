@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:5001*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](ContentAdvisoriesApi.md#create) | **POST** /api/pulp/{pulp_domain}/api/v3/content/rpm/advisories/ | Create an update record
-[**list**](ContentAdvisoriesApi.md#list) | **GET** /api/pulp/{pulp_domain}/api/v3/content/rpm/advisories/ | List update records
-[**read**](ContentAdvisoriesApi.md#read) | **GET** {rpm_update_record_href} | Inspect an update record
+[**content_rpm_advisories_create**](ContentAdvisoriesApi.md#content_rpm_advisories_create) | **POST** /pulp/{pulp_domain}/api/v3/content/rpm/advisories/ | Create an update record
+[**content_rpm_advisories_list**](ContentAdvisoriesApi.md#content_rpm_advisories_list) | **GET** /pulp/{pulp_domain}/api/v3/content/rpm/advisories/ | List update records
+[**content_rpm_advisories_read**](ContentAdvisoriesApi.md#content_rpm_advisories_read) | **GET** {rpm_update_record_href} | Inspect an update record
 
 
-# **create**
-> AsyncOperationResponse create(pulp_domain, repository=repository, file=file, upload=upload)
+# **content_rpm_advisories_create**
+> AsyncOperationResponse content_rpm_advisories_create(pulp_domain, repository=repository, file=file, upload=upload, file_url=file_url)
 
 Create an update record
 
@@ -60,13 +60,14 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 repository = 'repository_example' # str | A URI of a repository the new content unit should be associated with. (optional)
 file = '/path/to/file' # file | An uploaded file that may be turned into the content unit. (optional)
 upload = 'upload_example' # str | An uncommitted upload that may be turned into the content unit. (optional)
+file_url = 'file_url_example' # str | A url that Pulp can download and turn into the content unit. (optional)
 
     try:
         # Create an update record
-        api_response = api_instance.create(pulp_domain, repository=repository, file=file, upload=upload)
+        api_response = api_instance.content_rpm_advisories_create(pulp_domain, repository=repository, file=file, upload=upload, file_url=file_url)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentAdvisoriesApi->create: %s\n" % e)
+        print("Exception when calling ContentAdvisoriesApi->content_rpm_advisories_create: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -111,13 +112,14 @@ with pulpcore.client.pulp_rpm.ApiClient(configuration) as api_client:
 repository = 'repository_example' # str | A URI of a repository the new content unit should be associated with. (optional)
 file = '/path/to/file' # file | An uploaded file that may be turned into the content unit. (optional)
 upload = 'upload_example' # str | An uncommitted upload that may be turned into the content unit. (optional)
+file_url = 'file_url_example' # str | A url that Pulp can download and turn into the content unit. (optional)
 
     try:
         # Create an update record
-        api_response = api_instance.create(pulp_domain, repository=repository, file=file, upload=upload)
+        api_response = api_instance.content_rpm_advisories_create(pulp_domain, repository=repository, file=file, upload=upload, file_url=file_url)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentAdvisoriesApi->create: %s\n" % e)
+        print("Exception when calling ContentAdvisoriesApi->content_rpm_advisories_create: %s\n" % e)
 ```
 
 ### Parameters
@@ -128,6 +130,7 @@ Name | Type | Description  | Notes
  **repository** | **str**| A URI of a repository the new content unit should be associated with. | [optional] 
  **file** | **file**| An uploaded file that may be turned into the content unit. | [optional] 
  **upload** | **str**| An uncommitted upload that may be turned into the content unit. | [optional] 
+ **file_url** | **str**| A url that Pulp can download and turn into the content unit. | [optional] 
 
 ### Return type
 
@@ -149,8 +152,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **list**
-> PaginatedrpmUpdateRecordResponseList list(pulp_domain, id=id, id__in=id__in, limit=limit, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, severity=severity, severity__in=severity__in, severity__ne=severity__ne, status=status, status__in=status__in, status__ne=status__ne, type=type, type__in=type__in, type__ne=type__ne, fields=fields, exclude_fields=exclude_fields)
+# **content_rpm_advisories_list**
+> PaginatedrpmUpdateRecordResponseList content_rpm_advisories_list(pulp_domain, id=id, id__in=id__in, limit=limit, offset=offset, ordering=ordering, orphaned_for=orphaned_for, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, severity=severity, severity__in=severity__in, severity__ne=severity__ne, status=status, status__in=status__in, status__ne=status__ne, type=type, type__in=type__in, type__ne=type__ne, fields=fields, exclude_fields=exclude_fields)
 
 List update records
 
@@ -202,6 +205,7 @@ id__in = ['id__in_example'] # list[str] | Filter results where id is in a comma-
 limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 ordering = ['ordering_example'] # list[str] | Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `id` - Id * `-id` - Id (descending) * `updated_date` - Updated date * `-updated_date` - Updated date (descending) * `description` - Description * `-description` - Description (descending) * `issued_date` - Issued date * `-issued_date` - Issued date (descending) * `fromstr` - Fromstr * `-fromstr` - Fromstr (descending) * `status` - Status * `-status` - Status (descending) * `title` - Title * `-title` - Title (descending) * `summary` - Summary * `-summary` - Summary (descending) * `version` - Version * `-version` - Version (descending) * `type` - Type * `-type` - Type (descending) * `severity` - Severity * `-severity` - Severity (descending) * `solution` - Solution * `-solution` - Solution (descending) * `release` - Release * `-release` - Release (descending) * `rights` - Rights * `-rights` - Rights (descending) * `reboot_suggested` - Reboot suggested * `-reboot_suggested` - Reboot suggested (descending) * `pushcount` - Pushcount * `-pushcount` - Pushcount (descending) * `digest` - Digest * `-digest` - Digest (descending) * `pk` - Pk * `-pk` - Pk (descending) (optional)
+orphaned_for = 3.4 # float | Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME. (optional)
 pulp_href__in = ['pulp_href__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 pulp_id__in = ['pulp_id__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 q = 'q_example' # str |  (optional)
@@ -222,10 +226,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List update records
-        api_response = api_instance.list(pulp_domain, id=id, id__in=id__in, limit=limit, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, severity=severity, severity__in=severity__in, severity__ne=severity__ne, status=status, status__in=status__in, status__ne=status__ne, type=type, type__in=type__in, type__ne=type__ne, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_advisories_list(pulp_domain, id=id, id__in=id__in, limit=limit, offset=offset, ordering=ordering, orphaned_for=orphaned_for, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, severity=severity, severity__in=severity__in, severity__ne=severity__ne, status=status, status__in=status__in, status__ne=status__ne, type=type, type__in=type__in, type__ne=type__ne, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentAdvisoriesApi->list: %s\n" % e)
+        print("Exception when calling ContentAdvisoriesApi->content_rpm_advisories_list: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -272,6 +276,7 @@ id__in = ['id__in_example'] # list[str] | Filter results where id is in a comma-
 limit = 56 # int | Number of results to return per page. (optional)
 offset = 56 # int | The initial index from which to return the results. (optional)
 ordering = ['ordering_example'] # list[str] | Ordering  * `pulp_id` - Pulp id * `-pulp_id` - Pulp id (descending) * `pulp_created` - Pulp created * `-pulp_created` - Pulp created (descending) * `pulp_last_updated` - Pulp last updated * `-pulp_last_updated` - Pulp last updated (descending) * `pulp_type` - Pulp type * `-pulp_type` - Pulp type (descending) * `upstream_id` - Upstream id * `-upstream_id` - Upstream id (descending) * `timestamp_of_interest` - Timestamp of interest * `-timestamp_of_interest` - Timestamp of interest (descending) * `id` - Id * `-id` - Id (descending) * `updated_date` - Updated date * `-updated_date` - Updated date (descending) * `description` - Description * `-description` - Description (descending) * `issued_date` - Issued date * `-issued_date` - Issued date (descending) * `fromstr` - Fromstr * `-fromstr` - Fromstr (descending) * `status` - Status * `-status` - Status (descending) * `title` - Title * `-title` - Title (descending) * `summary` - Summary * `-summary` - Summary (descending) * `version` - Version * `-version` - Version (descending) * `type` - Type * `-type` - Type (descending) * `severity` - Severity * `-severity` - Severity (descending) * `solution` - Solution * `-solution` - Solution (descending) * `release` - Release * `-release` - Release (descending) * `rights` - Rights * `-rights` - Rights (descending) * `reboot_suggested` - Reboot suggested * `-reboot_suggested` - Reboot suggested (descending) * `pushcount` - Pushcount * `-pushcount` - Pushcount (descending) * `digest` - Digest * `-digest` - Digest (descending) * `pk` - Pk * `-pk` - Pk (descending) (optional)
+orphaned_for = 3.4 # float | Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME. (optional)
 pulp_href__in = ['pulp_href__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 pulp_id__in = ['pulp_id__in_example'] # list[str] | Multiple values may be separated by commas. (optional)
 q = 'q_example' # str |  (optional)
@@ -292,10 +297,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # List update records
-        api_response = api_instance.list(pulp_domain, id=id, id__in=id__in, limit=limit, offset=offset, ordering=ordering, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, severity=severity, severity__in=severity__in, severity__ne=severity__ne, status=status, status__in=status__in, status__ne=status__ne, type=type, type__in=type__in, type__ne=type__ne, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_advisories_list(pulp_domain, id=id, id__in=id__in, limit=limit, offset=offset, ordering=ordering, orphaned_for=orphaned_for, pulp_href__in=pulp_href__in, pulp_id__in=pulp_id__in, q=q, repository_version=repository_version, repository_version_added=repository_version_added, repository_version_removed=repository_version_removed, severity=severity, severity__in=severity__in, severity__ne=severity__ne, status=status, status__in=status__in, status__ne=status__ne, type=type, type__in=type__in, type__ne=type__ne, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentAdvisoriesApi->list: %s\n" % e)
+        print("Exception when calling ContentAdvisoriesApi->content_rpm_advisories_list: %s\n" % e)
 ```
 
 ### Parameters
@@ -308,6 +313,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of results to return per page. | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
  **ordering** | [**list[str]**](str.md)| Ordering  * &#x60;pulp_id&#x60; - Pulp id * &#x60;-pulp_id&#x60; - Pulp id (descending) * &#x60;pulp_created&#x60; - Pulp created * &#x60;-pulp_created&#x60; - Pulp created (descending) * &#x60;pulp_last_updated&#x60; - Pulp last updated * &#x60;-pulp_last_updated&#x60; - Pulp last updated (descending) * &#x60;pulp_type&#x60; - Pulp type * &#x60;-pulp_type&#x60; - Pulp type (descending) * &#x60;upstream_id&#x60; - Upstream id * &#x60;-upstream_id&#x60; - Upstream id (descending) * &#x60;timestamp_of_interest&#x60; - Timestamp of interest * &#x60;-timestamp_of_interest&#x60; - Timestamp of interest (descending) * &#x60;id&#x60; - Id * &#x60;-id&#x60; - Id (descending) * &#x60;updated_date&#x60; - Updated date * &#x60;-updated_date&#x60; - Updated date (descending) * &#x60;description&#x60; - Description * &#x60;-description&#x60; - Description (descending) * &#x60;issued_date&#x60; - Issued date * &#x60;-issued_date&#x60; - Issued date (descending) * &#x60;fromstr&#x60; - Fromstr * &#x60;-fromstr&#x60; - Fromstr (descending) * &#x60;status&#x60; - Status * &#x60;-status&#x60; - Status (descending) * &#x60;title&#x60; - Title * &#x60;-title&#x60; - Title (descending) * &#x60;summary&#x60; - Summary * &#x60;-summary&#x60; - Summary (descending) * &#x60;version&#x60; - Version * &#x60;-version&#x60; - Version (descending) * &#x60;type&#x60; - Type * &#x60;-type&#x60; - Type (descending) * &#x60;severity&#x60; - Severity * &#x60;-severity&#x60; - Severity (descending) * &#x60;solution&#x60; - Solution * &#x60;-solution&#x60; - Solution (descending) * &#x60;release&#x60; - Release * &#x60;-release&#x60; - Release (descending) * &#x60;rights&#x60; - Rights * &#x60;-rights&#x60; - Rights (descending) * &#x60;reboot_suggested&#x60; - Reboot suggested * &#x60;-reboot_suggested&#x60; - Reboot suggested (descending) * &#x60;pushcount&#x60; - Pushcount * &#x60;-pushcount&#x60; - Pushcount (descending) * &#x60;digest&#x60; - Digest * &#x60;-digest&#x60; - Digest (descending) * &#x60;pk&#x60; - Pk * &#x60;-pk&#x60; - Pk (descending) | [optional] 
+ **orphaned_for** | **float**| Minutes Content has been orphaned for. -1 uses ORPHAN_PROTECTION_TIME. | [optional] 
  **pulp_href__in** | [**list[str]**](str.md)| Multiple values may be separated by commas. | [optional] 
  **pulp_id__in** | [**list[str]**](str.md)| Multiple values may be separated by commas. | [optional] 
  **q** | **str**|  | [optional] 
@@ -346,8 +352,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **read**
-> RpmUpdateRecordResponse read(rpm_update_record_href, fields=fields, exclude_fields=exclude_fields)
+# **content_rpm_advisories_read**
+> RpmUpdateRecordResponse content_rpm_advisories_read(rpm_update_record_href, fields=fields, exclude_fields=exclude_fields)
 
 Inspect an update record
 
@@ -399,10 +405,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect an update record
-        api_response = api_instance.read(rpm_update_record_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_advisories_read(rpm_update_record_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentAdvisoriesApi->read: %s\n" % e)
+        print("Exception when calling ContentAdvisoriesApi->content_rpm_advisories_read: %s\n" % e)
 ```
 
 * Api Key Authentication (cookieAuth):
@@ -449,10 +455,10 @@ exclude_fields = ['exclude_fields_example'] # list[str] | A list of fields to ex
 
     try:
         # Inspect an update record
-        api_response = api_instance.read(rpm_update_record_href, fields=fields, exclude_fields=exclude_fields)
+        api_response = api_instance.content_rpm_advisories_read(rpm_update_record_href, fields=fields, exclude_fields=exclude_fields)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling ContentAdvisoriesApi->read: %s\n" % e)
+        print("Exception when calling ContentAdvisoriesApi->content_rpm_advisories_read: %s\n" % e)
 ```
 
 ### Parameters

@@ -37,13 +37,13 @@ class PublicationsRpmApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_role(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_add_role(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
         """Add a role  # noqa: E501
 
         Add a role for this object to users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role(rpm_rpm_publication_href, nested_role, async_req=True)
+        >>> thread = api.publications_rpm_rpm_add_role(rpm_rpm_publication_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -61,15 +61,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.add_role_with_http_info(rpm_rpm_publication_href, nested_role,  **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_add_role_with_http_info(rpm_rpm_publication_href, nested_role,  **kwargs)  # noqa: E501
 
-    def add_role_with_http_info(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_add_role_with_http_info(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
         """Add a role  # noqa: E501
 
         Add a role for this object to users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.add_role_with_http_info(rpm_rpm_publication_href, nested_role, async_req=True)
+        >>> thread = api.publications_rpm_rpm_add_role_with_http_info(rpm_rpm_publication_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -108,18 +108,18 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method add_role" % key
+                    " to method publications_rpm_rpm_add_role" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_publication_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_publication_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_publication_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `add_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `publications_rpm_rpm_add_role`")  # noqa: E501
         # verify the required parameter 'nested_role' is set
         if self.api_client.client_side_validation and ('nested_role' not in local_var_params or  # noqa: E501
                                                         local_var_params['nested_role'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `nested_role` when calling `add_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `nested_role` when calling `publications_rpm_rpm_add_role`")  # noqa: E501
 
         collection_formats = {}
 
@@ -164,13 +164,13 @@ class PublicationsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create(self, rpm_rpm_publication, pulp_domain="default", **kwargs):  # noqa: E501
+    def publications_rpm_rpm_create(self, rpm_rpm_publication, pulp_domain="default", **kwargs):  # noqa: E501
         """Create a rpm publication  # noqa: E501
 
         Trigger an asynchronous task to create a new RPM content publication.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create(pulp_domain, rpm_rpm_publication, async_req=True)
+        >>> thread = api.publications_rpm_rpm_create(pulp_domain, rpm_rpm_publication, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -188,15 +188,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.create_with_http_info(rpm_rpm_publication, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_create_with_http_info(rpm_rpm_publication, pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def create_with_http_info(self, rpm_rpm_publication, pulp_domain="default", **kwargs):  # noqa: E501
+    def publications_rpm_rpm_create_with_http_info(self, rpm_rpm_publication, pulp_domain="default", **kwargs):  # noqa: E501
         """Create a rpm publication  # noqa: E501
 
         Trigger an asynchronous task to create a new RPM content publication.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_with_http_info(pulp_domain, rpm_rpm_publication, async_req=True)
+        >>> thread = api.publications_rpm_rpm_create_with_http_info(pulp_domain, rpm_rpm_publication, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -235,18 +235,18 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create" % key
+                    " to method publications_rpm_rpm_create" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `publications_rpm_rpm_create`")  # noqa: E501
         # verify the required parameter 'rpm_rpm_publication' is set
         if self.api_client.client_side_validation and ('rpm_rpm_publication' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_publication'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_publication` when calling `create`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_publication` when calling `publications_rpm_rpm_create`")  # noqa: E501
 
         collection_formats = {}
 
@@ -276,7 +276,7 @@ class PublicationsRpmApi(object):
         auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/pulp/{pulp_domain}/api/v3/publications/rpm/rpm/', 'POST',
+            '/pulp/{pulp_domain}/api/v3/publications/rpm/rpm/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -291,13 +291,13 @@ class PublicationsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_delete(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """Delete a rpm publication  # noqa: E501
 
         ViewSet for Rpm Publications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_delete(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -314,15 +314,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_delete_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
 
-    def delete_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_delete_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """Delete a rpm publication  # noqa: E501
 
         ViewSet for Rpm Publications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_with_http_info(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_delete_with_http_info(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -359,14 +359,14 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete" % key
+                    " to method publications_rpm_rpm_delete" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_publication_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_publication_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_publication_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `delete`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `publications_rpm_rpm_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -401,13 +401,13 @@ class PublicationsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def publications_rpm_rpm_list(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List rpm publications  # noqa: E501
 
         ViewSet for Rpm Publications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list(pulp_domain, async_req=True)
+        >>> thread = api.publications_rpm_rpm_list(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -442,15 +442,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_list_with_http_info(pulp_domain=pulp_domain, **kwargs)  # noqa: E501
 
-    def list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
+    def publications_rpm_rpm_list_with_http_info(self, pulp_domain="default", **kwargs):  # noqa: E501
         """List rpm publications  # noqa: E501
 
         ViewSet for Rpm Publications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_with_http_info(pulp_domain, async_req=True)
+        >>> thread = api.publications_rpm_rpm_list_with_http_info(pulp_domain, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -523,14 +523,14 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list" % key
+                    " to method publications_rpm_rpm_list" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'pulp_domain' is set
         if self.api_client.client_side_validation and ('pulp_domain' not in local_var_params or  # noqa: E501
                                                         local_var_params['pulp_domain'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `list`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `pulp_domain` when calling `publications_rpm_rpm_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -596,7 +596,7 @@ class PublicationsRpmApi(object):
         auth_settings = ['basicAuth', 'cookieAuth']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/pulp/{pulp_domain}/api/v3/publications/rpm/rpm/', 'GET',
+            '/pulp/{pulp_domain}/api/v3/publications/rpm/rpm/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -611,13 +611,13 @@ class PublicationsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def list_roles(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_list_roles(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """List roles  # noqa: E501
 
         List roles assigned to this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_list_roles(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -636,15 +636,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.list_roles_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_list_roles_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
 
-    def list_roles_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_list_roles_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """List roles  # noqa: E501
 
         List roles assigned to this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.list_roles_with_http_info(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_list_roles_with_http_info(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -685,14 +685,14 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method list_roles" % key
+                    " to method publications_rpm_rpm_list_roles" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_publication_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_publication_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_publication_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `list_roles`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `publications_rpm_rpm_list_roles`")  # noqa: E501
 
         collection_formats = {}
 
@@ -737,13 +737,13 @@ class PublicationsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def my_permissions(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_my_permissions(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """List user permissions  # noqa: E501
 
         List permissions available to the current user on this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.my_permissions(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_my_permissions(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -762,15 +762,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.my_permissions_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_my_permissions_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
 
-    def my_permissions_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_my_permissions_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """List user permissions  # noqa: E501
 
         List permissions available to the current user on this object.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.my_permissions_with_http_info(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_my_permissions_with_http_info(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -811,14 +811,14 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method my_permissions" % key
+                    " to method publications_rpm_rpm_my_permissions" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_publication_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_publication_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_publication_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `my_permissions`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `publications_rpm_rpm_my_permissions`")  # noqa: E501
 
         collection_formats = {}
 
@@ -863,13 +863,13 @@ class PublicationsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def read(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_read(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """Inspect a rpm publication  # noqa: E501
 
         ViewSet for Rpm Publications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_read(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -888,15 +888,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.read_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_read_with_http_info(rpm_rpm_publication_href,  **kwargs)  # noqa: E501
 
-    def read_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_read_with_http_info(self, rpm_rpm_publication_href,  **kwargs):  # noqa: E501
         """Inspect a rpm publication  # noqa: E501
 
         ViewSet for Rpm Publications.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.read_with_http_info(rpm_rpm_publication_href, async_req=True)
+        >>> thread = api.publications_rpm_rpm_read_with_http_info(rpm_rpm_publication_href, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -937,14 +937,14 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method read" % key
+                    " to method publications_rpm_rpm_read" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_publication_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_publication_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_publication_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `read`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `publications_rpm_rpm_read`")  # noqa: E501
 
         collection_formats = {}
 
@@ -989,13 +989,13 @@ class PublicationsRpmApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def remove_role(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_remove_role(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
         """Remove a role  # noqa: E501
 
         Remove a role for this object from users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_role(rpm_rpm_publication_href, nested_role, async_req=True)
+        >>> thread = api.publications_rpm_rpm_remove_role(rpm_rpm_publication_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1013,15 +1013,15 @@ class PublicationsRpmApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.remove_role_with_http_info(rpm_rpm_publication_href, nested_role,  **kwargs)  # noqa: E501
+        return self.publications_rpm_rpm_remove_role_with_http_info(rpm_rpm_publication_href, nested_role,  **kwargs)  # noqa: E501
 
-    def remove_role_with_http_info(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
+    def publications_rpm_rpm_remove_role_with_http_info(self, rpm_rpm_publication_href, nested_role,  **kwargs):  # noqa: E501
         """Remove a role  # noqa: E501
 
         Remove a role for this object from users/groups.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.remove_role_with_http_info(rpm_rpm_publication_href, nested_role, async_req=True)
+        >>> thread = api.publications_rpm_rpm_remove_role_with_http_info(rpm_rpm_publication_href, nested_role, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
@@ -1060,18 +1060,18 @@ class PublicationsRpmApi(object):
             if key not in all_params:
                 raise ApiTypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method remove_role" % key
+                    " to method publications_rpm_rpm_remove_role" % key
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
         # verify the required parameter 'rpm_rpm_publication_href' is set
         if self.api_client.client_side_validation and ('rpm_rpm_publication_href' not in local_var_params or  # noqa: E501
                                                         local_var_params['rpm_rpm_publication_href'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `remove_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `rpm_rpm_publication_href` when calling `publications_rpm_rpm_remove_role`")  # noqa: E501
         # verify the required parameter 'nested_role' is set
         if self.api_client.client_side_validation and ('nested_role' not in local_var_params or  # noqa: E501
                                                         local_var_params['nested_role'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `nested_role` when calling `remove_role`")  # noqa: E501
+            raise ApiValueError("Missing the required parameter `nested_role` when calling `publications_rpm_rpm_remove_role`")  # noqa: E501
 
         collection_formats = {}
 

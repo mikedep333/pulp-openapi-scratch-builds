@@ -29,22 +29,22 @@ class TestContentModulemdDefaultsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_content_rpm_modulemd_defaults_create(self):
+        """Test case for content_rpm_modulemd_defaults_create
 
         Create a modulemd defaults  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_content_rpm_modulemd_defaults_list(self):
+        """Test case for content_rpm_modulemd_defaults_list
 
         List modulemd defaultss  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_content_rpm_modulemd_defaults_read(self):
+        """Test case for content_rpm_modulemd_defaults_read
 
         Inspect a modulemd defaults  # noqa: E501
         """

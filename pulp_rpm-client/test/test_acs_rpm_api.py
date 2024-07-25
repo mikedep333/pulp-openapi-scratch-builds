@@ -29,77 +29,77 @@ class TestAcsRpmApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_add_role(self):
-        """Test case for add_role
+    def test_acs_rpm_rpm_add_role(self):
+        """Test case for acs_rpm_rpm_add_role
 
         Add a role  # noqa: E501
         """
         pass
 
-    def test_create(self):
-        """Test case for create
+    def test_acs_rpm_rpm_create(self):
+        """Test case for acs_rpm_rpm_create
 
         Create a rpm alternate content source  # noqa: E501
         """
         pass
 
-    def test_delete(self):
-        """Test case for delete
+    def test_acs_rpm_rpm_delete(self):
+        """Test case for acs_rpm_rpm_delete
 
         Delete a rpm alternate content source  # noqa: E501
         """
         pass
 
-    def test_list(self):
-        """Test case for list
+    def test_acs_rpm_rpm_list(self):
+        """Test case for acs_rpm_rpm_list
 
         List rpm alternate content sources  # noqa: E501
         """
         pass
 
-    def test_list_roles(self):
-        """Test case for list_roles
+    def test_acs_rpm_rpm_list_roles(self):
+        """Test case for acs_rpm_rpm_list_roles
 
         List roles  # noqa: E501
         """
         pass
 
-    def test_my_permissions(self):
-        """Test case for my_permissions
+    def test_acs_rpm_rpm_my_permissions(self):
+        """Test case for acs_rpm_rpm_my_permissions
 
         List user permissions  # noqa: E501
         """
         pass
 
-    def test_partial_update(self):
-        """Test case for partial_update
+    def test_acs_rpm_rpm_partial_update(self):
+        """Test case for acs_rpm_rpm_partial_update
 
         Update a rpm alternate content source  # noqa: E501
         """
         pass
 
-    def test_read(self):
-        """Test case for read
+    def test_acs_rpm_rpm_read(self):
+        """Test case for acs_rpm_rpm_read
 
         Inspect a rpm alternate content source  # noqa: E501
         """
         pass
 
-    def test_refresh(self):
-        """Test case for refresh
+    def test_acs_rpm_rpm_refresh(self):
+        """Test case for acs_rpm_rpm_refresh
 
         """
         pass
 
-    def test_remove_role(self):
-        """Test case for remove_role
+    def test_acs_rpm_rpm_remove_role(self):
+        """Test case for acs_rpm_rpm_remove_role
 
         Remove a role  # noqa: E501
         """
         pass
 
-    def test_update(self):
-        """Test case for update
+    def test_acs_rpm_rpm_update(self):
+        """Test case for acs_rpm_rpm_update
 
         Update a rpm alternate content source  # noqa: E501
         """
